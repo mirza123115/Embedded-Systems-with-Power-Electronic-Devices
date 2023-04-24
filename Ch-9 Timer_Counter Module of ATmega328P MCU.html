@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://forum.arduino.cc/index.php?topic=692400.msg4654922#msg4654922 -->
+<html class="windows desktop landscape js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" style="--vh:5.2px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<link rel="stylesheet" type="text/css" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/index.css">
+	<link rel="stylesheet" type="text/css" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/responsive.css">
+	<link rel="stylesheet" type="text/css" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/jquery.custom-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/jquery.sceditor.css">
+	<style>
+img.avatar { max-width: 65px; max-height: 65px; }</style>
+	<script type="text/javascript" async="" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/analytics.js.download"></script><script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/notice" async=""></script><script><!-- // --><![CDATA[
+		var smf_theme_url = "https://forum.arduino.cc/Themes/default";
+		var smf_default_theme_url = "https://forum.arduino.cc/Themes/default";
+		var smf_images_url = "https://forum.arduino.cc/Themes/default/images";
+		var smf_smileys_url = "https://forum.arduino.cc/Smileys";
+		var smf_scripturl = "https://forum.arduino.cc/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+		var smf_session_id = "f27e02cfd2ffc059ad89808fbc1ebcc5";
+		var smf_session_var = "b9461d3f92";
+		var smf_member_id = 1441812;
+		var ajax_notification_text = 'Loading...';
+		var help_popup_heading_text = 'A little lost? Let me explain:';
+	// ]]></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/jquery.min.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/smf_jquery_plugins.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/jquery.custom-scrollbar.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/script.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/theme.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/editor.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/jquery.sceditor.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/jquery.sceditor.bbcode.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/jquery.sceditor.smf.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/drafts.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/topic.js.download"></script>
+	<script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/alerts.js.download"></script>
+	<script><!-- // --><![CDATA[
+		var smf_smileys_url = 'https://forum.arduino.cc/Smileys/arduino';
+		var bbc_quote_from = 'Quote from';
+		var bbc_quote = 'Quote';
+		var bbc_search_on = 'on';
+	var new_alert_title = "Arduino Forum";
+	var alert_timeout = 10000;
+	// ]]></script>
+	<meta name="description" content="Ch-9  Timer/Counter Module of ATmega328P MCU">
+	<title>Ch-9  Timer/Counter Module of ATmega328P MCU</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="robots" content="noindex">
+	<link rel="canonical" href="https://forum.arduino.cc/index.php?topic=692400.0">
+	<link rel="help" href="https://forum.arduino.cc/index.php?action=help">
+	<link rel="contents" href="https://forum.arduino.cc/index.php">
+	<link rel="search" href="https://forum.arduino.cc/index.php?action=search">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - RSS" href="https://forum.arduino.cc/index.php?type=rss2;action=.xml">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - Atom" href="https://forum.arduino.cc/index.php?type=atom;action=.xml">
+	<link rel="index" href="https://forum.arduino.cc/index.php?board=18.0">
+<style type="text/css">img[onload^="SVGInject("]{visibility:hidden;}</style><script async="" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/hotjar-1036685.js.download"></script>
+  <link rel="shortcut icon" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon-48x48.png">
+  <link rel="manifest" id="ino-manifest-placeholder" href="blob:https://forum.arduino.cc/1047fbc5-ae07-4fb1-9951-f5d9bba7c072">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#fff">
+  <meta name="application-name">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-1024x1024.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-640x1136.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-750x1334.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-828x1792.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1125x2436.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1242x2208.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1242x2688.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1536x2048.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1668x2224.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1668x2388.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2048x2732.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1620x2160.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1136x640.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1334x750.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1792x828.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2436x1125.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2208x1242.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2688x1242.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2048x1536.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2224x1668.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2388x1668.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2732x2048.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2160x1620.png">
+  <link rel="icon" type="image/png" sizes="228x228" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/coast-228x228.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="msapplication-TileImage" content="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/mstile-144x144.png">
+  <meta name="msapplication-config" content="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/browserconfig.xml">
+  <link rel="yandex-tableau-widget" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/yandex-browser-manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><script async="" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/modules.8831d20acac5f9d5fa63.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+<body id="chrome" class="action_messageindex board_18"><div style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/sprites.svg" style="display: none;">
+  <symbol id="footerLang-icon" viewBox="0 0 14 14">
+    <path d="M13.813 6.733a6.422 6.422 0 00-.286-1.669 6.563 6.563 0 00-2.56-3.46.267.267 0 00-.06-.037A6.43 6.43 0 007.783.48 4.49 4.49 0 007.25.438 6.563 6.563 0 1013.813 7a2.533 2.533 0 000-.268zM3.969 11.57a5.625 5.625 0 01-2.096-6.23l.807.577L3.969 8.07v3.501zm6.675-5.976a.469.469 0 00-.324.037l-.937.469a.469.469 0 00-.235.567l.47 1.406a.469.469 0 00.294.296l1.144.38.366 2.001a5.597 5.597 0 01-4.172 1.875 5.48 5.48 0 01-2.142-.427l2.076-3.557a.469.469 0 00-.07-.568l-.469-.468a.469.469 0 00-.332-.136H4.728l-.342-.68a.127.127 0 00-.028-.047l-.455-.68h1.003a.469.469 0 00.469-.468v-.746l.802-.796a.469.469 0 00.056-.591l-.9-1.355-.117-.351a5.56 5.56 0 012.034-.38v.469a.469.469 0 00.938 0v-.385a5.466 5.466 0 011.959.722L9.71 3.72l-.066.225-.384.38a.469.469 0 00.152.768.469.469 0 00.514-.103l.262-.262.469.15 2.044.68c.055.193.097.39.126.59l-2.184-.553z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="footerTriangle-icon" viewBox="0 0 9 6">
+    <path d="M.332 4.332l3.2-3.2a.8.8 0 011.136 0l3.2 3.2a.8.8 0 01.168.872.8.8 0 01-.736.496H.9a.8.8 0 01-.736-.496.8.8 0 01.168-.872z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="headerIcon-menu-triangle" viewBox="0 0 11 7">
+    <path d="M10.21 2.21l-4 4a1 1 0 01-1.42 0l-4-4a1 1 0 01-.21-1.09A1 1 0 011.5.5h8a1 1 0 01.92.62 1 1 0 01-.21 1.09z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="headerIcon-extend-menu" viewBox="0 0 7 12">
+    <path d="M1.5 11.25a.75.75 0 01-.533-1.283L4.942 6 .967 2.032A.753.753 0 112.032.967l4.5 4.5a.75.75 0 010 1.065l-4.5 4.5a.75.75 0 01-.532.218z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="headerIcon-extend-next" viewBox="0 0 10 9">
+    <path d="M8.891 4.766L5.516 8.141a.375.375 0 01-.614-.122.375.375 0 01.082-.41L7.72 4.875H.375a.375.375 0 010-.75h7.346L4.984 1.391A.377.377 0 015.516.86l3.375 3.375a.375.375 0 010 .532z" fill="currentColor"></path>
+  </symbol>
+</svg></div><link rel="stylesheet" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/foundation2.css" type="text/css"><link rel="stylesheet" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/common-hacked.css" type="text/css"><link rel="stylesheet" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/new_style.css" type="text/css"><link rel="stylesheet" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/fonts.css" type="text/css"><link rel="stylesheet" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/arduino-icons.css" type="text/css"><link rel="stylesheet" href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/index.v2.css" type="text/css"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/css2" rel="stylesheet"><div id="header" class="temporary ino-header-base" data-ref="0.5060636713082036"><header id="ino-header-new">
+  <nav class="arduino-nav teal">
+    <!-- First level of header -->
+    <div class="first-level">
+      <div class="first-level-left app-menu-apps" id="main-menu">
+        <!-- Component MenuAppsCmp -->
+      <div class="app-menu-apps-link"><a href="https://www.arduino.cc/pro"><span class="link-full">Professional</span><span class="link-short">Pro</span></a></div><div class="app-menu-apps-link"><a href="https://www.arduino.cc/edu"><span class="link-full">Education</span><span class="link-short">Edu</span></a></div><div class="app-menu-apps-link"><a href="https://store.arduino.cc/"><span>Store</span></a></div></div>
+
+      <!-- Right part of control -->
+      <div class="first-level-right">
+        <!-- Search bar -->
+        <div class="app-controls search-control app-desktop-search-control"><form class="search-form ino-suggestion" role="search" method="GET" action="https://www.arduino.cc/search">
+  <div class="search-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 20 20" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-search.svg">
+  <path d="M19.5325 18.4675L14.2825 13.2175C15.4994 11.7274 16.0972 9.82667 15.9522 7.90828C15.8072 5.9899 14.9306 4.20059 13.5035 2.91032C12.0765 1.62005 10.2082 0.927502 8.28495 0.975872C6.3617 1.02424 4.53058 1.80983 3.17021 3.1702C1.80984 4.53057 1.02425 6.36169 0.975884 8.28493C0.927514 10.2082 1.62006 12.0765 2.91033 13.5035C4.2006 14.9305 5.98991 15.8072 7.90829 15.9522C9.82668 16.0972 11.7274 15.4994 13.2175 14.2825L18.4675 19.5325C18.5372 19.6028 18.6202 19.6586 18.7116 19.6967C18.803 19.7347 18.901 19.7543 19 19.7543C19.099 19.7543 19.197 19.7347 19.2884 19.6967C19.3798 19.6586 19.4628 19.6028 19.5325 19.5325C19.6028 19.4628 19.6586 19.3798 19.6967 19.2884C19.7348 19.197 19.7544 19.099 19.7544 19C19.7544 18.901 19.7348 18.803 19.6967 18.7116C19.6586 18.6202 19.6028 18.5372 19.5325 18.4675ZM8.50001 14.5C7.31332 14.5 6.15329 14.1481 5.16659 13.4888C4.1799 12.8295 3.41086 11.8925 2.95674 10.7961C2.50261 9.69974 2.38379 8.49334 2.6153 7.32946C2.84681 6.16557 3.41826 5.09647 4.25737 4.25736C5.09649 3.41824 6.16558 2.8468 7.32947 2.61529C8.49336 2.38378 9.69976 2.5026 10.7961 2.95672C11.8925 3.41085 12.8295 4.17988 13.4888 5.16658C14.1481 6.15327 14.5 7.31331 14.5 8.5C14.5 10.0913 13.8679 11.6174 12.7427 12.7426C11.6174 13.8679 10.0913 14.5 8.50001 14.5Z" fill="currentColor"></path>
+</svg>
+  </div>
+  <input type="hidden" name="tab" value="forum" class="search-tab">
+  <input type="text" placeholder="Search on Arduino.cc" value="" name="q" title="" class="search-typing" autocomplete="off">
+<div class="ino-suggestion__box"></div></form></div>
+
+        <!-- Store container -->
+        <div class="app-controls store-controls hide">
+          <!-- Store buttons -->
+        </div>
+
+        <!-- Application list -->
+        <div class="app-controls application-list app-applications-container style-arduino"><div class="app-applications popup-dropdown">
+  <a id="application-list-control" href="https://forum.arduino.cc/index.php?topic=692400.msg4654922#">
+    <div class="app-applications-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" id="app-list" viewBox="0 0 18 18" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-app-list.svg">
+  <path d="M9 10.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM15.75 10.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM15.75 3.75a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM9 3.75a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM2.25 3.75a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM2.25 10.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM9 17.25a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM15.75 17.25a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM2.25 17.25a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="currentColor"></path>
+</svg>
+    </div>
+  </a>
+  <div class="popup-container">
+    <div class="popup-container__box" id="app-apps-container-box"><div class="app-applications__row"><div class="app-applications__col"><a id="web-editor" class="app-application" href="https://create.arduino.cc/editor" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 36" id="app-web-editor" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-web-editor.svg">
+  <path d="M0.5 6.5H45.5V32.5C45.5 34.1569 44.1569 35.5 42.5 35.5H3.5C1.84315 35.5 0.5 34.1569 0.5 32.5V6.5Z" fill="#171E21"></path>
+  <path d="M0.5 3.5C0.5 1.84315 1.84315 0.5 3.5 0.5H42.5C44.1569 0.5 45.5 1.84315 45.5 3.5V6.5H0.5V3.5Z" fill="#DAE3E3"></path>
+  <rect x="5.5" y="10.5" width="6" height="2" rx="1" fill="#98FFC7"></rect>
+  <rect x="19.5" y="16.5" width="6" height="2" rx="1" fill="#FFE793"></rect>
+  <rect x="13.5" y="22.5" width="6" height="2" rx="1" fill="#95A5A6"></rect>
+  <rect x="13.5" y="10.5" width="4" height="2" rx="1" fill="#98FFC7"></rect>
+  <rect x="21.5" y="22.5" width="4" height="2" rx="1" fill="#95A5A6"></rect>
+  <rect x="13.5" y="16.5" width="4" height="2" rx="1" fill="#FFA572"></rect>
+  <rect x="5.5" y="28.5" width="4" height="2" rx="1" fill="#fff"></rect>
+  <rect x="27.5" y="16.5" width="4" height="2" rx="1" fill="#fff"></rect>
+</svg>
+        </div>
+        <div class="app-application__name">Web Editor</div>
+      </a></div><div class="app-applications__col"><a id="iot-cloud" class="app-application" href="https://create.arduino.cc/iot" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="app-iot-cloud" viewBox="0 0 46 36" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-iot-cloud.svg">
+  <rect x=".5" y=".5" width="45" height="35" rx="3" fill="#DAE3E3"></rect>
+  <rect x="3.5" y="3.5" width="18" height="29" rx="1" fill="#fff"></rect>
+  <rect x="24.5" y="3.5" width="18" height="13" rx="1" fill="#fff"></rect>
+  <rect x="24.5" y="19.5" width="18" height="13" rx="1" fill="#fff"></rect>
+  <rect x="27.5" y="6.5" width="12" height="7" rx="3.5" fill="#95A5A6"></rect>
+  <rect x="27.5" y="22.5" width="12" height="7" rx="3.5" fill="#0CA1A6"></rect>
+  <circle cx="31" cy="10" r="2.5" fill="#fff"></circle>
+  <circle cx="36" cy="26" r="2.5" fill="#fff"></circle>
+  <path stroke="#95A5A6" stroke-width="3" stroke-linecap="round" d="M13 8v20"></path>
+  <path stroke="#0CA1A6" stroke-width="3" stroke-linecap="round" d="M13 17v11"></path>
+  <circle cx="13" cy="18" r="3" fill="#fff" stroke="#95A5A6"></circle>
+</svg>
+        </div>
+        <div class="app-application__name">IoT Cloud</div>
+      </a></div></div><div class="app-applications__row"><div class="app-applications__col"><a id="device-manager" class="app-application" href="https://create.arduino.cc/devices" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="app-device-manager" viewBox="0 0 48 36" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-device-manager.svg">
+  <rect x="2.5" y=".5" width="45" height="35" rx="3" fill="#0CA1A6"></rect>
+  <circle cx="5.5" cy="3.5" r="2" fill="#fff"></circle>
+  <circle cx="44.5" cy="3.5" r="2" fill="#fff"></circle>
+  <circle cx="5.5" cy="32.5" r="2" fill="#fff"></circle>
+  <circle cx="44.5" cy="32.5" r="2" fill="#fff"></circle>
+  <rect x=".5" y="12.5" width="7" height="11" rx="1" fill="#DAE3E3"></rect>
+  <rect x="30.5" y="11.5" width="13" height="13" rx="1" fill="#DAE3E3"></rect>
+  <rect x="16.5" y="1.5" width="23" height="4" rx="1" fill="#4E5B61"></rect>
+  <rect x="16.5" y="30.5" width="23" height="4" rx="1" fill="#4E5B61"></rect>
+</svg>
+        </div>
+        <div class="app-application__name">Manager for Linux</div>
+      </a></div><div class="app-applications__col"><a id="digital-store" class="app-application" href="https://store.arduino.cc/digital/" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="app-digital-store" viewBox="0 0 52 36" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-digital-store.svg">
+  <path d="M3.5 3.5a3 3 0 013-3h39a3 3 0 013 3v32h-45v-32z" fill="#DAE3E3"></path>
+  <path fill="#fff" d="M24.5 17.5h19v12h-19z"></path>
+  <rect x="3.5" y="3.5" width="9" height="9" rx="4.5" fill="#0CA1A6"></rect>
+  <path d="M3.5 3.5a3 3 0 013-3h6v8h-9v-5zM39.5.5h6a3 3 0 013 3v5h-9v-8z" fill="#0CA1A6"></path>
+  <rect x="39.5" y="3.5" width="9" height="9" rx="4.5" fill="#0CA1A6"></rect>
+  <rect x="12.5" y="3.5" width="9" height="9" rx="4.5" fill="#fff"></rect>
+  <path fill="#fff" d="M12.5.5h9v8h-9z"></path>
+  <rect x="21.5" y="3.5" width="9" height="9" rx="4.5" fill="#0CA1A6"></rect>
+  <path fill="#0CA1A6" d="M21.5.5h9v8h-9z"></path>
+  <rect x="30.5" y="3.5" width="9" height="9" rx="4.5" fill="#fff"></rect>
+  <path fill="#fff" d="M30.5.5h9v8h-9z"></path>
+  <path d="M8.5 18.5a1 1 0 011-1h10a1 1 0 011 1v17h-12v-17z" fill="#BCAC99"></path>
+  <circle cx="15.5" cy="25.5" r="2" fill="#fff"></circle>
+  <rect x=".5" y="33.5" width="51" height="2" rx="1" fill="#C9D2D2"></rect>
+</svg>
+        </div>
+        <div class="app-application__name">Digital Store</div>
+      </a></div></div></div>
+  </div>
+</div></div>
+
+        <!-- Auth/Profile container -->
+        <div class="app-controls profile-desktop-container app-desktop-profile-container style-arduino min-width"><!-- Sign In -->
+<div class="login-button hide">
+  <a href="https://forum.arduino.cc/index.php?topic=692400.msg4654922#">
+    <span>Sign In</span>
+  </a>
+</div>
+
+<!-- Profile view -->
+<div class="profile-dropdown popup-dropdown" tabindex="0">
+  <a data-hj-suppress="" class="submenu-toggle profile-avatar" aria-label="user profile">
+    <svg viewBox="0 0 22 22" class="avatar default-avatar" style="display: none;">
+      <path d="M11 11.7498H10.88C9.99585 11.7184 9.1594 11.341 8.55072 10.6989C7.94204 10.0569 7.6098 9.20152 7.62553 8.31694C7.64126 7.43237 8.0037 6.58934 8.63483 5.96934C9.26595 5.34934 10.1153 5.00195 11 5.00195C11.8847 5.00195 12.7341 5.34934 13.3652 5.96934C13.9963 6.58934 14.3587 7.43237 14.3745 8.31694C14.3902 9.20152 14.058 10.0569 13.4493 10.6989C12.8406 11.341 12.0042 11.7184 11.12 11.7498H11Z" fill="currentColor"></path>
+      <path d="M17.9752 18.65C17.9857 18.7012 18.0007 18.7514 18.0202 18.8C16.0921 20.535 13.5902 21.495 10.9964 21.495C8.40264 21.495 5.90067 20.535 3.97266 18.8C3.99462 18.7516 4.01219 18.7014 4.02516 18.65C4.38847 17.1001 5.26936 15.7205 6.52245 14.7387C7.77553 13.757 9.3259 13.2318 10.9177 13.25H11.0827C12.6744 13.2318 14.2248 13.757 15.4779 14.7387C16.7309 15.7205 17.6118 17.1001 17.9752 18.65Z" fill="currentColor"></path>
+      <path d="M21.5004 10.9998C21.5108 13.3645 20.7174 15.6626 19.2504 17.5173C18.8356 16.2987 18.1466 15.1916 17.2363 14.2814C16.3261 13.3712 15.219 12.6821 14.0004 12.2673C14.8135 11.6501 15.4123 10.7933 15.7124 9.81765C16.0126 8.842 15.9989 7.79676 15.6733 6.82931C15.3477 5.86186 14.7266 5.02102 13.8977 4.42536C13.0687 3.8297 12.0737 3.50928 11.0529 3.50928C10.0321 3.50928 9.03713 3.8297 8.20818 4.42536C7.37922 5.02102 6.75816 5.86186 6.43256 6.82931C6.10697 7.79676 6.09327 8.842 6.39341 9.81765C6.69354 10.7933 7.29236 11.6501 8.10542 12.2673C6.88682 12.6821 5.77973 13.3712 4.8695 14.2814C3.95927 15.1916 3.2702 16.2987 2.85542 17.5173C1.79166 16.2095 1.05841 14.6648 0.717686 13.0138C0.376957 11.3629 0.438759 9.65409 0.897868 8.03203C1.35698 6.40996 2.19989 4.92228 3.35535 3.69477C4.51081 2.46726 5.94484 1.536 7.5362 0.979724C9.12757 0.423451 10.8295 0.25852 12.498 0.498875C14.1666 0.73923 15.7528 1.3778 17.1224 2.36061C18.4921 3.34341 19.605 4.64156 20.367 6.14528C21.129 7.64901 21.5178 9.31411 21.5004 10.9998Z" fill="currentColor"></path>
+    </svg>      
+    <img class="avatar user-avatar" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/emon_mirza.jpeg" alt="User Profile" style="display: block;">
+    <span class="badge">0</span>
+  </a>
+  <div class="popup-container">
+    <div class="popup-container__box">
+      <ul>
+        <li>
+          <a href="https://id.arduino.cc/"><span>Profile</span></a>
+        </li>
+        <li class="forum-messages">
+          <a href="https://forum.arduino.cc/index.php?action=pm"><span>Messages</span></a>
+        </li>
+        <li>
+          <a href="https://store.arduino.cc/digital/subscriptions"><span>My Plans</span></a>
+        </li>
+        <li class="logout">
+          <a role="button" tabindex="0"><span>Sign Out</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+      </div>
+
+    </div>
+
+    <!-- Second level of header -->
+    <div class="second-level">
+      <!-- Brand logo -->
+      <a class="brand-logo app-brand-logo style-arduino logo-arduino" href="https://www.arduino.cc/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 25" fill="none" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerLogo-arduino.svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M51.25 12.5C51.25 5.60219 45.5773 0 38.6242 0C37.984 0 37.3261 0.0364964 36.6859 0.145985C31.2799 0.930657 27.6522 4.92701 25.625 7.9927C23.5978 4.92701 19.9701 0.930657 14.5641 0.145985C13.9239 0.0547445 13.266 0 12.6258 0C5.65493 0 0 5.60219 0 12.5C0 19.3978 5.67271 25 12.6258 25C13.266 25 13.9239 24.9635 14.5819 24.854C19.9879 24.0511 23.6155 20.0547 25.6428 16.9891C27.67 20.0547 31.2977 24.0511 36.7037 24.854C37.3439 24.9453 38.0018 25 38.6598 25C45.5773 25 51.25 19.3978 51.25 12.5ZM13.9416 20.4744C13.4971 20.5474 13.0525 20.5657 12.6079 20.5657C8.01996 20.5657 4.30336 16.9343 4.30336 12.5C4.30336 8.04744 8.03774 4.4343 12.6257 4.4343C13.0703 4.4343 13.5148 4.4708 13.9594 4.52554C19.0631 5.27372 22.1751 10.4379 23.242 12.5C22.1573 14.5803 19.0275 19.7263 13.9416 20.4744ZM37.2905 4.52554C32.1868 5.27372 29.057 10.4379 28.0079 12.5C29.057 14.562 32.1868 19.7263 37.2905 20.4744C37.735 20.5292 38.1796 20.5657 38.6242 20.5657C43.1944 20.5657 46.9287 16.9525 46.9287 12.5C46.9287 8.06569 43.2121 4.4343 38.6242 4.4343C38.1796 4.4343 37.735 4.4708 37.2905 4.52554ZM9.06449 11.161H16.7004V13.5642H9.06449V11.161ZM42.1479 13.5817H39.5728V16.1077H37.1049V13.5817H34.5298V11.161H37.1049V8.63499H39.5728V11.161H42.1479V13.5817Z" fill="currentColor"></path>
+</svg></a>
+
+      <!-- Main application menu -->
+      <div class="menu-container">
+        <!-- Search bar -->
+        <div class="mobile-search-control app-mobile-search-control"><form class="search-form ino-suggestion" role="search" method="GET" action="https://www.arduino.cc/search">
+  <div class="search-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 20 20" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-search.svg">
+  <path d="M19.5325 18.4675L14.2825 13.2175C15.4994 11.7274 16.0972 9.82667 15.9522 7.90828C15.8072 5.9899 14.9306 4.20059 13.5035 2.91032C12.0765 1.62005 10.2082 0.927502 8.28495 0.975872C6.3617 1.02424 4.53058 1.80983 3.17021 3.1702C1.80984 4.53057 1.02425 6.36169 0.975884 8.28493C0.927514 10.2082 1.62006 12.0765 2.91033 13.5035C4.2006 14.9305 5.98991 15.8072 7.90829 15.9522C9.82668 16.0972 11.7274 15.4994 13.2175 14.2825L18.4675 19.5325C18.5372 19.6028 18.6202 19.6586 18.7116 19.6967C18.803 19.7347 18.901 19.7543 19 19.7543C19.099 19.7543 19.197 19.7347 19.2884 19.6967C19.3798 19.6586 19.4628 19.6028 19.5325 19.5325C19.6028 19.4628 19.6586 19.3798 19.6967 19.2884C19.7348 19.197 19.7544 19.099 19.7544 19C19.7544 18.901 19.7348 18.803 19.6967 18.7116C19.6586 18.6202 19.6028 18.5372 19.5325 18.4675ZM8.50001 14.5C7.31332 14.5 6.15329 14.1481 5.16659 13.4888C4.1799 12.8295 3.41086 11.8925 2.95674 10.7961C2.50261 9.69974 2.38379 8.49334 2.6153 7.32946C2.84681 6.16557 3.41826 5.09647 4.25737 4.25736C5.09649 3.41824 6.16558 2.8468 7.32947 2.61529C8.49336 2.38378 9.69976 2.5026 10.7961 2.95672C11.8925 3.41085 12.8295 4.17988 13.4888 5.16658C14.1481 6.15327 14.5 7.31331 14.5 8.5C14.5 10.0913 13.8679 11.6174 12.7427 12.7426C11.6174 13.8679 10.0913 14.5 8.50001 14.5Z" fill="currentColor"></path>
+</svg>
+  </div>
+  <input type="hidden" name="tab" value="forum" class="search-tab">
+  <input type="text" placeholder="Search on Arduino.cc" value="" name="q" title="" class="search-typing" autocomplete="off">
+<div class="ino-suggestion__box"></div></form></div>
+
+        <!-- App menu -->
+        <div class="menu-list app-menu-main style-arduino" id="app-menu-list"><div class="app-menu-item" tabindex="0"><a class="app-menu-text main-text" href="https://www.arduino.cc/en/Main/Products" tabindex="-1"><span title="Hardware">Hardware</span></a></div><div class="app-menu-item app-has-sub-menu" tabindex="0"><a class="app-menu-text main-text" role="button" tabindex="-1"><span title="Software">Software</span><div class="app-menu-triangle"><svg>
+        <use xlink:href="/index.php#headerIcon-menu-triangle" href="#headerIcon-menu-triangle"></use>
+      </svg></div></a><div class="app-sub-menu"><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Main/Create" target="_blank" rel="noopener noreferrer"><span title="Arduino Create">Arduino Create</span></a><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Main/Software"><span title="Downloads">Downloads</span></a></div></div><div class="app-menu-item app-has-sub-menu" tabindex="0"><a class="app-menu-text main-text" role="button" tabindex="-1"><span title="Documentation">Documentation</span><div class="app-menu-triangle"><svg>
+        <use xlink:href="/index.php#headerIcon-menu-triangle" href="#headerIcon-menu-triangle"></use>
+      </svg></div></a><div class="app-sub-menu"><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Tutorial/HomePage"><span title="Tutorials">Tutorials</span></a><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/reference/en"><span title="Reference">Reference</span></a><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Main/FAQ"><span title="FAQ">FAQ</span></a><a class="app-menu-text sub-menu-text" href="https://playground.arduino.cc/"><span title="Playground">Playground</span></a></div></div><div class="app-menu-item app-has-sub-menu" tabindex="0"><a class="app-menu-text main-text" role="button" tabindex="-1"><span title="Community">Community</span><div class="app-menu-triangle"><svg>
+        <use xlink:href="/index.php#headerIcon-menu-triangle" href="#headerIcon-menu-triangle"></use>
+      </svg></div></a><div class="app-sub-menu"><a class="app-menu-text sub-menu-text" href="https://forum.arduino.cc/"><span title="Forum">Forum</span></a><a class="app-menu-text sub-menu-text" href="https://discord.gg/jQJFwW7" target="_blank" rel="noopener noreferrer"><span title="Discord">Discord</span></a><a class="app-menu-text sub-menu-text" href="https://create.arduino.cc/projecthub" target="_blank" rel="noopener noreferrer"><span title="Project Hub">Project Hub</span></a><a class="app-menu-text sub-menu-text" href="https://day.arduino.cc/" target="_blank" rel="noopener noreferrer"><span title="Arduino Day">Arduino Day</span></a></div></div><div class="app-menu-item" tabindex="0"><a class="app-menu-text main-text" href="https://blog.arduino.cc/" tabindex="-1"><span title="Blog">Blog</span></a></div><div class="app-menu-item" tabindex="0"><a class="app-menu-text main-text" href="https://www.arduino.cc/en/Guide/Introduction" tabindex="-1"><span title="About">About</span></a></div></div>
+
+        <!-- App buttons -->
+        <div class="menu-buttons app-menu-buttons" id="app-menu-buttons"></div>
+
+        <div class="profile-mobile-container app-mobile-profile-container style-arduino"><!-- Sign In -->
+<div class="login-button hide">
+  <a href="https://forum.arduino.cc/index.php?topic=692400.msg4654922#">
+    <span>Sign In</span>
+  </a>
+</div>
+<!-- User profile -->
+<div class="profile-dropdown">
+  <div class="profile-menu">
+    <div class="profile-menu__item">
+      <a href="https://id.arduino.cc/">Profile</a>
+    </div>
+    <div class="profile-menu__item">
+      <a href="https://forum.arduino.cc/index.php?action=pm">Messages</a>
+    </div>
+    <div class="profile-menu__item">
+      <a href="https://store.arduino.cc/digital/subscriptions">My Plans</a>
+    </div>
+  </div>
+  <div class="profile-info">
+    <div class="profile-avatar" aria-label="user profile">
+      <svg viewBox="0 0 22 22" class="avatar default-avatar" style="display: none;">
+        <path d="M11 11.7498H10.88C9.99585 11.7184 9.1594 11.341 8.55072 10.6989C7.94204 10.0569 7.6098 9.20152 7.62553 8.31694C7.64126 7.43237 8.0037 6.58934 8.63483 5.96934C9.26595 5.34934 10.1153 5.00195 11 5.00195C11.8847 5.00195 12.7341 5.34934 13.3652 5.96934C13.9963 6.58934 14.3587 7.43237 14.3745 8.31694C14.3902 9.20152 14.058 10.0569 13.4493 10.6989C12.8406 11.341 12.0042 11.7184 11.12 11.7498H11Z" fill="currentColor"></path>
+        <path d="M17.9752 18.65C17.9857 18.7012 18.0007 18.7514 18.0202 18.8C16.0921 20.535 13.5902 21.495 10.9964 21.495C8.40264 21.495 5.90067 20.535 3.97266 18.8C3.99462 18.7516 4.01219 18.7014 4.02516 18.65C4.38847 17.1001 5.26936 15.7205 6.52245 14.7387C7.77553 13.757 9.3259 13.2318 10.9177 13.25H11.0827C12.6744 13.2318 14.2248 13.757 15.4779 14.7387C16.7309 15.7205 17.6118 17.1001 17.9752 18.65Z" fill="currentColor"></path>
+        <path d="M21.5004 10.9998C21.5108 13.3645 20.7174 15.6626 19.2504 17.5173C18.8356 16.2987 18.1466 15.1916 17.2363 14.2814C16.3261 13.3712 15.219 12.6821 14.0004 12.2673C14.8135 11.6501 15.4123 10.7933 15.7124 9.81765C16.0126 8.842 15.9989 7.79676 15.6733 6.82931C15.3477 5.86186 14.7266 5.02102 13.8977 4.42536C13.0687 3.8297 12.0737 3.50928 11.0529 3.50928C10.0321 3.50928 9.03713 3.8297 8.20818 4.42536C7.37922 5.02102 6.75816 5.86186 6.43256 6.82931C6.10697 7.79676 6.09327 8.842 6.39341 9.81765C6.69354 10.7933 7.29236 11.6501 8.10542 12.2673C6.88682 12.6821 5.77973 13.3712 4.8695 14.2814C3.95927 15.1916 3.2702 16.2987 2.85542 17.5173C1.79166 16.2095 1.05841 14.6648 0.717686 13.0138C0.376957 11.3629 0.438759 9.65409 0.897868 8.03203C1.35698 6.40996 2.19989 4.92228 3.35535 3.69477C4.51081 2.46726 5.94484 1.536 7.5362 0.979724C9.12757 0.423451 10.8295 0.25852 12.498 0.498875C14.1666 0.73923 15.7528 1.3778 17.1224 2.36061C18.4921 3.34341 19.605 4.64156 20.367 6.14528C21.129 7.64901 21.5178 9.31411 21.5004 10.9998Z" fill="currentColor"></path>
+      </svg> 
+      <img class="avatar user-avatar" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/emon_mirza.jpeg" alt="User Profile" style="display: block;">
+      <div class="profile-greeting">
+        <!-- Set user greeting here -->
+      </div>
+    </div>
+    <div class="logout">
+      <a role="button" tabindex="0">Sign Out</a>
+    </div>
+  </div>
+</div></div>
+      </div>
+
+      <!-- Burger menu -->
+      <div class="burger-menu">
+        <div class="burger-main-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="burger-menu" viewBox="0 0 18 13" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-burger-menu.svg">
+  <path d="M17.25 7.25H0.75C0.551088 7.25 0.360322 7.17098 0.21967 7.03033C0.0790178 6.88968 0 6.69891 0 6.5C0 6.30109 0.0790178 6.11032 0.21967 5.96967C0.360322 5.82902 0.551088 5.75 0.75 5.75H17.25C17.4489 5.75 17.6397 5.82902 17.7803 5.96967C17.921 6.11032 18 6.30109 18 6.5C18 6.69891 17.921 6.88968 17.7803 7.03033C17.6397 7.17098 17.4489 7.25 17.25 7.25Z" fill="currentColor"></path>
+  <path d="M17.25 2H0.75C0.551088 2 0.360322 1.92098 0.21967 1.78033C0.0790178 1.63968 0 1.44891 0 1.25C0 1.05109 0.0790178 0.860322 0.21967 0.71967C0.360322 0.579018 0.551088 0.5 0.75 0.5H17.25C17.4489 0.5 17.6397 0.579018 17.7803 0.71967C17.921 0.860322 18 1.05109 18 1.25C18 1.44891 17.921 1.63968 17.7803 1.78033C17.6397 1.92098 17.4489 2 17.25 2Z" fill="currentColor"></path>
+  <path d="M17.25 12.5H0.75C0.551088 12.5 0.360322 12.421 0.21967 12.2803C0.0790178 12.1397 0 11.9489 0 11.75C0 11.5511 0.0790178 11.3603 0.21967 11.2197C0.360322 11.079 0.551088 11 0.75 11H17.25C17.4489 11 17.6397 11.079 17.7803 11.2197C17.921 11.3603 18 11.5511 18 11.75C18 11.9489 17.921 12.1397 17.7803 12.2803C17.6397 12.421 17.4489 12.5 17.25 12.5Z" fill="currentColor"></path>
+</svg>
+        </div>
+        <div class="burger-close-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="burger-close" viewBox="0 0 20 19" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-burger-close.svg">
+  <path d="M18.7099 16.7899C18.8037 16.8829 18.8781 16.9935 18.9288 17.1154C18.9796 17.2372 19.0057 17.3679 19.0057 17.4999C19.0057 17.632 18.9796 17.7627 18.9288 17.8845C18.8781 18.0064 18.8037 18.117 18.7099 18.2099C18.617 18.3037 18.5064 18.3781 18.3845 18.4288C18.2627 18.4796 18.132 18.5057 17.9999 18.5057C17.8679 18.5057 17.7372 18.4796 17.6154 18.4288C17.4935 18.3781 17.3829 18.3037 17.2899 18.2099L9.99994 10.9199L2.70994 18.2099C2.61698 18.3037 2.50638 18.3781 2.38452 18.4288C2.26266 18.4796 2.13195 18.5057 1.99994 18.5057C1.86793 18.5057 1.73722 18.4796 1.61536 18.4288C1.4935 18.3781 1.3829 18.3037 1.28994 18.2099C1.19621 18.117 1.12182 18.0064 1.07105 17.8845C1.02028 17.7627 0.994141 17.632 0.994141 17.4999C0.994141 17.3679 1.02028 17.2372 1.07105 17.1154C1.12182 16.9935 1.19621 16.8829 1.28994 16.7899L8.57994 9.49994L1.28994 2.20994C1.1967 2.1167 1.12274 2.00601 1.07228 1.88419C1.02182 1.76237 0.995847 1.6318 0.995847 1.49994C0.995847 1.36808 1.02182 1.23751 1.07228 1.11569C1.12274 0.99387 1.1967 0.88318 1.28994 0.789941C1.38318 0.696703 1.49387 0.622742 1.61569 0.572282C1.73751 0.521822 1.86808 0.49585 1.99994 0.49585C2.1318 0.49585 2.26237 0.521822 2.38419 0.572282C2.50601 0.622742 2.6167 0.696703 2.70994 0.789941L9.99994 8.07994L17.2899 0.789941C17.4782 0.601638 17.7336 0.49585 17.9999 0.49585C18.2662 0.49585 18.5216 0.601638 18.7099 0.789941C18.8982 0.978245 19.004 1.23364 19.004 1.49994C19.004 1.76624 18.8982 2.02164 18.7099 2.20994L11.4199 9.49994L18.7099 16.7899Z" fill="currentColor"></path>
+</svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- portal element-->
+    <div id="ino-portal-element"></div>
+  </nav>
+  <div id="consent-modal-container"></div>
+</header>
+<nagbar data-ref="0.6722056431548984"></nagbar></div>
+
+				<div class="navigate_section" id="headerbread">
+          <div class="row" style="max-width: 960px!important;">
+          <div class="small-12">
+					<ul>
+          
+						<li>
+					<a href="https://forum.arduino.cc/index.php"><span>Arduino Forum</span></a>
+						</li>
+						<li>
+							<span class="dividers"> &gt; </span>
+					<a href="https://forum.arduino.cc/index.php#c3"><span>Topics</span></a>
+						</li>
+						<li>
+							<span class="dividers"> &gt; </span>
+					<a href="https://forum.arduino.cc/index.php?board=18.0"><span>Education and Teaching</span></a>
+						</li>
+						<li class="last">
+							<span class="dividers"> &gt; </span>
+					<a href="https://forum.arduino.cc/index.php?topic=692400.0"><span>Ch-9  Timer/Counter Module of ATmega328P MCU</span></a>
+						</li>
+						<li class="unread_links">
+                            <a href="https://forum.arduino.cc/index.php?action=profile;area=showalerts" id="alerts_menu_top">Alerts</a>
+                            <div id="alerts_menu" class="top_menu"></div>
+
+							<a href="https://forum.arduino.cc/index.php?action=unread" title="Show unread posts since last visit.">Unread Posts</a>
+							<a href="https://forum.arduino.cc/index.php?action=unreadreplies" title="Show new replies to your posts.">Updated Topics</a>
+              <a href="https://forum.arduino.cc/index.php?action=profile;area=showposts;u=1441812" title="My Posts">My Posts</a>
+              <a href="https://forum.arduino.cc/index.php?action=profile;u=1441812" title="Profile"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/emon_mirza.jpeg" alt="emon_mirza" class="avatar" style="height:1.2em;">&nbsp;emon_mirza</a>
+						</li>
+					</ul>
+        </div>
+				</div>
+				</div>
+  <div class="row collapse">
+  <div class="small-12 columns">
+	<div id="wrapper">
+    <div id="upper_section">
+			<div id="inner_section">
+				<div id="main_menu">
+					<ul class="dropmenu sf-js-enabled sf-arrows" id="menu_nav" style="touch-action: pan-y;">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content_section">
+			<div id="main_content_section">
+
+			<a id="msg4654922"></a><a id="new"></a>
+			<div class="pagesection top">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_reply " href="https://forum.arduino.cc/index.php?action=post;topic=692400.0;last_msg=4654929">Reply</a>
+				<a class="button-forum  button_strip_mark_unread" href="https://forum.arduino.cc/index.php?action=markasread;sa=topic;t=4654922;topic=692400.0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">Mark unread</a>
+				<a class="button-forum  button_strip_print" href="https://forum.arduino.cc/index.php?action=printpage;topic=692400.0" rel="nofollow">Print</a>
+				<a class="button-forum  button_strip_notify" href="https://forum.arduino.cc/index.php?topic=692400.msg4654922">No Alerts or Emails</a>
+					<div class="top_menu dropmenu notify_dropdown">
+						<div class="viewport">
+							<div class="overview"><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Not Following</strong><br><span>You will not receive any emails or alerts for this post and it will also not show up in your unread replies and topics list. You will still receive @mentions for this topic.</span></a><span class="notify_check checked"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=1;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>No Alerts or Emails</strong><br><span>You will not receive any emails or alerts but only @mentions by other members.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=2;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Alerts</strong><br><span>You will receive alerts for this topic.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=3;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails</strong><br><span>You will receive emails for this topic</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=4;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails and Alerts</strong><br><span>You will receive both alerts and e-mails for this topic.</span></a>
+							</div>
+						</div>
+					</div>
+		</div>
+				 <a href="https://forum.arduino.cc/index.php?topic=692400.msg4654922#bot" class="topbottom floatleft">Go Down</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="forumposts">
+				<div class="cat_bar">
+					<h3 class="catbg">
+						<span id="top_subject" class="topic-icon topic-icon-">Topic: Ch-9  Timer/Counter Module of ATmega328P MCU&nbsp;<span>(Read 1 time)</span></span>
+						<span class="nextlinks floatright"><a href="https://forum.arduino.cc/index.php?topic=692400.0;prev_next=prev#new">previous topic</a> - <a href="https://forum.arduino.cc/index.php?topic=692400.0;prev_next=next#new">next topic</a></span>
+					</h3>
+				</div>
+				<form action="https://forum.arduino.cc/index.php?action=quickmod2;topic=692400.0" method="post" accept-charset="UTF-8" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return oQuickModify.bInEditMode ? oQuickModify.modifySave(&#39;f27e02cfd2ffc059ad89808fbc1ebcc5&#39;, &#39;b9461d3f92&#39;) : false">
+				<div class="windowbg">
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon">
+									<img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip.png" alt="">
+								</div>
+								<div id="subject_4654922" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=692400.msg4654922#msg4654922" rel="nofollow">Ch-9  Timer/Counter Module of ATmega328P MCU</a></div>
+								<div class="page_number floatright">
+									 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=692400.msg4654922#msg4654922" rel="nofollow" title=" - Ch-9  Timer/Counter Module of ATmega328P MCU" class="smalltext">Jun 25, 2020, 05:04 pm</a>
+									<span class="smalltext modified" id="modified_4654922"><span class="lastedit">Last Edit</span>: Jul 01, 2020, 08:11 am by GolamMostafa</span>
+								</h5>
+								<div id="msg_4654922_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4654922">Timer/Counter (TC) Module is a "Programmable Electronic Circuit" with ATmega328P MCU, which can be used as <span class="bbc_bold">Timer</span> to create some fixed amount of time like a Stop Watch. The same TC Module can also be used as <span class="bbc_bold">Counter</span> to count pulses coming from external sources. It can be used to generate PWM signals, square wave signals etc. There are three TC Modules (TC0, TC1, and TC2) within ATmega328P MCU. In this Chapter, we will study the architecture and programming of the TC1 Module.<br><br><span class="bbc_bold">9.1 &nbsp;Introduction</span><br><span class="bbc_bold">(1)</span> &nbsp;Within ATmega328P MCU of the Arduino UNO Board, there are three "Timer/Counter Modules/Registers" (Fig-9.1). These are:<br>(a) &nbsp;8-bit TC0 (Timer/Counter 0) Module/Register. It is also Known as TCNT0 (Timer/Counter 0). <br>(b) &nbsp;16-bit TC1 (Timer/Counter 1) Module/Register. It is also Known as TCNT1 (Timer/Counter 0).<br>(c) &nbsp;8-bit TC2 (Timer/Counter 2) Module/Register. It is also Known as TCNT2 (Timer/Counter 2). <br><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/tcModule.png" alt="" width="500" height="336" class="bbc_img resized"><br>Figure-9.1: Timer/Counter Modules/Registers of ATmega328P MCU<br><br><span class="bbc_bold">(2)</span> &nbsp;TCNT1 is a 16-bit Register/Module. It is composed of two parts: TCNT1H (high byte of TCNT1) and TCNT1L (low byte of TCNT1). In "Normal Mode" operation, the TCNT1 always counts in the upward direction; this means that TCNT1 is an "up counter" register. &nbsp; &nbsp;<br><br><span class="bbc_bold">(3)</span> &nbsp;TCNT1 can receive the counting/driving pulses (clkTC1) from the following two sources:<br>(a) &nbsp;From internal "16 MHz Oscillator" which can be further divided by "TC1 Clock Prescaler".<br>(b) &nbsp;From external source via DPin-5; there is no divider in this case.<br><br><span class="bbc_bold">(4)</span> &nbsp;When TCNT1 receives its driving clkTC1 from internal oscillator, it is said that TCNT1 is working as <span class="bbc_bold">Timer-1</span>.<br><br><span class="bbc_bold">(5)</span> &nbsp;When TCNT1 receives its driving clkTC1 from external source, it is said that TCNT1 is working as <span class="bbc_bold">Counter-1</span>.<br><br><span class="bbc_bold">(6)</span> &nbsp;In Fig-9.2, we observe that TCNT1 begins the counting of clkTC1 pulses from 0x0000 (inital count or BOTTOM) and goes upto 0xFFFF (final or MAXimum count) and then again to 0x0000 after counting one more pulse. That is:<br><br><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/tc1Preset.png" alt="" width="500" height="133" class="bbc_img resized"><br>Figure-9.2: Counting sequence of TCNT1<br><br>Initial = BOTTOM Count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= &nbsp; &nbsp;0000, ..., 0000 (16-bit) = 0 in decimal<br>next count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = &nbsp; &nbsp;0000, ..., 0001 (16-bit) = 1 in decimal<br>//...<br>next = Final = MAXimum Count = &nbsp; &nbsp;1111, ..., 1111 (16-bit) = 65535 in decimal<br>next = Total Count &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 1 0000, ..., 0000 (17-bit) = 65536 in decimal <br><br>It means that the initial count contains all 0s and the final (MAXimum) count contains all 1s. Total counting sequence will be complete when the counter will count one more pulse; as a result, the 16-bit content of the TCNT1 timer/counter will be back to 0000, ..., 0000. <br><br>Total count is 1 0000, ..., 0000 (17-bit); but, the size of TC1/TCNT1 is 16-bit; hence, there is an <span class="bbc_bold">over-flow</span> bit which is the left-most bit (the 17th bit in decimal). This bit is saved into the TOV1 bit/flag of TIFR1 Register (Fig-9.3) of the MCU. Looking at the TOV1 bit for HIGH state, it could be sure that the TCNT1 has made the Total Count.<br><br><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/TIFR1y.png" alt="" width="500" height="92" class="bbc_img resized"><br>Figure-9.3: Bit layout of TIFR1 Register<br><br>The TOV1 bit/flag assumes HIGH state when the 16-bit content of TCNT1 turns form all 1s (0xFFFF) to all 0s (0x0000). This event of transition from all 1s to all 0s is called <span class="bbc_bold">over-flow</span> or <span class="bbc_bold">roll-over</span> event.<br><br>The "time" required for the 16-bit TCNT1 is the "time" that is needed to count "MAX + 1 = 65536" pulses. Ley us designate this "time' by the term "timeDelay". &nbsp;The timeDelay will be chnage if the frequency of the clkTC1 signal changes. <br><br>However, TCNT1 can be configured to begin counting from a "preset value/quantity (N)". For example: TCNT1 may begin counting from 0x1000 and not from 0x0000 (Fig-9.2). In this case, the timeDelay can be changed by changing the value of <span class="bbc_bold">N</span>.<br><br><span class="bbc_bold">(7)</span> &nbsp;The occurrence of the over-flow event can be known in two ways:<br>(a) &nbsp;<span class="bbc_bold">Polling process:</span> This process involves the continuous monitoring of the value of TOV1 flag for HIGH state (Fig-9.3). The codes are:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">while(bitRead(TIFR1, TOV1) != HIGH)<br>{<br>&nbsp;&nbsp; &nbsp;; &nbsp; &nbsp; //wait and keep checking that TOV1 has become HIGH<br>}<br>bitSet(TIFR1, TOV1); &nbsp; &nbsp;//claear TOV1 bot/flag by putting HIGH (1) at this bit position</code><br>(b) &nbsp;<span class="bbc_bold">Interrupt Process:</span> &nbsp;In this process, the MCU will be automatically interrupted when over-flow event occurs due to HIGH value of the TOV1 flag. To implement this scheme, the "interrupt logic" must be enabled. When interrupy happens, the MCU will suspend the MLP and then will enter into an ISR routine named as <span class="bbc_bold">ISRTOV1</span> (ISR Routine due to TC1 over-flow). Before going to ISRTOV1 routine, the MCU will disable only the "global part" of the "interrupt logic" (Fig-9.1); the "local part" of the "interrupt logic" will remain closed as it was before interruption. When the MCU makes a jump to the ISRTOV1 routine, the TOV1 flag is automatically cleared. The ISRTOV1 routine has to be declared by the following codes:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">//ISRTOV1 Routine<br>ISR(TIMER1_OVF_vect) &nbsp; //four pre-defined words: ISR, TIMER1, OVF, vect; we can't change them<br>{<br>&nbsp;&nbsp; &nbsp;//insert minimum codes as needed<br>}</code><br><span class="bbc_bold">(8)</span> &nbsp;<span class="bbc_bold">Data write/storage</span> sequence in TCNT1 Register.<br>(a) &nbsp;First, execute code to move 8-bit data into TCNT1H Register. The data is not actually placed into TCNT1H; it is placed into a temporary register/latch. When write operation is performed with TCNT1L Register, the content of 8-bit of temporary register/latch automatically moves into TCNT1H Register. For Example: storing 0x2356 into TCNT1 Register.<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">TCNT1H = 0x23;<br>TCNT1L = 0x56;</code><br>To test the validity of the above codes, we may execute the following codes in UNO:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">TCCR1A = 0x0000; //do it for read/write test routine; otherwise there might be wrong results<br>TCNT1H = 0x23;<br>TCNT1H = 0x45;<br>Serial.print(TCNT1, HEX); &nbsp; //shows: 0x2345</code><br>(b) &nbsp;The following single line code can also be performed to store 0x2356 into TCNT1 Register; where the above sequence of operation automatically takes place.<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">TCNT1 = 0x2356; /TCNT1H = 0x23; TCNT1L = 0x56</code><br><span class="bbc_bold">(9)</span> &nbsp;<span class="bbc_bold">Data read</span> sequence from TCNT1 Register.<br>(a) &nbsp;Read lower byte first (TCNT1L) and then the higer byte (TCNT1H). This operation brings the content of higher byte register (TCNT1H) into a temporary register/latch. When read operation is performed from higher byte, the data automatically comes from the temporary register. Example:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">byte x = TCNT1L;<br>byte y = TCNT1H;</code><br>(b) &nbsp;The following single line code could be executed to read 16-bit data from TCNT1 Register; where, the above sequence of atomic operations are automatically carried out.<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">int z = TCNT1; </code><br><span class="bbc_bold">(10)</span> &nbsp;The frequency of clkTC1 signal of TCNT1 Register is set to the following values depending on the bit values of CS12 - CS10 of the TCRR1B Register (Fig-9.4):<br>(a) &nbsp;No clock &nbsp; : S1I (tc1 Switch to connect Internal pulse): Open : TCNT1 is STOP: CS12 - CS10 = 000.<br>(b) &nbsp;16 MHz &nbsp; &nbsp;: S1I is closed with division factor 1 &nbsp; &nbsp; &nbsp; : TCNT1 is running : CS12 - CS10 = 001<br>(c) &nbsp;2 MHz &nbsp; &nbsp; &nbsp;: S1I is closed with division factor 8 &nbsp; &nbsp; &nbsp; : TCNT1 is running : CS12 - C10 = 010<br>(d) &nbsp;250 kHz &nbsp; : S1I is closed with division factor 64 &nbsp; &nbsp; : TCNT1 is running : CS12 - C10 = 011<br>(e) &nbsp;62500 Hz : S1I is closed with division factor 256 &nbsp; : TCNT1 is running : CS12 - C10 = 100<br>(f) &nbsp;15625 Hz &nbsp;: S1I is closed with division factor 1024 : TCNT1 is running : CS12 - C10 = 101<br><br><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/TCCR1B.png" alt="" width="500" height="222" class="bbc_img resized"><br>Figure-9.4: Bit layout of TCCR1B Register<br><br><span class="bbc_bold">(11)</span> &nbsp;Expanded view of TCNT1 Register (Fig-9.5)<br><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/tc1a.png" alt="" width="500" height="147" class="bbc_img resized"><br>Figure-9.5: Expanded view of TC1 Register<br><br>...to be continued</div>
+							</div>
+							<div id="msg_4654922_footer" class="attachments">
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/tcModule.png"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;tcModule.png</a> 
+											<br>53.69 KB<br>downloaded 604 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/TCCR1B.png"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;TCCR1B.png</a> 
+											<br>65.67 KB<br>downloaded 511 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/tc1Preset.png"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;tc1Preset.png</a> 
+											<br>19.11 KB<br>downloaded 515 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/timsk1y.png"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;timsk1y.png</a> 
+											<br>14.32 KB<br>downloaded 491 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/TIFR1y.png"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;TIFR1y.png</a> 
+											<br>13.71 KB<br>downloaded 477 times
+										</div>
+									</div>
+									<br>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/tc1a.png"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;tc1a.png</a> 
+											<br>33.56 KB<br>downloaded 320 times
+										</div>
+									</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=692400.0;msg=4654922">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4654922;topic=692400.0;last_msg=4654929" onclick="return oQuickReply.quote(4654922);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div><div id="ad_container_zone" class="adv-banner"><script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/ajs.php"></script></div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg4654924"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/xx.png" alt="">
+								</div>
+								<div id="subject_4654924" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=692400.msg4654924#msg4654924" rel="nofollow">Re: Ch-9  Timer/Counter Module of ATmega328P MCU</a></div>
+								<div class="page_number floatright">
+									 #1 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=692400.msg4654924#msg4654924" rel="nofollow" title="Reply #1 - Re: Ch-9  Timer/Counter Module of ATmega328P MCU" class="smalltext">Jun 25, 2020, 05:05 pm</a>
+									<span class="smalltext modified" id="modified_4654924"><span class="lastedit">Last Edit</span>: Jul 01, 2020, 08:12 am by GolamMostafa</span>
+								</h5>
+								<div id="msg_4654924_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4654924"><span class="bbc_bold">9.2 &nbsp;Questions and Answers</span><br><span class="bbc_bold">1.</span> &nbsp;Define <span class="bbc_bold">timeDelay</span>.<br>This is the "delay time" that the TCNT1 spends to begin counting from 0 (or from a preset value) and then come back to 0.<br><br><span class="bbc_bold">2.</span> &nbsp;Calculate maximum timeDelay that can be achieved using TC1/TCNT1 of Fig-9.1.<br><span class="bbc_bold">Ans:</span> Maximum timeDelay will occur when the TCNT1 is running at minimum frequency and with initial count of 0 (preset value is 0).<br><br>In the light of Fig-9.2, we can say that:<br>timeDelay (max) = "total clock Pulse Count of clkTC1" * "maximum period of 1 clock pulse of clkTC1"<br>==&gt; timeDelay (max) = (0xFFFFF + 1) * 1/(minimum frequency of &nbsp;clkTC1"<br>==&gt; timeDelay(max) = 65536 * 1/(16000000/1024) &nbsp; //1024 is the division factor of TC1 Clock Prescaler<br>==&gt; timeDelay (max) = 65536 * 0.000064<br>==&gt; timeDelay (max) = 4.194304 sec = 4 194 304 us.<br><br><span class="bbc_bold">3.</span> &nbsp;Calculate suitable values for clkTC1 and preset quantity for TCNT1 of Fig-9.1 so that the timeDelay is 4 sec.<br><span class="bbc_bold">Hints:</span> &nbsp;Take one frequency (say: 16 MHz/1024) for the clkTC1 signal. Now, calculate the value of "preset quantity". Consult Fig-9.2.<br><span class="bbc_bold">Ans:</span><br>Frequency of clkTC1 = 16000000/1024 = 15625 Hz.<br>Period of clkTC1 = 1/frequency of clkTC1 = 1024/16000000 = 0.00000064 = 64 us.<br>==&gt; presetCount = totalCount - actualCount <br>==&gt; presetCount = 65536 - (number of &nbsp;pulse to be counted for 4 sec)<br>==&gt; presetCount = 65536 - (15625*4)<br>==&gt; presetCount = 65536 - 62500<br>==&gt; presetCount = 3036 in decimal = 0x0BDC in hex<br><br><span class="bbc_bold">4.</span> &nbsp;Calculate suitable values for clkTC1 and preset quantity for TCNT1 of Fig-9.1 so that the timeDelay is 10 ms.<br><span class="bbc_bold">Ans:</span><br><span class="bbc_bold">(1)</span> &nbsp; totalCount = presetCount + actualCount. (Fig-9.2)<br><span class="bbc_bold">(2)</span> &nbsp; Choose a division factor 8 for "TC1 Clock Prescaler" to get clkTC1 = 16 MHz/1024 = 2 MHz.<br><span class="bbc_bold">(3)</span> &nbsp; timeDelay = 10 ms = 10000 µs. (time to count actualCount)<br>==&gt; timeDelay = actualCount*(period of clkTC1) //timeDelay = time required to begin counting from preset value and then come back to 0.<br><br>==&gt; actualCount = timeDelay/(period of clkTC1) = 10000/(1/clkTC1) = 10000/0.5 = 20000 = 4E20h.<br><span class="bbc_bold">(4)</span> &nbsp;presetCount = totalCount - actualCount <br>==&gt; 0x10000h - 0x4E20h = 0xB1E0h = 45536 in decimal. &nbsp;<br><br><span class="bbc_bold">5.</span> &nbsp;What is over-flow/roll-over event?<br>After arriving at the full/final/MAX count, the TCNTX (X = 0, 1, 2) turns from all 1s to all 0s. This transition from all 1s to all 0s is known as overflow/roll-over event. When over-flow event occurs, the TOVX (X = 0, 1, 2) flag assumes HIGH state. TOVX is the first bit (Bit-0) of the TIFRX (X = 0, 1, 2) Register (Fig-9.3).<br><br><span class="bbc_bold">5.</span> &nbsp;(a) &nbsp;What is the source of interrupt signal in Step-7(b)? <br>(b) &nbsp;Is the above interrupt externally or internally generated? <br>(c) &nbsp;How can we disable (also called mask) the TOV1 interrupt?<br>(d) &nbsp;Write register-level code to put LOW at the TOIE1 bit by consulting the bit layout diagram of the TIMSK1 Register (Fig-9.6).<br><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/timsk1y.png" alt="" width="500" height="87" class="bbc_img resized"><br>Figure-9.6: Bit layout of TIMSK1 Register<br><br><span class="bbc_bold">Ans:</span> (a) &nbsp;Over-flow event of TCNT1 Register is the source of interrupt signal. <br>(b) &nbsp;The interrupt signal has been generated internally.<br>(c) &nbsp;By putting LOW at the TOIE1 bit (TCNT1 Over-flow Interrupt Enable Bit). <br>(d) &nbsp;?<br><br><span class="bbc_bold">6.</span> &nbsp;Write register level code to close S1E (Switch of TC1 to connect External pulse) of Fig-9.1 so that the TCNT1 will now work as a counter and will count the rising edges of the external pulses coming at DPin-5.<br><span class="bbc_bold">Ans:</span> &nbsp;Consult Section-9.1(10).<br><br><span class="bbc_bold">7.</span> &nbsp;Write a sketch to blink L (built-in LED of UNO) at 1-sec interval. The 1-sec timeDelay should be generated using TCNT1 of Fig-9.1; where, end of 1-sec period would be known by continuous monitoring (known as polling) of the TOV1 flag.<br><span class="bbc_bold">Ans:</span> &nbsp;<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: 200px;">void setup()<br>{<br>&nbsp;&nbsp; &nbsp;Serial.begin(9600); &nbsp; &nbsp; //PC/IDE is connected with UNO using UART port<br>&nbsp;&nbsp; &nbsp;pinMode(13, OUTPUT); &nbsp; &nbsp;//set direction of DPin-13 to drive L<br>&nbsp;&nbsp; &nbsp;//-1. write code to operate TCNT1 as up counter in Normal Mode of operation -- (TCCR1A = 0x00)<br>&nbsp;&nbsp; &nbsp;//-2. write code to keep TCNT1 in STOP condition--- (TCCR1B = 0x00)<br>&nbsp;&nbsp; &nbsp;//-3. assume clkTC1 = 16 MHz/1024 = 15625 Hz-----<br>&nbsp;&nbsp; &nbsp;//-4. &nbsp;Hand calculate the preset value (0xmmnn) for 1-sec timeDelay at clckTC1 = 15625 Hz<br>&nbsp;&nbsp; &nbsp;//-5. Write code to store preset value in TCNT1 (TCNT1=0xmmnn) or TCNT1H = 0xmm; TCNT1L = 0xnn<br>&nbsp;&nbsp; &nbsp;//-6. START TCNT1 with clckTC1 at division factor of 1024 (TCCR1B = 0x05; see Fig-9.4 <br>}<br><br>void loop()<br>{<br>&nbsp;&nbsp; &nbsp; digitalWrite(13, HIGH); &nbsp; // L is ON<br>&nbsp;&nbsp; &nbsp; timeDelay(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //insert 1-sec timeDelay to be generated by TCNT1<br>&nbsp;&nbsp; &nbsp; digitalWrite(13, LOw); &nbsp; &nbsp; //L is OFF<br>&nbsp;&nbsp; &nbsp;timeDelay();<br>}<br><br>void timeDelay()<br>{<br>&nbsp;&nbsp; //check that TOVe flag has assumed HIGH state; if not wait<br>&nbsp;&nbsp; while(bitRead(TIFR1, TOV1) != HIGH)<br>&nbsp;&nbsp; {<br>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;; &nbsp;//wait<br>&nbsp;&nbsp; }<br>&nbsp;&nbsp; bitSet(TIFR1, TOV1); &nbsp; &nbsp; &nbsp;//clear TOV1 flag by putting HIGH at this bit position<br>&nbsp;&nbsp; //-------------------------------------------------------------------------------------<br>&nbsp;&nbsp; TCNT1 = 0xmmnn; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//re-load preset value for 1-sec timeDelay<br>}</code><br><span class="bbc_bold">8.</span> &nbsp;Repeat Q7 with the condition that the end of 1-sec timeDelay would be known through interrupt process.<br><br>In Q7, during 1-sec timeDelay, the MCU was checking and checking the TOV1 flag for HIGH state. This is to say that the MCU was in "blocked condition" -- it had no ability do anything else until the 1-sec timeDelay was elapsed. This is the <span class="bbc_bold">polling</span> (a blocking case) process.<br><br>It would be good if we could leave the MCU free (do something else like checking if someone wants to enter in the Hall Room and the door should be opened) and let the TOV1 flag interrupt the MCU when it (the TOV1 flag) assumes HIGH state after the elapse of 1-sec time. This is the <span class="bbc_bold">interrupt</span> (an unblocking case) process.<br><br><span class="bbc_bold">The Sketch:</span> (tested On UNO)<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: 200px;">volatile bool flag = false;<br><br>void setup()<br>{<br>&nbsp;&nbsp;pinMode(13, OUTPUT); &nbsp; &nbsp;//DPin direction is output<br>&nbsp;&nbsp;TCCR1A = 0x0000; &nbsp; &nbsp; &nbsp; &nbsp;//up counter mode<br>&nbsp;&nbsp;TCCR1B = 0x0000; &nbsp; &nbsp; &nbsp; &nbsp;//TC1 is STOP<br>&nbsp;&nbsp;TCNT1 = 0xC2F7; &nbsp; &nbsp; &nbsp; &nbsp; //preset value for 1 sec timeDelay<br>&nbsp;&nbsp;TCCR1B = 0x05; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Start TC1 with division factor 1024<br>&nbsp;&nbsp;//---------------------------------------------------<br>&nbsp;&nbsp;bitSet(TIMSK1, TOIE1); &nbsp; &nbsp;//local part of interrupu logic is enable; Fig-9.1<br>&nbsp;&nbsp;bitSet(SREG, 7); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //global part (I) of interrupt logic is enabled; Fig-9.1<br>&nbsp;&nbsp;//---------------------------------------------------<br>&nbsp;&nbsp;digitalWrite(13, HIGH); &nbsp;//initially L is ON<br>}<br><br>void loop()<br>{<br>&nbsp;&nbsp;//do something else rather than waiting<br>}<br><br>//ISRTOV1 Rooutine<br>ISR(TIMER1_OVF_vect) &nbsp; //ISR Routine for TOV1 interrupt<br>{<br>&nbsp;&nbsp;//bitSet(TIFR1, TOV1); this code is not needed; the TOV1 is auto cleared<br>&nbsp;&nbsp;TCNT1 = 0xC2F7; &nbsp;//re-load preset value<br>&nbsp;&nbsp;if (flag == false) &nbsp; &nbsp;//1-sec has gone; OFF L <br>&nbsp;&nbsp;{<br>&nbsp;&nbsp; &nbsp;digitalWrite(13, LOW); &nbsp; //L is OFF from ON condition<br>&nbsp;&nbsp; &nbsp;flag = true;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else &nbsp; &nbsp;//toggle L from OFF to ON state<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp; &nbsp;digitalWrite(13, HIGH); &nbsp;//L is ON from OFF<br>&nbsp;&nbsp; &nbsp;flag = false;<br>&nbsp;&nbsp;}<br>}</code><br>...to be continued.<br><br></div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=692400.1;msg=4654924">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4654924;topic=692400.0;last_msg=4654929" onclick="return oQuickReply.quote(4654924);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg4654928"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon">
+									<img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip.png" alt="">
+								</div>
+								<div id="subject_4654928" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=692400.msg4654928#msg4654928" rel="nofollow">Re: Ch-9  Timer/Counter Module of ATmega328P MCU</a></div>
+								<div class="page_number floatright">
+									 #2 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=692400.msg4654928#msg4654928" rel="nofollow" title="Reply #2 - Re: Ch-9  Timer/Counter Module of ATmega328P MCU" class="smalltext">Jun 25, 2020, 05:06 pm</a>
+									<span class="smalltext modified" id="modified_4654928"><span class="lastedit">Last Edit</span>: Jun 29, 2020, 08:37 pm by GolamMostafa</span>
+								</h5>
+								<div id="msg_4654928_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4654928">... this is reserved.</div>
+							</div>
+							<div id="msg_4654928_footer" class="attachments">
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="https://forum.arduino.cc/index.php?action=dlattach;topic=692400.0;attach=370309"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;tcx.jpg</a> 
+											<br>42.32 KB<br>downloaded 184 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="https://forum.arduino.cc/index.php?action=dlattach;topic=692400.0;attach=370313"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/clip(1).png" class="centericon" alt="*">&nbsp;tcx.gif</a> 
+											<br>42.32 KB<br>downloaded 173 times
+										</div>
+									</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=692400.2;msg=4654928">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4654928;topic=692400.0;last_msg=4654929" onclick="return oQuickReply.quote(4654928);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg4654929"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"><img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/xx.png" alt="">
+								</div>
+								<div id="subject_4654929" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=692400.msg4654929#msg4654929" rel="nofollow">Re: Ch-9  Timer/Counter Module of ATmega328P MCU</a></div>
+								<div class="page_number floatright">
+									 #3 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=692400.msg4654929#msg4654929" rel="nofollow" title="Reply #3 - Re: Ch-9  Timer/Counter Module of ATmega328P MCU" class="smalltext">Jun 25, 2020, 05:06 pm</a>
+									<span class="smalltext modified" id="modified_4654929"><span class="lastedit">Last Edit</span>: Jun 27, 2020, 08:11 am by GolamMostafa</span>
+								</h5>
+								<div id="msg_4654929_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4654929">...this is also reserved.</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=692400.3;msg=4654929">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4654929;topic=692400.0;last_msg=4654929" onclick="return oQuickReply.quote(4654929);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				</form>
+			</div>
+			<div class="pagesection">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_reply " href="https://forum.arduino.cc/index.php?action=post;topic=692400.0;last_msg=4654929">Reply</a>
+				<a class="button-forum  button_strip_mark_unread" href="https://forum.arduino.cc/index.php?action=markasread;sa=topic;t=4654922;topic=692400.0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">Mark unread</a>
+				<a class="button-forum  button_strip_print" href="https://forum.arduino.cc/index.php?action=printpage;topic=692400.0" rel="nofollow">Print</a>
+				<a class="button-forum  button_strip_notify" href="https://forum.arduino.cc/index.php?topic=692400.msg4654922">No Alerts or Emails</a>
+					<div class="top_menu dropmenu notify_dropdown">
+						<div class="viewport">
+							<div class="overview"><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Not Following</strong><br><span>You will not receive any emails or alerts for this post and it will also not show up in your unread replies and topics list. You will still receive @mentions for this topic.</span></a><span class="notify_check checked"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=1;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>No Alerts or Emails</strong><br><span>You will not receive any emails or alerts but only @mentions by other members.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=2;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Alerts</strong><br><span>You will receive alerts for this topic.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=3;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails</strong><br><span>You will receive emails for this topic</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=692400;mode=4;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails and Alerts</strong><br><span>You will receive both alerts and e-mails for this topic.</span></a>
+							</div>
+						</div>
+					</div>
+		</div>
+				 <a href="https://forum.arduino.cc/index.php?topic=692400.msg4654922#main_content_section" class="topbottom floatleft" id="bot">Go Up</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="moderationbuttons">
+				
+			</div>
+			<div id="display_jump_to"><label class="smalltext" for="display_jump_to_select">Jump to:</label> <select name="display_jump_to_select" id="display_jump_to_select" onfocus="grabJumpToContent(this);"><option value="?board=18.0">=&gt; Education and Teaching</option></select>&nbsp;<input type="button" class="button_submit" value="Go" onclick="window.location.href = &#39;https://forum.arduino.cc/index.php?board=18.0&#39;;"></div><div class="tborder" id="quickreplybox">
+							<div>
+									<div class="roundframe">
+											<p class="alert smalltext">Warning: this topic has not been posted in for at least 120 days.<br>Unless you're sure you want to reply, please consider starting a new topic.<br>You have no permission to post in this topic. If you really want to post here - please contact moderator to bump this topic.</p>
+									</div>
+							</div>
+					</div>
+			<script><!-- // --><![CDATA[
+				var oDraftAutoSave = new smf_DraftAutoSave({
+					sSelf: 'oDraftAutoSave',
+					sLastNote: 'draft_lastautosave',
+					sLastID: 'id_draft',
+					sSceditorID: 'quickReply',
+					sType: 'quick',
+					iBoard: 18,
+					iFreq: 60000
+				});
+			// ]]></script>
+				<script><!-- // --><![CDATA[
+					var oQuickReply = new QuickReply({
+						bDefaultCollapsed: false,
+						iTopicId: 692400,
+						iStart: 0,
+						sScriptUrl: smf_scripturl,
+						sImagesUrl: smf_images_url,
+						sContainerId: "quickReplyOptions",
+						sImageId: "quickReplyExpand",
+						sClassCollapsed: "toggle_up",
+						sClassExpanded: "toggle_down",
+						bIsFull: true
+					});
+					if ('XMLHttpRequest' in window)
+					{
+						var oQuickModify = new QuickModify({
+							sScriptUrl: smf_scripturl,
+							sClassName: 'quick_edit',
+							bShowModify: true,
+							iTopicId: 692400,
+							sTemplateBodyEdit: '\n\t\t\t\t\t\t\t\t<div id="quick_edit_body_container">\n\t\t\t\t\t\t\t\t\t<div id="error_box" class="error"><' + '/div>\n\t\t\t\t\t\t\t\t\t<textarea class="editor" name="message" rows="12" style="width: 100%; margin-bottom: 10px;" tabindex="1">%body%<' + '/textarea><br>\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="b9461d3f92" value="f27e02cfd2ffc059ad89808fbc1ebcc5">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="topic" value="692400">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="msg" value="%msg_id%">\n\t\t\t\t\t\t\t\t\t<div class="righttext">\n\t\t\t\t\t\t\t\t\t\t<input type="submit" name="post" value="Save" tabindex="2" onclick="return oQuickModify.modifySave(\'f27e02cfd2ffc059ad89808fbc1ebcc5\', \'b9461d3f92\');" accesskey="s" class="button_submit">&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" tabindex="3" onclick="return oQuickModify.modifyCancel();" class="button_submit">\n\t\t\t\t\t\t\t\t\t<' + '/div>\n\t\t\t\t\t\t\t\t<' + '/div>',
+							sTemplateSubjectEdit: '<input type="text" name="subject" value="%subject%" size="80" maxlength="80" tabindex="4" class="input_text">',
+							sTemplateBodyNormal: '%body%',
+							sTemplateSubjectNormal: '<a hr'+'ef="' + smf_scripturl + '?topic=692400.msg%msg_id%#msg%msg_id%" rel="nofollow">%subject%<' + '/a>',
+							sTemplateTopSubject: 'Topic: %subject% &nbsp;(Read 1 time)',
+							sTemplateReasonEdit: '<input type="text" name="modify_reason" value="%modify_reason%" size="80" maxlength="80" tabindex="5" class="input_text">)',
+							sTemplateReasonNormal: '%modify_text',
+							sErrorBorderStyle: '1px solid red',
+							sFormRemoveAccessKeys: 'postmodify'
+						});
+
+						aJumpTo[aJumpTo.length] = new JumpTo({
+							sContainerId: "display_jump_to",
+							sJumpToTemplate: "<label class=\"smalltext\" for=\"%select_id%\">Jump to:<" + "/label> %dropdown_list%",
+							iCurBoardId: 18,
+							iCurBoardChildLevel: 0,
+							sCurBoardName: "Education and Teaching",
+							sBoardChildLevelIndicator: "==",
+							sBoardPrefix: "=> ",
+							sCatSeparator: "-----------------------------",
+							sCatPrefix: "",
+							sGoButtonLabel: "Go"
+						});
+
+						aIconLists[aIconLists.length] = new IconList({
+							sBackReference: "aIconLists[" + aIconLists.length + "]",
+							sIconIdPrefix: "msg_icon_",
+							sScriptUrl: smf_scripturl,
+							bShowModify: true,
+							iBoardId: 18,
+							iTopicId: 692400,
+							sSessionId: smf_session_id,
+							sSessionVar: smf_session_var,
+							sLabelIconList: "Message icon",
+							sBoxBackground: "transparent",
+							sBoxBackgroundHover: "#ffffff",
+							iBoxBorderWidthHover: 1,
+							sBoxBorderColorHover: "#adadad" ,
+							sContainerBackground: "#ffffff",
+							sContainerBorder: "1px solid #adadad",
+							sItemBorder: "1px solid #ffffff",
+							sItemBorderHover: "1px dotted gray",
+							sItemBackground: "transparent",
+							sItemBackgroundHover: "#e0e0f0"
+						});
+					}
+				// ]]></script>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+           <br><style>.pagefooter a { color: white !important; }</style><div id="spacer"></div>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/js"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-22581631-3');
+	</script>
+    <div>
+      <div id="newsletter-modal"></div>
+      <div id="footer" data-ref="0.9076279986153417"><div id="ino-footer-block" class="ino-footer-block">
+  <!-- TrusArc -->
+  <div id="teconsent"></div>
+
+  <div class="app-footer-header">
+    <div class="app-footer-header__logo app-footer-logo logo-arduino" id="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" width="102" height="14" fill="none" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerLogo-arduino.svg">
+  <path d="M0 13.812L4.162.19h3.784l4.351 13.622H8.703l-.757-2.649H4.162l-.757 2.649H0zM6.054 3.595L4.73 8.515h2.648l-1.324-4.92zM14.378.19h5.486c3.784 0 5.108 1.891 5.108 4.54 0 1.892-.756 3.216-2.27 3.973l2.649 4.919h-3.973l-1.892-4.163h-1.703v4.352h-3.405V.189zm7.19 4.54c0-1.135-.38-1.892-2.082-1.892h-1.703v3.784h1.703c1.324.189 2.081-.379 2.081-1.892zM27.811.19h4.352c5.108 0 6.81 2.459 6.81 6.62 0 3.217-.945 6.812-6.81 6.812h-4.54V.189h.188zm3.406 2.648v7.946h1.324c2.838 0 3.027-1.703 3.027-3.973 0-2.649-.19-3.973-3.216-3.973h-1.135zM48.81.19h3.217V9.08C52.027 13.054 49 14 46.541 14c-2.27 0-5.298-.757-5.298-4.919V.19h3.406v8.324c0 2.27.756 2.838 2.08 2.838 1.514 0 2.082-.756 2.082-2.838V.19zM55.054 10.973h3.594V3.027h-3.405V.189h10.405v2.838h-3.594v7.946h3.594v2.838H55.243v-2.838h-.19zM71.325 13.622h-3.217V.189h3.784l4.352 8.135V.19h3.216v13.622h-3.406l-4.54-8.703-.19 8.514zM93.082 7c0 3.973-1.514 7-5.865 7-3.973 0-5.676-2.27-5.676-6.81 0-4.163 1.514-7.19 5.676-7.19 3.973 0 5.865 1.703 5.865 7zm-3.595 0c0-3.405-.19-4.162-2.27-4.162-1.703-.19-2.081.946-2.081 4.351 0 2.649.189 4.162 2.08 4.162 2.082-.189 2.271-1.324 2.271-4.351zM95.352 3.027C95.352 1.324 96.676 0 98.189 0c1.703 0 3.027 1.324 3.027 3.027s-1.324 3.027-3.027 3.027c-1.513-.19-2.837-1.513-2.837-3.027zm5.297 0c0-1.324-.946-2.46-2.46-2.46-1.324 0-2.27.947-2.27 2.46 0 1.514 1.135 2.46 2.27 2.46 1.514 0 2.46-.946 2.46-2.46zm-3.973-1.892h1.703c1.135 0 1.513.568 1.513 1.135 0 .379-.19.757-.567 1.135l.567 1.325h-1.135l-.378-1.135H98V4.73h-1.135V1.135h-.19zm1.513 1.703c.379 0 .568-.19.568-.568 0-.378-.19-.378-.568-.378h-.378v.946h.378z" fill="currentColor"></path>
+</svg></div>
+
+    <div class="app-footer-header__controls no-select app-footer-controls" id="footer-controls"><div class="app-footer-button" id="go-top">
+  <div class="app-footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" id="control-icon-back2top" viewBox="0 0 15 14" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerControl-back2top.svg">
+  <path d="M10.3125 8.40628C10.2508 8.40664 10.1896 8.39481 10.1325 8.37149C10.0754 8.34816 10.0235 8.31379 9.97965 8.27034L7.49996 5.78597L5.02028 8.27034C4.97657 8.31405 4.92469 8.34872 4.86758 8.37237C4.81048 8.39603 4.74927 8.4082 4.68746 8.4082C4.62566 8.4082 4.56445 8.39603 4.50735 8.37237C4.45024 8.34872 4.39836 8.31405 4.35465 8.27034C4.31095 8.22664 4.27628 8.17475 4.25262 8.11765C4.22897 8.06054 4.2168 7.99934 4.2168 7.93753C4.2168 7.87572 4.22897 7.81452 4.25262 7.75742C4.27628 7.70031 4.31095 7.64843 4.35465 7.60472L7.16715 4.79222C7.21073 4.74828 7.26257 4.71341 7.31969 4.68961C7.37682 4.66582 7.43808 4.65356 7.49996 4.65356C7.56185 4.65356 7.62311 4.66582 7.68023 4.68961C7.73736 4.71341 7.7892 4.74828 7.83278 4.79222L10.6453 7.60472C10.6892 7.6483 10.7241 7.70014 10.7479 7.75726C10.7717 7.81438 10.7839 7.87565 10.7839 7.93753C10.7839 7.99941 10.7717 8.06068 10.7479 8.1178C10.7241 8.17492 10.6892 8.22677 10.6453 8.27034C10.6015 8.31379 10.5495 8.34816 10.4924 8.37149C10.4353 8.39481 10.3742 8.40664 10.3125 8.40628Z" fill="currentColor"></path>
+  <path d="M7.5 13.5625C6.20206 13.5625 4.93327 13.1776 3.85407 12.4565C2.77488 11.7354 1.93374 10.7105 1.43704 9.51136C0.940343 8.31222 0.810384 6.99272 1.0636 5.71972C1.31682 4.44672 1.94183 3.2774 2.85961 2.35961C3.7774 1.44183 4.94672 0.816815 6.21972 0.5636C7.49272 0.310384 8.81222 0.440343 10.0114 0.937043C11.2105 1.43374 12.2354 2.27488 12.9565 3.35407C13.6776 4.43327 14.0625 5.70206 14.0625 7C14.0625 8.74049 13.3711 10.4097 12.1404 11.6404C10.9097 12.8711 9.24049 13.5625 7.5 13.5625ZM7.5 1.375C6.38748 1.375 5.29995 1.7049 4.37492 2.32299C3.44989 2.94107 2.72892 3.81957 2.30318 4.84741C1.87744 5.87524 1.76604 7.00624 1.98309 8.09738C2.20013 9.18853 2.73586 10.1908 3.52253 10.9775C4.3092 11.7641 5.31148 12.2999 6.40262 12.5169C7.49376 12.734 8.62476 12.6226 9.6526 12.1968C10.6804 11.7711 11.5589 11.0501 12.177 10.1251C12.7951 9.20006 13.125 8.11252 13.125 7C13.125 5.50816 12.5324 4.07742 11.4775 3.02253C10.4226 1.96764 8.99185 1.375 7.5 1.375Z" fill="currentColor"></path>
+</svg></div>
+  <span class="app-footer-button__text">Back to top</span>
+</div></div>
+  </div>
+
+  <div class="app-footer-content main">
+    <div class="footer-menu-desktop app-footer-menu-desktop"><div class="app-footer-menu-desktop__item"><div class="app-footer-menu-desktop__link"><a href="https://www.arduino.cc/en/Trademark/HomePage"><span title="Trademark">Trademark</span></a></div><div class="app-footer-menu-desktop__link"><a href="https://www.arduino.cc/en/contact-us"><span title="Contact Us">Contact Us</span></a></div><div class="app-footer-menu-desktop__link"><a href="https://store.arduino.cc/distributors"><span title="Distributors">Distributors</span></a></div><div class="app-footer-menu-desktop__link"><a href="https://careers.arduino.cc/"><span title="Careers">Careers</span></a></div></div><div class="app-footer-menu-desktop__item"><div class="app-footer-menu-desktop__link"><a href="https://support.arduino.cc/"><span title="Help Center">Help Center</span></a></div></div></div>
+
+    <div class="news-letter arduino-view">
+      <newsletter data-ref="0.820236235128841"><div class="newsletter-form">
+    <h4 id="newsletter-input-label">Newsletter</h4>
+    <div class="subscribe-wrapper">
+        <div id="newsletter-email-error" class="upper-error-notif">Please insert a valid email</div>
+        <div class="input-wrapper">
+            <input id="newsletter-email" aria-labelledby="newsletter-input-label" type="email" name="email" class="email" placeholder="Enter your email to sign up">
+            <button id="subscribe-btn" aria-label="Subscribe" class="button">Subscribe</button>
+        </div>
+    </div>
+</div></newsletter>
+    </div>
+
+    <div class="social-container app-footer-social-apps"><h4>FOLLOW US</h4>
+<div class="app-footer-social-btns">
+  <div class="app-footer-social-btn">
+    <a href="https://www.facebook.com/official.arduino" target="_blank" id="facebook" class="facebook" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-facebook" viewBox="0 0 7 13" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-facebook.svg">
+  <path d="M4.66301 3.54026V4.93745H6.72426L6.39488 7.08901H4.66301V12.3749H2.33613V7.08901H0.450195V4.93745H2.33613V3.3012C2.33613 1.43651 3.44645 0.405884 5.14645 0.405884C5.70345 0.413533 6.25917 0.46147 6.80926 0.549321V2.38213H5.87426C5.71438 2.35869 5.55126 2.37203 5.39731 2.42112C5.24336 2.47021 5.10264 2.55377 4.98585 2.66544C4.86906 2.77711 4.77927 2.91395 4.72333 3.06554C4.66739 3.21713 4.64676 3.37949 4.66301 3.54026Z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://www.instagram.com/arduino.cc/" target="_blank" id="instagram" class="instagram" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-instagram" viewBox="0 0 13 14" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-instagram.svg">
+  <path d="M6.5 1.772c1.7 0 1.902 0 2.577.038.404.006.805.081 1.184.223a2.066 2.066 0 011.206 1.206c.142.379.217.78.223 1.184.032.675.037.877.037 2.577s0 1.902-.037 2.577a3.541 3.541 0 01-.223 1.184 2.065 2.065 0 01-1.206 1.206c-.379.142-.78.217-1.184.223-.675.032-.877.037-2.577.037s-1.902 0-2.577-.037a3.542 3.542 0 01-1.184-.223 2.066 2.066 0 01-1.206-1.206 3.543 3.543 0 01-.223-1.184C1.278 8.902 1.272 8.7 1.272 7s0-1.902.038-2.577c.006-.404.081-.805.223-1.184a2.066 2.066 0 011.206-1.206c.379-.142.78-.217 1.184-.223.675-.032.877-.038 2.577-.038zm0-1.147c-1.732 0-1.95 0-2.63.037A4.654 4.654 0 002.324.96 3.224 3.224 0 00.46 2.824 4.654 4.654 0 00.162 4.37C.125 5.05.125 5.268.125 7c0 1.732 0 1.95.037 2.63.01.528.111 1.05.298 1.546a3.225 3.225 0 001.864 1.864 4.65 4.65 0 001.546.298c.68.037.898.037 2.63.037 1.732 0 1.95 0 2.63-.037a4.65 4.65 0 001.546-.298 3.226 3.226 0 001.864-1.864c.184-.487.284-1 .298-1.52.037-.706.037-.924.037-2.656 0-1.732 0-1.95-.037-2.63a4.65 4.65 0 00-.298-1.546A3.226 3.226 0 0010.676.96c-.487-.184-1-.284-1.52-.298C8.45.625 8.232.625 6.5.625z" fill="currentColor"></path>
+  <path d="M6.5 3.728a3.273 3.273 0 100 6.545 3.273 3.273 0 000-6.545zm0 5.397a2.125 2.125 0 110-4.25 2.125 2.125 0 010 4.25zM9.906 4.36a.765.765 0 100-1.53.765.765 0 000 1.53z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://twitter.com/arduino" target="_blank" id="twitter" class="twitter" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-twitter" viewBox="0 0 13 11" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-twitter.svg">
+  <path d="M4.545 10.36a7.04 7.04 0 007.087-7.092V2.95a5.13 5.13 0 001.243-1.29c-.457.2-.94.332-1.434.393.522-.311.913-.802 1.1-1.382a5.233 5.233 0 01-1.595.606 2.491 2.491 0 00-4.308 1.705 2.22 2.22 0 00.064.569A7.071 7.071 0 011.575.94a2.497 2.497 0 00.776 3.326 2.444 2.444 0 01-1.126-.33v.032a2.497 2.497 0 001.997 2.444 2.619 2.619 0 01-1.126.043 2.492 2.492 0 002.327 1.732A4.994 4.994 0 011.325 9.25a4.422 4.422 0 01-.595 0 6.975 6.975 0 003.815 1.126" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://github.com/arduino/" target="_blank" id="github" class="github" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-github" viewBox="0 0 11 13" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-github.svg">
+  <path d="M6.85 8.337a1.77 1.77 0 01.504 1.382v2.008a.531.531 0 01-.409.531 7.52 7.52 0 01-2.869 0 .531.531 0 01-.409-.531v-1.233c-2.066.447-2.502-.998-2.502-.998a1.97 1.97 0 00-.829-1.09c-.674-.456.054-.451.054-.451a1.562 1.562 0 011.136.77 1.594 1.594 0 002.168.617c.03-.377.196-.73.467-.994C2.515 8.157.777 7.52.777 4.672a2.869 2.869 0 01.744-2.003A2.656 2.656 0 011.596.687s.621-.201 2.045.76a7.066 7.066 0 013.719 0C8.783.502 9.405.687 9.405.687c.275.622.302 1.325.074 1.966.503.542.777 1.258.765 1.998 0 2.874-1.737 3.5-3.394 3.686z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://www.linkedin.com/company/arduino" target="_blank" id="linkedin" class="linkedin" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-linkedin" viewBox="0 0 11 12" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-linkedin.svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.863 11.313h2.125V7.338c-.006-.18.02-.36.075-.531A1.222 1.222 0 017.237 6c.967 0 1.307.616 1.307 1.525v3.787h2.167V7.239c0-2.067-.632-3.188-2.576-3.188A2.183 2.183 0 006.01 5.33V4.205H3.885c.031.633 0 7.109 0 7.109h-.022z" fill="currentColor"></path>
+  <path d="M1.361 3.248a1.28 1.28 0 100-2.56 1.28 1.28 0 000 2.56zM2.45 4.204H.247v7.109h2.205V4.204z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://www.youtube.com/user/arduinoteam" target="_blank" id="youtube" class="youtube" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-youtube" viewBox="0 0 15 12" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-youtube.svg">
+  <path d="M14.624 2.398a1.854 1.854 0 00-1.312-1.323C12.154.762 7.5.762 7.5.762s-4.653 0-5.811.313A1.854 1.854 0 00.376 2.398 19.407 19.407 0 00.063 6a19.407 19.407 0 00.313 3.602 1.855 1.855 0 001.313 1.323c1.158.313 5.811.313 5.811.313s4.654 0 5.812-.313a1.855 1.855 0 001.313-1.323c.216-1.188.32-2.394.313-3.602a19.412 19.412 0 00-.314-3.602zM5.981 8.21V3.79L9.864 6 5.981 8.21z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+</div></div>
+  </div>
+
+  <div class="footer-mobile-menu-list app-footer-menu-mobile"><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Trademark/HomePage"><span title="Trademark">Trademark</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/contact-us"><span title="Contact Us">Contact Us</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://store.arduino.cc/distributors"><span title="Distributors">Distributors</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://careers.arduino.cc/"><span title="Careers">Careers</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://support.arduino.cc/"><span title="Help Center">Help Center</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Main/TermsOfService"><span title="Terms Of Service">Terms Of Service</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Main/PrivacyPolicy"><span title="Privacy Policy">Privacy Policy</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Main/Security"><span title="Security">Security</span></a></div><div class="app-footer-menu-mobile__link" id="footer-trustarc-element" style="display: none;"><a class="footer-teconsent">Cookie Preferences</a></div></div>
+
+  <div class="app-footer-bottom">
+    <div class="app-footer-bottom__left footer-year app-footer-copyright" id="footer-copyright"><p id="footer-copyright-container">
+  <a href="https://www.arduino.cc/en/Main/CopyrightNotice" id="footer-copyright-url">
+    <span class="text">
+      © <span id="current-year">2020</span> Arduino
+    </span>
+  </a>
+</p></div>
+
+    <div class="app-footer-bottom__middle">
+      <div class="footer-menu-copyright app-footer-menu-copyright"><div class="app-footer-menu-copyright__link"><a href="https://www.arduino.cc/en/Main/TermsOfService"><span title="Terms Of Service">Terms Of Service</span></a></div><div class="app-footer-menu-copyright__link"><a href="https://www.arduino.cc/en/Main/PrivacyPolicy"><span title="Privacy Policy">Privacy Policy</span></a></div><div class="app-footer-menu-copyright__link"><a href="https://www.arduino.cc/en/Main/Security"><span title="Security">Security</span></a></div><div class="app-footer-menu-copyright__link" id="footer-trustarc-element" style="display: none;"><a class="footer-teconsent">Cookie Preferences</a></div></div>
+    </div>
+
+    <div class="app-footer-bottom__right payments" id="footer-payments">
+      <!-- right -->
+    </div>
+  </div>
+  
+  <div class="footer-help-container hide">
+    <a href="https://support.arduino.cc/" aria-haspopup="true" aria-label="Help" class="footer-help-button">
+      <span class="footer-help-icon" type="Icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><title></title><g id="Layer_4"><path d="M11,12.3V13c0,0-1.8,0-2,0v-0.6c0-0.6,0.1-1.4,0.8-2.1c0.7-0.7,1.6-1.2,1.6-2.1c0-0.9-0.7-1.4-1.4-1.4 c-1.3,0-1.4,1.4-1.5,1.7H6.6C6.6,7.1,7.2,5,10,5c2.4,0,3.4,1.6,3.4,3C13.4,10.4,11,10.8,11,12.3z"></path><circle cx="10" cy="15" r="1"></circle><path d="M10,2c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S5.6,2,10,2 M10,0C4.5,0,0,4.5,0,10s4.5,10,10,10s10-4.5,10-10S15.5,0,10,0 L10,0z"></path></g></svg>
+      </span>
+      <span class="footer-help-text">Help</span>
+    </a>
+  </div>
+</div><!-- footer-block -->
+</div>
+    </div>
+    <script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/index.v2.js.download" type="text/javascript"></script>
+    <script>
+      var auth = new window.arduinoHF.CustomAuth({
+        token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rUkVSalJFTWpBNFFqTXdNMFl3TXpSRFF6SkZOa0kxT0RkQlFVVTJNelpCUkRReFJqTXlOZyJ9.eyJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6ImVtb25fbWlyemEiLCJodHRwOi8vYXJkdWluby5jYy9pZCI6IjBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImh0dHA6Ly9hcmR1aW5vLmNjL3JvbGVzIjpbXSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5hcmR1aW5vLmNjLyIsInN1YiI6ImF1dGgwfDBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImF1ZCI6WyJodHRwczovL2FwaS5hcmR1aW5vLmNjIiwiaHR0cHM6Ly9hcmR1aW5vLXByb2QuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTYwMzk4NjU2NiwiZXhwIjoxNjAzOTg3MTY2LCJhenAiOiJnVGxqaWFmN2NOS25xMWQwdzdJSzcxaWIya0l3SmI3VyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MiLCJwZXJtaXNzaW9ucyI6W119.oASuZdBnSy0rnOn9EkWZsEfWLvEfXnHkDZu056lBTnS5GP6Ty-vYtcpuMJ2wfk79DsL61_lcYvNcLJlC8O2uWSK_XJOQB0e64v4OYPnYuRIp3uRuA9HIxeqh95gA6D_gAXOxdL6xuyvyLM8U1bW7ZjmxvpIFuaMMBanpK4gauw6VJTR6p5_13msp6hrSEGzN10rLb1UNcDESlB7YYvw4kaF_o6DgpyhnSURejf2tjuEd4h3qeJH4HWiWh-9p8nvoL_hO2rjhVGQZBMM5bM8EpNJaPUat8jcW6RmUJ2lYjURqo80Lec32Iuq0uZvXSTWiuhwADfJ2KkppqswpR8NmQQ" ? "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rUkVSalJFTWpBNFFqTXdNMFl3TXpSRFF6SkZOa0kxT0RkQlFVVTJNelpCUkRReFJqTXlOZyJ9.eyJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6ImVtb25fbWlyemEiLCJodHRwOi8vYXJkdWluby5jYy9pZCI6IjBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImh0dHA6Ly9hcmR1aW5vLmNjL3JvbGVzIjpbXSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5hcmR1aW5vLmNjLyIsInN1YiI6ImF1dGgwfDBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImF1ZCI6WyJodHRwczovL2FwaS5hcmR1aW5vLmNjIiwiaHR0cHM6Ly9hcmR1aW5vLXByb2QuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTYwMzk4NjU2NiwiZXhwIjoxNjAzOTg3MTY2LCJhenAiOiJnVGxqaWFmN2NOS25xMWQwdzdJSzcxaWIya0l3SmI3VyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MiLCJwZXJtaXNzaW9ucyI6W119.oASuZdBnSy0rnOn9EkWZsEfWLvEfXnHkDZu056lBTnS5GP6Ty-vYtcpuMJ2wfk79DsL61_lcYvNcLJlC8O2uWSK_XJOQB0e64v4OYPnYuRIp3uRuA9HIxeqh95gA6D_gAXOxdL6xuyvyLM8U1bW7ZjmxvpIFuaMMBanpK4gauw6VJTR6p5_13msp6hrSEGzN10rLb1UNcDESlB7YYvw4kaF_o6DgpyhnSURejf2tjuEd4h3qeJH4HWiWh-9p8nvoL_hO2rjhVGQZBMM5bM8EpNJaPUat8jcW6RmUJ2lYjURqo80Lec32Iuq0uZvXSTWiuhwADfJ2KkppqswpR8NmQQ": null,
+        login_url: 'https://forum.arduino.cc/login.php?redirect_uri=https%3A%2F%2Fforum.arduino.cc%2Findex.php%3Ftopic%3D692400.msg4654922&do_login=1',
+        logout_url: 'https://login.arduino.cc/v2/logout?returnTo=https%3A%2F%2Fforum.arduino.cc%2Flogin.php%3Ferror%3Dloggedout&client_id=gTljiaf7cNKnq1d0w7IK71ib2kIwJb7W',
+        profile: {
+          picture: 'https://content.arduino.cc/avatars/2/emon_mirza.jpeg'
+        }
+    });
+
+      var header = new window.arduinoHF.Header(document.getElementById('header'), window.auth, {
+        env: 'prod',
+        search: {
+          tab: 'forum'
+        },
+        style: 'arduino',
+        logo: {
+            url: 'https://www.arduino.cc'
+        }
+      });
+      header.init();
+
+      var footer = new arduinoHF.Footer(document.getElementById('footer'), {env: 'prod', style: 'arduino', helpCenter: null});
+
+    </script><div data-ref="0.84165321981669"><div class="modal info-modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-body" data-ref="0.05692053219501325"><div class="privacy">
+
+    <h1>Privacy consent</h1>
+
+    <div>
+        <p>
+            Arduino cares about the privacy and personal data of its users. The <a href="https://www.arduino.cc/en/Main/PrivacyPolicy" target="_blank" rel="noopener">privacy policy</a> is meant to inform you on how we process your personal data when you use our services.
+        </p>
+
+        <ul class="privacy-settings">
+            <li>
+                <div class="upper-error-notif privacy-error">Please confirm that you have read the privacy policy</div>
+                <label class="checkbox">
+        <input type="checkbox" id="privacy-consent" name="privacy-consent" value="privacy_approval">
+
+        <span class="custom-checkbox"></span>
+        <span>I confirm to have read the privacy policy<span class="required-asterisk">*</span></span>
+      </label>
+            </li>
+            <li>
+                <div class="upper-error-notif newsletter-error">Please confirm your consent to receive the newsletter</div>
+                <label class="checkbox">
+        <input type="checkbox" id="newsletter-consent" name="newsletter-consent" value="newsletter_approval" checked="checked">
+
+        <span class="custom-checkbox"></span>
+        <span>I confirm my consent to receive your newsletter<span class="required-asterisk">*</span></span>
+      </label>
+            </li>
+            <li>
+                <label class="checkbox">
+        <input type="checkbox" id="marketing-consent" value="marketing_approval">
+        <span class="custom-checkbox"></span>
+        <span>I confirm my consent to the processing of my personal data for marketing purposes, consisting in commercial offers sent via email</span>
+      </label>
+            </li>
+            <li>
+                <label class="checkbox">
+        <input type="checkbox" id="tracking-consent" value="tracking_approval">
+        <span class="custom-checkbox"></span>
+        <span>I confirm my consent to automated processing of my personal data, by means of profiling, in order to receive commercial offers customized on the basis of my browsing and purchasing behavior</span>
+      </label>
+            </li>
+        </ul>
+        <div class="my-error-notification">
+            <div id="newsletterSubscribeStatus"></div>
+        </div>
+        <section class="buttons-wrapper">
+            <button name="Cancel" class="button secondary cancel">Cancel</button>
+            <button name="Ok" class="primary button submit">Ok</button>
+        </section>
+    </div>
+</div></div>
+</div></div><div data-ref="0.9564082833013385"><div class="modal info-modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-body" data-ref="0.9766575099260089"><div class="confirm">
+  <h1>Confirm your email address</h1>
+  <p>
+    We need to confirm your email address.<br> To complete the subscription, please click the link in the email we just sent you.
+  </p>
+  <p>
+    Thank you for subscribing!
+  </p>
+  <section class="buttons-wrapper">
+    <button name="Ok" class="button submit">Ok</button>
+  </section>
+</div></div>
+</div></div>
+  <div id="ajax_in_progress" style="display: none;">Loading...</div>
+<script><!-- // --><![CDATA[
+	function triggerCron() {
+		var tempImage = new Image();
+		tempImage.src = 'https://forum.arduino.cc' + "/cron.php?ts=1603986615";
+	}
+	window.setTimeout(triggerCron, 1);
+	var user_menus = new smc_PopupMenu();
+	user_menus.add("profile", "https://forum.arduino.cc/index.php?action=profile;area=popup");
+	user_menus.add("alerts", "https://forum.arduino.cc/index.php?action=profile;area=alerts_popup");
+	user_menus.add("pm", "https://forum.arduino.cc/index.php?action=pm;sa=popup");
+// ]]></script>
+    <script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/modernizr.js.download"></script>
+    <!--[if gte IE 9]><!-->
+    <script src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/foundation.min.js.download"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <!--<![endif]-->
+    <!--[if IE 8]>
+    <script src="//content.arduino.cc/legacy/js/foundation_ie8.min.js"></script>
+    <script src="//content.arduino.cc/legacy/js/ie8/jquery.foundation.alerts.js"></script>
+    <script src="//content.arduino.cc/legacy/js/app.js"></script>
+		<![endif]-->
+		<script>
+		// Adv banner configuration
+		var arduinoAdvOptions = {
+			breakpointDesktop: 480,
+			breakpointMobile: 480,
+			zoneIdDesktop: 561,
+			zoneIdTablet: 560,
+			zoneIdMobile: 560
+		};
+
+		jQuery('.boardindex_table .main_container:nth-child(1)').append('<div id="ad_container_zone" class="adv-banner"></div>');
+		jQuery('#forumposts form .windowbg:nth-of-type(1)').after('<div id="ad_container_zone" class="adv-banner"></div>');
+
+		</script>
+		<!-- Script used by adv banner -->
+		<script type="text/javascript" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/postscribe.min.js.download"></script>
+		<script type="text/javascript" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/banner.js.download"></script>
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Ch-9 Timer_Counter Module of ATmega328P MCU_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>

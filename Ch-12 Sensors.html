@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://forum.arduino.cc/index.php?topic=695781.msg4677511#msg4677511 -->
+<html class="windows desktop landscape js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" style="--vh:5.2px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<link rel="stylesheet" type="text/css" href="./Ch-12 Sensors_files/index.css">
+	<link rel="stylesheet" type="text/css" href="./Ch-12 Sensors_files/responsive.css">
+	<link rel="stylesheet" type="text/css" href="./Ch-12 Sensors_files/jquery.custom-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="./Ch-12 Sensors_files/jquery.sceditor.css">
+	<style>
+img.avatar { max-width: 65px; max-height: 65px; }</style>
+	<script type="text/javascript" async="" src="./Ch-12 Sensors_files/analytics.js.download"></script><script src="./Ch-12 Sensors_files/notice" async=""></script><script><!-- // --><![CDATA[
+		var smf_theme_url = "https://forum.arduino.cc/Themes/default";
+		var smf_default_theme_url = "https://forum.arduino.cc/Themes/default";
+		var smf_images_url = "https://forum.arduino.cc/Themes/default/images";
+		var smf_smileys_url = "https://forum.arduino.cc/Smileys";
+		var smf_scripturl = "https://forum.arduino.cc/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+		var smf_session_id = "f27e02cfd2ffc059ad89808fbc1ebcc5";
+		var smf_session_var = "b9461d3f92";
+		var smf_member_id = 1441812;
+		var ajax_notification_text = 'Loading...';
+		var help_popup_heading_text = 'A little lost? Let me explain:';
+	// ]]></script>
+	<script src="./Ch-12 Sensors_files/jquery.min.js.download"></script>
+	<script src="./Ch-12 Sensors_files/smf_jquery_plugins.js.download"></script>
+	<script src="./Ch-12 Sensors_files/jquery.custom-scrollbar.js.download"></script>
+	<script src="./Ch-12 Sensors_files/script.js.download"></script>
+	<script src="./Ch-12 Sensors_files/theme.js.download"></script>
+	<script src="./Ch-12 Sensors_files/editor.js.download"></script>
+	<script src="./Ch-12 Sensors_files/jquery.sceditor.js.download"></script>
+	<script src="./Ch-12 Sensors_files/jquery.sceditor.bbcode.js.download"></script>
+	<script src="./Ch-12 Sensors_files/jquery.sceditor.smf.js.download"></script>
+	<script src="./Ch-12 Sensors_files/drafts.js.download"></script>
+	<script src="./Ch-12 Sensors_files/topic.js.download"></script>
+	<script src="./Ch-12 Sensors_files/alerts.js.download"></script>
+	<script><!-- // --><![CDATA[
+		var smf_smileys_url = 'https://forum.arduino.cc/Smileys/arduino';
+		var bbc_quote_from = 'Quote from';
+		var bbc_quote = 'Quote';
+		var bbc_search_on = 'on';
+	var new_alert_title = "Arduino Forum";
+	var alert_timeout = 10000;
+	// ]]></script>
+	<meta name="description" content="Ch-12  Sensors">
+	<title>Ch-12  Sensors</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="robots" content="noindex">
+	<link rel="canonical" href="https://forum.arduino.cc/index.php?topic=695781.0">
+	<link rel="help" href="https://forum.arduino.cc/index.php?action=help">
+	<link rel="contents" href="https://forum.arduino.cc/index.php">
+	<link rel="search" href="https://forum.arduino.cc/index.php?action=search">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - RSS" href="https://forum.arduino.cc/index.php?type=rss2;action=.xml">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - Atom" href="https://forum.arduino.cc/index.php?type=atom;action=.xml">
+	<link rel="index" href="https://forum.arduino.cc/index.php?board=18.0">
+<style type="text/css">img[onload^="SVGInject("]{visibility:hidden;}</style><script async="" src="./Ch-12 Sensors_files/hotjar-1036685.js.download"></script>
+  <link rel="shortcut icon" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/favicon-48x48.png">
+  <link rel="manifest" id="ino-manifest-placeholder" href="blob:https://forum.arduino.cc/a5272672-b033-47fe-b679-e41625583eb7">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#fff">
+  <meta name="application-name">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="1024x1024" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-icon-1024x1024.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-640x1136.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-750x1334.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-828x1792.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1125x2436.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1242x2208.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1242x2688.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1536x2048.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1668x2224.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1668x2388.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2048x2732.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1620x2160.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1136x640.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1334x750.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-1792x828.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2436x1125.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2208x1242.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2688x1242.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2048x1536.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2224x1668.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2388x1668.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2732x2048.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/apple-touch-startup-image-2160x1620.png">
+  <link rel="icon" type="image/png" sizes="228x228" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/coast-228x228.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="msapplication-TileImage" content="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/mstile-144x144.png">
+  <meta name="msapplication-config" content="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/browserconfig.xml">
+  <link rel="yandex-tableau-widget" href="https://cdn.arduino.cc/header-footer/prod/assets/favicon-arduino/yandex-browser-manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><script async="" src="./Ch-12 Sensors_files/modules.8831d20acac5f9d5fa63.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+<body id="chrome" class="action_messageindex board_18" style=""><div style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/sprites.svg" style="display: none;">
+  <symbol id="footerLang-icon" viewBox="0 0 14 14">
+    <path d="M13.813 6.733a6.422 6.422 0 00-.286-1.669 6.563 6.563 0 00-2.56-3.46.267.267 0 00-.06-.037A6.43 6.43 0 007.783.48 4.49 4.49 0 007.25.438 6.563 6.563 0 1013.813 7a2.533 2.533 0 000-.268zM3.969 11.57a5.625 5.625 0 01-2.096-6.23l.807.577L3.969 8.07v3.501zm6.675-5.976a.469.469 0 00-.324.037l-.937.469a.469.469 0 00-.235.567l.47 1.406a.469.469 0 00.294.296l1.144.38.366 2.001a5.597 5.597 0 01-4.172 1.875 5.48 5.48 0 01-2.142-.427l2.076-3.557a.469.469 0 00-.07-.568l-.469-.468a.469.469 0 00-.332-.136H4.728l-.342-.68a.127.127 0 00-.028-.047l-.455-.68h1.003a.469.469 0 00.469-.468v-.746l.802-.796a.469.469 0 00.056-.591l-.9-1.355-.117-.351a5.56 5.56 0 012.034-.38v.469a.469.469 0 00.938 0v-.385a5.466 5.466 0 011.959.722L9.71 3.72l-.066.225-.384.38a.469.469 0 00.152.768.469.469 0 00.514-.103l.262-.262.469.15 2.044.68c.055.193.097.39.126.59l-2.184-.553z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="footerTriangle-icon" viewBox="0 0 9 6">
+    <path d="M.332 4.332l3.2-3.2a.8.8 0 011.136 0l3.2 3.2a.8.8 0 01.168.872.8.8 0 01-.736.496H.9a.8.8 0 01-.736-.496.8.8 0 01.168-.872z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="headerIcon-menu-triangle" viewBox="0 0 11 7">
+    <path d="M10.21 2.21l-4 4a1 1 0 01-1.42 0l-4-4a1 1 0 01-.21-1.09A1 1 0 011.5.5h8a1 1 0 01.92.62 1 1 0 01-.21 1.09z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="headerIcon-extend-menu" viewBox="0 0 7 12">
+    <path d="M1.5 11.25a.75.75 0 01-.533-1.283L4.942 6 .967 2.032A.753.753 0 112.032.967l4.5 4.5a.75.75 0 010 1.065l-4.5 4.5a.75.75 0 01-.532.218z" fill="currentColor"></path>
+  </symbol>
+  <symbol id="headerIcon-extend-next" viewBox="0 0 10 9">
+    <path d="M8.891 4.766L5.516 8.141a.375.375 0 01-.614-.122.375.375 0 01.082-.41L7.72 4.875H.375a.375.375 0 010-.75h7.346L4.984 1.391A.377.377 0 015.516.86l3.375 3.375a.375.375 0 010 .532z" fill="currentColor"></path>
+  </symbol>
+</svg></div><link rel="stylesheet" href="./Ch-12 Sensors_files/foundation2.css" type="text/css"><link rel="stylesheet" href="./Ch-12 Sensors_files/common-hacked.css" type="text/css"><link rel="stylesheet" href="./Ch-12 Sensors_files/new_style.css" type="text/css"><link rel="stylesheet" href="./Ch-12 Sensors_files/fonts.css" type="text/css"><link rel="stylesheet" href="./Ch-12 Sensors_files/arduino-icons.css" type="text/css"><link rel="stylesheet" href="./Ch-12 Sensors_files/index.v2.css" type="text/css"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./Ch-12 Sensors_files/css2" rel="stylesheet"><div id="header" class="temporary ino-header-base" data-ref="0.5647012455241813"><header id="ino-header-new">
+  <nav class="arduino-nav teal collapsed">
+    <!-- First level of header -->
+    <div class="first-level">
+      <div class="first-level-left app-menu-apps" id="main-menu">
+        <!-- Component MenuAppsCmp -->
+      <div class="app-menu-apps-link"><a href="https://www.arduino.cc/pro"><span class="link-full">Professional</span><span class="link-short">Pro</span></a></div><div class="app-menu-apps-link"><a href="https://www.arduino.cc/edu"><span class="link-full">Education</span><span class="link-short">Edu</span></a></div><div class="app-menu-apps-link"><a href="https://store.arduino.cc/"><span>Store</span></a></div></div>
+
+      <!-- Right part of control -->
+      <div class="first-level-right">
+        <!-- Search bar -->
+        <div class="app-controls search-control app-desktop-search-control"><form class="search-form ino-suggestion" role="search" method="GET" action="https://www.arduino.cc/search">
+  <div class="search-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 20 20" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-search.svg">
+  <path d="M19.5325 18.4675L14.2825 13.2175C15.4994 11.7274 16.0972 9.82667 15.9522 7.90828C15.8072 5.9899 14.9306 4.20059 13.5035 2.91032C12.0765 1.62005 10.2082 0.927502 8.28495 0.975872C6.3617 1.02424 4.53058 1.80983 3.17021 3.1702C1.80984 4.53057 1.02425 6.36169 0.975884 8.28493C0.927514 10.2082 1.62006 12.0765 2.91033 13.5035C4.2006 14.9305 5.98991 15.8072 7.90829 15.9522C9.82668 16.0972 11.7274 15.4994 13.2175 14.2825L18.4675 19.5325C18.5372 19.6028 18.6202 19.6586 18.7116 19.6967C18.803 19.7347 18.901 19.7543 19 19.7543C19.099 19.7543 19.197 19.7347 19.2884 19.6967C19.3798 19.6586 19.4628 19.6028 19.5325 19.5325C19.6028 19.4628 19.6586 19.3798 19.6967 19.2884C19.7348 19.197 19.7544 19.099 19.7544 19C19.7544 18.901 19.7348 18.803 19.6967 18.7116C19.6586 18.6202 19.6028 18.5372 19.5325 18.4675ZM8.50001 14.5C7.31332 14.5 6.15329 14.1481 5.16659 13.4888C4.1799 12.8295 3.41086 11.8925 2.95674 10.7961C2.50261 9.69974 2.38379 8.49334 2.6153 7.32946C2.84681 6.16557 3.41826 5.09647 4.25737 4.25736C5.09649 3.41824 6.16558 2.8468 7.32947 2.61529C8.49336 2.38378 9.69976 2.5026 10.7961 2.95672C11.8925 3.41085 12.8295 4.17988 13.4888 5.16658C14.1481 6.15327 14.5 7.31331 14.5 8.5C14.5 10.0913 13.8679 11.6174 12.7427 12.7426C11.6174 13.8679 10.0913 14.5 8.50001 14.5Z" fill="currentColor"></path>
+</svg>
+  </div>
+  <input type="hidden" name="tab" value="forum" class="search-tab">
+  <input type="text" placeholder="Search on Arduino.cc" value="" name="q" title="" class="search-typing" autocomplete="off">
+<div class="ino-suggestion__box"></div></form></div>
+
+        <!-- Store container -->
+        <div class="app-controls store-controls hide">
+          <!-- Store buttons -->
+        </div>
+
+        <!-- Application list -->
+        <div class="app-controls application-list app-applications-container style-arduino"><div class="app-applications popup-dropdown">
+  <a id="application-list-control" href="https://forum.arduino.cc/index.php?topic=695781.msg4677511#">
+    <div class="app-applications-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" id="app-list" viewBox="0 0 18 18" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-app-list.svg">
+  <path d="M9 10.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM15.75 10.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM15.75 3.75a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM9 3.75a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM2.25 3.75a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM2.25 10.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM9 17.25a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM15.75 17.25a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM2.25 17.25a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" fill="currentColor"></path>
+</svg>
+    </div>
+  </a>
+  <div class="popup-container">
+    <div class="popup-container__box" id="app-apps-container-box"><div class="app-applications__row"><div class="app-applications__col"><a id="web-editor" class="app-application" href="https://create.arduino.cc/editor" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 36" id="app-web-editor" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-web-editor.svg">
+  <path d="M0.5 6.5H45.5V32.5C45.5 34.1569 44.1569 35.5 42.5 35.5H3.5C1.84315 35.5 0.5 34.1569 0.5 32.5V6.5Z" fill="#171E21"></path>
+  <path d="M0.5 3.5C0.5 1.84315 1.84315 0.5 3.5 0.5H42.5C44.1569 0.5 45.5 1.84315 45.5 3.5V6.5H0.5V3.5Z" fill="#DAE3E3"></path>
+  <rect x="5.5" y="10.5" width="6" height="2" rx="1" fill="#98FFC7"></rect>
+  <rect x="19.5" y="16.5" width="6" height="2" rx="1" fill="#FFE793"></rect>
+  <rect x="13.5" y="22.5" width="6" height="2" rx="1" fill="#95A5A6"></rect>
+  <rect x="13.5" y="10.5" width="4" height="2" rx="1" fill="#98FFC7"></rect>
+  <rect x="21.5" y="22.5" width="4" height="2" rx="1" fill="#95A5A6"></rect>
+  <rect x="13.5" y="16.5" width="4" height="2" rx="1" fill="#FFA572"></rect>
+  <rect x="5.5" y="28.5" width="4" height="2" rx="1" fill="#fff"></rect>
+  <rect x="27.5" y="16.5" width="4" height="2" rx="1" fill="#fff"></rect>
+</svg>
+        </div>
+        <div class="app-application__name">Web Editor</div>
+      </a></div><div class="app-applications__col"><a id="iot-cloud" class="app-application" href="https://create.arduino.cc/iot" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="app-iot-cloud" viewBox="0 0 46 36" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-iot-cloud.svg">
+  <rect x=".5" y=".5" width="45" height="35" rx="3" fill="#DAE3E3"></rect>
+  <rect x="3.5" y="3.5" width="18" height="29" rx="1" fill="#fff"></rect>
+  <rect x="24.5" y="3.5" width="18" height="13" rx="1" fill="#fff"></rect>
+  <rect x="24.5" y="19.5" width="18" height="13" rx="1" fill="#fff"></rect>
+  <rect x="27.5" y="6.5" width="12" height="7" rx="3.5" fill="#95A5A6"></rect>
+  <rect x="27.5" y="22.5" width="12" height="7" rx="3.5" fill="#0CA1A6"></rect>
+  <circle cx="31" cy="10" r="2.5" fill="#fff"></circle>
+  <circle cx="36" cy="26" r="2.5" fill="#fff"></circle>
+  <path stroke="#95A5A6" stroke-width="3" stroke-linecap="round" d="M13 8v20"></path>
+  <path stroke="#0CA1A6" stroke-width="3" stroke-linecap="round" d="M13 17v11"></path>
+  <circle cx="13" cy="18" r="3" fill="#fff" stroke="#95A5A6"></circle>
+</svg>
+        </div>
+        <div class="app-application__name">IoT Cloud</div>
+      </a></div></div><div class="app-applications__row"><div class="app-applications__col"><a id="device-manager" class="app-application" href="https://create.arduino.cc/devices" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="app-device-manager" viewBox="0 0 48 36" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-device-manager.svg">
+  <rect x="2.5" y=".5" width="45" height="35" rx="3" fill="#0CA1A6"></rect>
+  <circle cx="5.5" cy="3.5" r="2" fill="#fff"></circle>
+  <circle cx="44.5" cy="3.5" r="2" fill="#fff"></circle>
+  <circle cx="5.5" cy="32.5" r="2" fill="#fff"></circle>
+  <circle cx="44.5" cy="32.5" r="2" fill="#fff"></circle>
+  <rect x=".5" y="12.5" width="7" height="11" rx="1" fill="#DAE3E3"></rect>
+  <rect x="30.5" y="11.5" width="13" height="13" rx="1" fill="#DAE3E3"></rect>
+  <rect x="16.5" y="1.5" width="23" height="4" rx="1" fill="#4E5B61"></rect>
+  <rect x="16.5" y="30.5" width="23" height="4" rx="1" fill="#4E5B61"></rect>
+</svg>
+        </div>
+        <div class="app-application__name">Manager for Linux</div>
+      </a></div><div class="app-applications__col"><a id="digital-store" class="app-application" href="https://store.arduino.cc/digital/" target="blank" rel="noopener noreferrer">
+        <div class="app-application__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="app-digital-store" viewBox="0 0 52 36" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerApp-digital-store.svg">
+  <path d="M3.5 3.5a3 3 0 013-3h39a3 3 0 013 3v32h-45v-32z" fill="#DAE3E3"></path>
+  <path fill="#fff" d="M24.5 17.5h19v12h-19z"></path>
+  <rect x="3.5" y="3.5" width="9" height="9" rx="4.5" fill="#0CA1A6"></rect>
+  <path d="M3.5 3.5a3 3 0 013-3h6v8h-9v-5zM39.5.5h6a3 3 0 013 3v5h-9v-8z" fill="#0CA1A6"></path>
+  <rect x="39.5" y="3.5" width="9" height="9" rx="4.5" fill="#0CA1A6"></rect>
+  <rect x="12.5" y="3.5" width="9" height="9" rx="4.5" fill="#fff"></rect>
+  <path fill="#fff" d="M12.5.5h9v8h-9z"></path>
+  <rect x="21.5" y="3.5" width="9" height="9" rx="4.5" fill="#0CA1A6"></rect>
+  <path fill="#0CA1A6" d="M21.5.5h9v8h-9z"></path>
+  <rect x="30.5" y="3.5" width="9" height="9" rx="4.5" fill="#fff"></rect>
+  <path fill="#fff" d="M30.5.5h9v8h-9z"></path>
+  <path d="M8.5 18.5a1 1 0 011-1h10a1 1 0 011 1v17h-12v-17z" fill="#BCAC99"></path>
+  <circle cx="15.5" cy="25.5" r="2" fill="#fff"></circle>
+  <rect x=".5" y="33.5" width="51" height="2" rx="1" fill="#C9D2D2"></rect>
+</svg>
+        </div>
+        <div class="app-application__name">Digital Store</div>
+      </a></div></div></div>
+  </div>
+</div></div>
+
+        <!-- Auth/Profile container -->
+        <div class="app-controls profile-desktop-container app-desktop-profile-container style-arduino min-width"><!-- Sign In -->
+<div class="login-button hide">
+  <a href="https://forum.arduino.cc/index.php?topic=695781.msg4677511#">
+    <span>Sign In</span>
+  </a>
+</div>
+
+<!-- Profile view -->
+<div class="profile-dropdown popup-dropdown" tabindex="0">
+  <a data-hj-suppress="" class="submenu-toggle profile-avatar" aria-label="user profile">
+    <svg viewBox="0 0 22 22" class="avatar default-avatar" style="display: none;">
+      <path d="M11 11.7498H10.88C9.99585 11.7184 9.1594 11.341 8.55072 10.6989C7.94204 10.0569 7.6098 9.20152 7.62553 8.31694C7.64126 7.43237 8.0037 6.58934 8.63483 5.96934C9.26595 5.34934 10.1153 5.00195 11 5.00195C11.8847 5.00195 12.7341 5.34934 13.3652 5.96934C13.9963 6.58934 14.3587 7.43237 14.3745 8.31694C14.3902 9.20152 14.058 10.0569 13.4493 10.6989C12.8406 11.341 12.0042 11.7184 11.12 11.7498H11Z" fill="currentColor"></path>
+      <path d="M17.9752 18.65C17.9857 18.7012 18.0007 18.7514 18.0202 18.8C16.0921 20.535 13.5902 21.495 10.9964 21.495C8.40264 21.495 5.90067 20.535 3.97266 18.8C3.99462 18.7516 4.01219 18.7014 4.02516 18.65C4.38847 17.1001 5.26936 15.7205 6.52245 14.7387C7.77553 13.757 9.3259 13.2318 10.9177 13.25H11.0827C12.6744 13.2318 14.2248 13.757 15.4779 14.7387C16.7309 15.7205 17.6118 17.1001 17.9752 18.65Z" fill="currentColor"></path>
+      <path d="M21.5004 10.9998C21.5108 13.3645 20.7174 15.6626 19.2504 17.5173C18.8356 16.2987 18.1466 15.1916 17.2363 14.2814C16.3261 13.3712 15.219 12.6821 14.0004 12.2673C14.8135 11.6501 15.4123 10.7933 15.7124 9.81765C16.0126 8.842 15.9989 7.79676 15.6733 6.82931C15.3477 5.86186 14.7266 5.02102 13.8977 4.42536C13.0687 3.8297 12.0737 3.50928 11.0529 3.50928C10.0321 3.50928 9.03713 3.8297 8.20818 4.42536C7.37922 5.02102 6.75816 5.86186 6.43256 6.82931C6.10697 7.79676 6.09327 8.842 6.39341 9.81765C6.69354 10.7933 7.29236 11.6501 8.10542 12.2673C6.88682 12.6821 5.77973 13.3712 4.8695 14.2814C3.95927 15.1916 3.2702 16.2987 2.85542 17.5173C1.79166 16.2095 1.05841 14.6648 0.717686 13.0138C0.376957 11.3629 0.438759 9.65409 0.897868 8.03203C1.35698 6.40996 2.19989 4.92228 3.35535 3.69477C4.51081 2.46726 5.94484 1.536 7.5362 0.979724C9.12757 0.423451 10.8295 0.25852 12.498 0.498875C14.1666 0.73923 15.7528 1.3778 17.1224 2.36061C18.4921 3.34341 19.605 4.64156 20.367 6.14528C21.129 7.64901 21.5178 9.31411 21.5004 10.9998Z" fill="currentColor"></path>
+    </svg>      
+    <img class="avatar user-avatar" src="./Ch-12 Sensors_files/emon_mirza.jpeg" alt="User Profile" style="display: block;">
+    <span class="badge">0</span>
+  </a>
+  <div class="popup-container">
+    <div class="popup-container__box">
+      <ul>
+        <li>
+          <a href="https://id.arduino.cc/"><span>Profile</span></a>
+        </li>
+        <li class="forum-messages">
+          <a href="https://forum.arduino.cc/index.php?action=pm"><span>Messages</span></a>
+        </li>
+        <li>
+          <a href="https://store.arduino.cc/digital/subscriptions"><span>My Plans</span></a>
+        </li>
+        <li class="logout">
+          <a role="button" tabindex="0"><span>Sign Out</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+      </div>
+
+    </div>
+
+    <!-- Second level of header -->
+    <div class="second-level">
+      <!-- Brand logo -->
+      <a class="brand-logo app-brand-logo style-arduino logo-arduino" href="https://www.arduino.cc/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 25" fill="none" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerLogo-arduino.svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M51.25 12.5C51.25 5.60219 45.5773 0 38.6242 0C37.984 0 37.3261 0.0364964 36.6859 0.145985C31.2799 0.930657 27.6522 4.92701 25.625 7.9927C23.5978 4.92701 19.9701 0.930657 14.5641 0.145985C13.9239 0.0547445 13.266 0 12.6258 0C5.65493 0 0 5.60219 0 12.5C0 19.3978 5.67271 25 12.6258 25C13.266 25 13.9239 24.9635 14.5819 24.854C19.9879 24.0511 23.6155 20.0547 25.6428 16.9891C27.67 20.0547 31.2977 24.0511 36.7037 24.854C37.3439 24.9453 38.0018 25 38.6598 25C45.5773 25 51.25 19.3978 51.25 12.5ZM13.9416 20.4744C13.4971 20.5474 13.0525 20.5657 12.6079 20.5657C8.01996 20.5657 4.30336 16.9343 4.30336 12.5C4.30336 8.04744 8.03774 4.4343 12.6257 4.4343C13.0703 4.4343 13.5148 4.4708 13.9594 4.52554C19.0631 5.27372 22.1751 10.4379 23.242 12.5C22.1573 14.5803 19.0275 19.7263 13.9416 20.4744ZM37.2905 4.52554C32.1868 5.27372 29.057 10.4379 28.0079 12.5C29.057 14.562 32.1868 19.7263 37.2905 20.4744C37.735 20.5292 38.1796 20.5657 38.6242 20.5657C43.1944 20.5657 46.9287 16.9525 46.9287 12.5C46.9287 8.06569 43.2121 4.4343 38.6242 4.4343C38.1796 4.4343 37.735 4.4708 37.2905 4.52554ZM9.06449 11.161H16.7004V13.5642H9.06449V11.161ZM42.1479 13.5817H39.5728V16.1077H37.1049V13.5817H34.5298V11.161H37.1049V8.63499H39.5728V11.161H42.1479V13.5817Z" fill="currentColor"></path>
+</svg></a>
+
+      <!-- Main application menu -->
+      <div class="menu-container">
+        <!-- Search bar -->
+        <div class="mobile-search-control app-mobile-search-control"><form class="search-form ino-suggestion" role="search" method="GET" action="https://www.arduino.cc/search">
+  <div class="search-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 20 20" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-search.svg">
+  <path d="M19.5325 18.4675L14.2825 13.2175C15.4994 11.7274 16.0972 9.82667 15.9522 7.90828C15.8072 5.9899 14.9306 4.20059 13.5035 2.91032C12.0765 1.62005 10.2082 0.927502 8.28495 0.975872C6.3617 1.02424 4.53058 1.80983 3.17021 3.1702C1.80984 4.53057 1.02425 6.36169 0.975884 8.28493C0.927514 10.2082 1.62006 12.0765 2.91033 13.5035C4.2006 14.9305 5.98991 15.8072 7.90829 15.9522C9.82668 16.0972 11.7274 15.4994 13.2175 14.2825L18.4675 19.5325C18.5372 19.6028 18.6202 19.6586 18.7116 19.6967C18.803 19.7347 18.901 19.7543 19 19.7543C19.099 19.7543 19.197 19.7347 19.2884 19.6967C19.3798 19.6586 19.4628 19.6028 19.5325 19.5325C19.6028 19.4628 19.6586 19.3798 19.6967 19.2884C19.7348 19.197 19.7544 19.099 19.7544 19C19.7544 18.901 19.7348 18.803 19.6967 18.7116C19.6586 18.6202 19.6028 18.5372 19.5325 18.4675ZM8.50001 14.5C7.31332 14.5 6.15329 14.1481 5.16659 13.4888C4.1799 12.8295 3.41086 11.8925 2.95674 10.7961C2.50261 9.69974 2.38379 8.49334 2.6153 7.32946C2.84681 6.16557 3.41826 5.09647 4.25737 4.25736C5.09649 3.41824 6.16558 2.8468 7.32947 2.61529C8.49336 2.38378 9.69976 2.5026 10.7961 2.95672C11.8925 3.41085 12.8295 4.17988 13.4888 5.16658C14.1481 6.15327 14.5 7.31331 14.5 8.5C14.5 10.0913 13.8679 11.6174 12.7427 12.7426C11.6174 13.8679 10.0913 14.5 8.50001 14.5Z" fill="currentColor"></path>
+</svg>
+  </div>
+  <input type="hidden" name="tab" value="forum" class="search-tab">
+  <input type="text" placeholder="Search on Arduino.cc" value="" name="q" title="" class="search-typing" autocomplete="off">
+<div class="ino-suggestion__box"></div></form></div>
+
+        <!-- App menu -->
+        <div class="menu-list app-menu-main style-arduino" id="app-menu-list"><div class="app-menu-item" tabindex="0"><a class="app-menu-text main-text" href="https://www.arduino.cc/en/Main/Products" tabindex="-1"><span title="Hardware">Hardware</span></a></div><div class="app-menu-item app-has-sub-menu" tabindex="0"><a class="app-menu-text main-text" role="button" tabindex="-1"><span title="Software">Software</span><div class="app-menu-triangle"><svg>
+        <use xlink:href="/index.php#headerIcon-menu-triangle" href="#headerIcon-menu-triangle"></use>
+      </svg></div></a><div class="app-sub-menu"><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Main/Create" target="_blank" rel="noopener noreferrer"><span title="Arduino Create">Arduino Create</span></a><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Main/Software"><span title="Downloads">Downloads</span></a></div></div><div class="app-menu-item app-has-sub-menu" tabindex="0"><a class="app-menu-text main-text" role="button" tabindex="-1"><span title="Documentation">Documentation</span><div class="app-menu-triangle"><svg>
+        <use xlink:href="/index.php#headerIcon-menu-triangle" href="#headerIcon-menu-triangle"></use>
+      </svg></div></a><div class="app-sub-menu"><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Tutorial/HomePage"><span title="Tutorials">Tutorials</span></a><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/reference/en"><span title="Reference">Reference</span></a><a class="app-menu-text sub-menu-text" href="https://www.arduino.cc/en/Main/FAQ"><span title="FAQ">FAQ</span></a><a class="app-menu-text sub-menu-text" href="https://playground.arduino.cc/"><span title="Playground">Playground</span></a></div></div><div class="app-menu-item app-has-sub-menu" tabindex="0"><a class="app-menu-text main-text" role="button" tabindex="-1"><span title="Community">Community</span><div class="app-menu-triangle"><svg>
+        <use xlink:href="/index.php#headerIcon-menu-triangle" href="#headerIcon-menu-triangle"></use>
+      </svg></div></a><div class="app-sub-menu"><a class="app-menu-text sub-menu-text" href="https://forum.arduino.cc/"><span title="Forum">Forum</span></a><a class="app-menu-text sub-menu-text" href="https://discord.gg/jQJFwW7" target="_blank" rel="noopener noreferrer"><span title="Discord">Discord</span></a><a class="app-menu-text sub-menu-text" href="https://create.arduino.cc/projecthub" target="_blank" rel="noopener noreferrer"><span title="Project Hub">Project Hub</span></a><a class="app-menu-text sub-menu-text" href="https://day.arduino.cc/" target="_blank" rel="noopener noreferrer"><span title="Arduino Day">Arduino Day</span></a></div></div><div class="app-menu-item" tabindex="0"><a class="app-menu-text main-text" href="https://blog.arduino.cc/" tabindex="-1"><span title="Blog">Blog</span></a></div><div class="app-menu-item" tabindex="0"><a class="app-menu-text main-text" href="https://www.arduino.cc/en/Guide/Introduction" tabindex="-1"><span title="About">About</span></a></div></div>
+
+        <!-- App buttons -->
+        <div class="menu-buttons app-menu-buttons" id="app-menu-buttons"></div>
+
+        <div class="profile-mobile-container app-mobile-profile-container style-arduino"><!-- Sign In -->
+<div class="login-button hide">
+  <a href="https://forum.arduino.cc/index.php?topic=695781.msg4677511#">
+    <span>Sign In</span>
+  </a>
+</div>
+<!-- User profile -->
+<div class="profile-dropdown">
+  <div class="profile-menu">
+    <div class="profile-menu__item">
+      <a href="https://id.arduino.cc/">Profile</a>
+    </div>
+    <div class="profile-menu__item">
+      <a href="https://forum.arduino.cc/index.php?action=pm">Messages</a>
+    </div>
+    <div class="profile-menu__item">
+      <a href="https://store.arduino.cc/digital/subscriptions">My Plans</a>
+    </div>
+  </div>
+  <div class="profile-info">
+    <div class="profile-avatar" aria-label="user profile">
+      <svg viewBox="0 0 22 22" class="avatar default-avatar" style="display: none;">
+        <path d="M11 11.7498H10.88C9.99585 11.7184 9.1594 11.341 8.55072 10.6989C7.94204 10.0569 7.6098 9.20152 7.62553 8.31694C7.64126 7.43237 8.0037 6.58934 8.63483 5.96934C9.26595 5.34934 10.1153 5.00195 11 5.00195C11.8847 5.00195 12.7341 5.34934 13.3652 5.96934C13.9963 6.58934 14.3587 7.43237 14.3745 8.31694C14.3902 9.20152 14.058 10.0569 13.4493 10.6989C12.8406 11.341 12.0042 11.7184 11.12 11.7498H11Z" fill="currentColor"></path>
+        <path d="M17.9752 18.65C17.9857 18.7012 18.0007 18.7514 18.0202 18.8C16.0921 20.535 13.5902 21.495 10.9964 21.495C8.40264 21.495 5.90067 20.535 3.97266 18.8C3.99462 18.7516 4.01219 18.7014 4.02516 18.65C4.38847 17.1001 5.26936 15.7205 6.52245 14.7387C7.77553 13.757 9.3259 13.2318 10.9177 13.25H11.0827C12.6744 13.2318 14.2248 13.757 15.4779 14.7387C16.7309 15.7205 17.6118 17.1001 17.9752 18.65Z" fill="currentColor"></path>
+        <path d="M21.5004 10.9998C21.5108 13.3645 20.7174 15.6626 19.2504 17.5173C18.8356 16.2987 18.1466 15.1916 17.2363 14.2814C16.3261 13.3712 15.219 12.6821 14.0004 12.2673C14.8135 11.6501 15.4123 10.7933 15.7124 9.81765C16.0126 8.842 15.9989 7.79676 15.6733 6.82931C15.3477 5.86186 14.7266 5.02102 13.8977 4.42536C13.0687 3.8297 12.0737 3.50928 11.0529 3.50928C10.0321 3.50928 9.03713 3.8297 8.20818 4.42536C7.37922 5.02102 6.75816 5.86186 6.43256 6.82931C6.10697 7.79676 6.09327 8.842 6.39341 9.81765C6.69354 10.7933 7.29236 11.6501 8.10542 12.2673C6.88682 12.6821 5.77973 13.3712 4.8695 14.2814C3.95927 15.1916 3.2702 16.2987 2.85542 17.5173C1.79166 16.2095 1.05841 14.6648 0.717686 13.0138C0.376957 11.3629 0.438759 9.65409 0.897868 8.03203C1.35698 6.40996 2.19989 4.92228 3.35535 3.69477C4.51081 2.46726 5.94484 1.536 7.5362 0.979724C9.12757 0.423451 10.8295 0.25852 12.498 0.498875C14.1666 0.73923 15.7528 1.3778 17.1224 2.36061C18.4921 3.34341 19.605 4.64156 20.367 6.14528C21.129 7.64901 21.5178 9.31411 21.5004 10.9998Z" fill="currentColor"></path>
+      </svg> 
+      <img class="avatar user-avatar" src="./Ch-12 Sensors_files/emon_mirza.jpeg" alt="User Profile" style="display: block;">
+      <div class="profile-greeting">
+        <!-- Set user greeting here -->
+      </div>
+    </div>
+    <div class="logout">
+      <a role="button" tabindex="0">Sign Out</a>
+    </div>
+  </div>
+</div></div>
+      </div>
+
+      <!-- Burger menu -->
+      <div class="burger-menu">
+        <div class="burger-main-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="burger-menu" viewBox="0 0 18 13" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-burger-menu.svg">
+  <path d="M17.25 7.25H0.75C0.551088 7.25 0.360322 7.17098 0.21967 7.03033C0.0790178 6.88968 0 6.69891 0 6.5C0 6.30109 0.0790178 6.11032 0.21967 5.96967C0.360322 5.82902 0.551088 5.75 0.75 5.75H17.25C17.4489 5.75 17.6397 5.82902 17.7803 5.96967C17.921 6.11032 18 6.30109 18 6.5C18 6.69891 17.921 6.88968 17.7803 7.03033C17.6397 7.17098 17.4489 7.25 17.25 7.25Z" fill="currentColor"></path>
+  <path d="M17.25 2H0.75C0.551088 2 0.360322 1.92098 0.21967 1.78033C0.0790178 1.63968 0 1.44891 0 1.25C0 1.05109 0.0790178 0.860322 0.21967 0.71967C0.360322 0.579018 0.551088 0.5 0.75 0.5H17.25C17.4489 0.5 17.6397 0.579018 17.7803 0.71967C17.921 0.860322 18 1.05109 18 1.25C18 1.44891 17.921 1.63968 17.7803 1.78033C17.6397 1.92098 17.4489 2 17.25 2Z" fill="currentColor"></path>
+  <path d="M17.25 12.5H0.75C0.551088 12.5 0.360322 12.421 0.21967 12.2803C0.0790178 12.1397 0 11.9489 0 11.75C0 11.5511 0.0790178 11.3603 0.21967 11.2197C0.360322 11.079 0.551088 11 0.75 11H17.25C17.4489 11 17.6397 11.079 17.7803 11.2197C17.921 11.3603 18 11.5511 18 11.75C18 11.9489 17.921 12.1397 17.7803 12.2803C17.6397 12.421 17.4489 12.5 17.25 12.5Z" fill="currentColor"></path>
+</svg>
+        </div>
+        <div class="burger-close-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" id="burger-close" viewBox="0 0 20 19" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/headerIcon-burger-close.svg">
+  <path d="M18.7099 16.7899C18.8037 16.8829 18.8781 16.9935 18.9288 17.1154C18.9796 17.2372 19.0057 17.3679 19.0057 17.4999C19.0057 17.632 18.9796 17.7627 18.9288 17.8845C18.8781 18.0064 18.8037 18.117 18.7099 18.2099C18.617 18.3037 18.5064 18.3781 18.3845 18.4288C18.2627 18.4796 18.132 18.5057 17.9999 18.5057C17.8679 18.5057 17.7372 18.4796 17.6154 18.4288C17.4935 18.3781 17.3829 18.3037 17.2899 18.2099L9.99994 10.9199L2.70994 18.2099C2.61698 18.3037 2.50638 18.3781 2.38452 18.4288C2.26266 18.4796 2.13195 18.5057 1.99994 18.5057C1.86793 18.5057 1.73722 18.4796 1.61536 18.4288C1.4935 18.3781 1.3829 18.3037 1.28994 18.2099C1.19621 18.117 1.12182 18.0064 1.07105 17.8845C1.02028 17.7627 0.994141 17.632 0.994141 17.4999C0.994141 17.3679 1.02028 17.2372 1.07105 17.1154C1.12182 16.9935 1.19621 16.8829 1.28994 16.7899L8.57994 9.49994L1.28994 2.20994C1.1967 2.1167 1.12274 2.00601 1.07228 1.88419C1.02182 1.76237 0.995847 1.6318 0.995847 1.49994C0.995847 1.36808 1.02182 1.23751 1.07228 1.11569C1.12274 0.99387 1.1967 0.88318 1.28994 0.789941C1.38318 0.696703 1.49387 0.622742 1.61569 0.572282C1.73751 0.521822 1.86808 0.49585 1.99994 0.49585C2.1318 0.49585 2.26237 0.521822 2.38419 0.572282C2.50601 0.622742 2.6167 0.696703 2.70994 0.789941L9.99994 8.07994L17.2899 0.789941C17.4782 0.601638 17.7336 0.49585 17.9999 0.49585C18.2662 0.49585 18.5216 0.601638 18.7099 0.789941C18.8982 0.978245 19.004 1.23364 19.004 1.49994C19.004 1.76624 18.8982 2.02164 18.7099 2.20994L11.4199 9.49994L18.7099 16.7899Z" fill="currentColor"></path>
+</svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- portal element-->
+    <div id="ino-portal-element"></div>
+  </nav>
+  <div id="consent-modal-container"></div>
+</header>
+<nagbar data-ref="0.14241951222045124"></nagbar></div>
+
+				<div class="navigate_section" id="headerbread">
+          <div class="row" style="max-width: 960px!important;">
+          <div class="small-12">
+					<ul>
+          
+						<li>
+					<a href="https://forum.arduino.cc/index.php"><span>Arduino Forum</span></a>
+						</li>
+						<li>
+							<span class="dividers"> &gt; </span>
+					<a href="https://forum.arduino.cc/index.php#c3"><span>Topics</span></a>
+						</li>
+						<li>
+							<span class="dividers"> &gt; </span>
+					<a href="https://forum.arduino.cc/index.php?board=18.0"><span>Education and Teaching</span></a>
+						</li>
+						<li class="last">
+							<span class="dividers"> &gt; </span>
+					<a href="https://forum.arduino.cc/index.php?topic=695781.0"><span>Ch-12  Sensors</span></a>
+						</li>
+						<li class="unread_links">
+                            <a href="https://forum.arduino.cc/index.php?action=profile;area=showalerts" id="alerts_menu_top">Alerts</a>
+                            <div id="alerts_menu" class="top_menu"></div>
+
+							<a href="https://forum.arduino.cc/index.php?action=unread" title="Show unread posts since last visit.">Unread Posts</a>
+							<a href="https://forum.arduino.cc/index.php?action=unreadreplies" title="Show new replies to your posts.">Updated Topics</a>
+              <a href="https://forum.arduino.cc/index.php?action=profile;area=showposts;u=1441812" title="My Posts">My Posts</a>
+              <a href="https://forum.arduino.cc/index.php?action=profile;u=1441812" title="Profile"><img src="./Ch-12 Sensors_files/emon_mirza.jpeg" alt="emon_mirza" class="avatar" style="height:1.2em;">&nbsp;emon_mirza</a>
+						</li>
+					</ul>
+        </div>
+				</div>
+				</div>
+  <div class="row collapse">
+  <div class="small-12 columns">
+	<div id="wrapper">
+    <div id="upper_section">
+			<div id="inner_section">
+				<div id="main_menu">
+					<ul class="dropmenu sf-js-enabled sf-arrows" id="menu_nav" style="touch-action: pan-y;">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content_section">
+			<div id="main_content_section">
+
+			<a id="msg4677511"></a><a id="new"></a>
+			<div class="pagesection top">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_reply " href="https://forum.arduino.cc/index.php?action=post;topic=695781.0;last_msg=4717573">Reply</a>
+				<a class="button-forum  button_strip_mark_unread" href="https://forum.arduino.cc/index.php?action=markasread;sa=topic;t=4677511;topic=695781.0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">Mark unread</a>
+				<a class="button-forum  button_strip_print" href="https://forum.arduino.cc/index.php?action=printpage;topic=695781.0" rel="nofollow">Print</a>
+				<a class="button-forum  button_strip_notify" href="https://forum.arduino.cc/index.php?topic=695781.msg4677511">No Alerts or Emails</a>
+					<div class="top_menu dropmenu notify_dropdown">
+						<div class="viewport">
+							<div class="overview"><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Not Following</strong><br><span>You will not receive any emails or alerts for this post and it will also not show up in your unread replies and topics list. You will still receive @mentions for this topic.</span></a><span class="notify_check checked"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=1;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>No Alerts or Emails</strong><br><span>You will not receive any emails or alerts but only @mentions by other members.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=2;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Alerts</strong><br><span>You will receive alerts for this topic.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=3;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails</strong><br><span>You will receive emails for this topic</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=4;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails and Alerts</strong><br><span>You will receive both alerts and e-mails for this topic.</span></a>
+							</div>
+						</div>
+					</div>
+		</div>
+				 <a href="https://forum.arduino.cc/index.php?topic=695781.msg4677511#bot" class="topbottom floatleft">Go Down</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="forumposts">
+				<div class="cat_bar">
+					<h3 class="catbg">
+						<span id="top_subject" class="topic-icon topic-icon-">Topic: Ch-12  Sensors&nbsp;<span>(Read 2291 times)</span></span>
+						<span class="nextlinks floatright"><a href="https://forum.arduino.cc/index.php?topic=695781.0;prev_next=prev#new">previous topic</a> - <a href="https://forum.arduino.cc/index.php?topic=695781.0;prev_next=next#new">next topic</a></span>
+					</h3>
+				</div>
+				<form action="https://forum.arduino.cc/index.php?action=quickmod2;topic=695781.0" method="post" accept-charset="UTF-8" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return oQuickModify.bInEditMode ? oQuickModify.modifySave(&#39;f27e02cfd2ffc059ad89808fbc1ebcc5&#39;, &#39;b9461d3f92&#39;) : false">
+				<div class="windowbg">
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-12 Sensors_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon">
+									<img src="./Ch-12 Sensors_files/clip.png" alt="">
+								</div>
+								<div id="subject_4677511" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=695781.msg4677511#msg4677511" rel="nofollow">Ch-12  Sensors</a></div>
+								<div class="page_number floatright">
+									 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=695781.msg4677511#msg4677511" rel="nofollow" title=" - Ch-12  Sensors" class="smalltext">Jul 16, 2020, 04:45 pm</a>
+									<span class="smalltext modified" id="modified_4677511"><span class="lastedit">Last Edit</span>: Jul 20, 2020, 07:11 am by GolamMostafa</span>
+								</h5>
+								<div id="msg_4677511_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4677511"><span class="bbc_bold">12.1 &nbsp;Introduction</span><br><span class="bbc_bold">1.</span> &nbsp;<span class="bbc_bold">(1)</span> &nbsp;What is a <span class="bbc_bold">Sensor?</span> <br>It is an "agent" that detects the environmental parameters like pressure, temperature, altitude, humidity, weight, color, etc. and produces proportional electrical signal. For example: LM35 is a temperature sensor, and it produces an electrical voltage of 250 mV when the environment temperature is 25<sup>0</sup>C. The sensor produces 300 mV signal when the environmental temperature is 30<sup>0</sup>C. <br><br><span class="bbc_bold">(2)</span> &nbsp;Sensor Accuracy<br><br><span class="bbc_bold">(3)</span> &nbsp;Sensor Precision<br><br><span class="bbc_bold">2.</span> &nbsp;Commonly used Sensors in Household Appliances and Industrial Machinery.<br><span class="bbc_bold">(1) &nbsp;LM35:</span> Analog type Temperature Sensor<br><img src="./Ch-12 Sensors_files/lm35Uno.png" alt="" class="bbc_img"><br>Figure-12.1: LM35 temperature sensor with UNO<br><br><span class="bbc_bold">(a)</span> &nbsp;Response Equation of LM35 (found using A(250 mV, 25<sup>0</sup>c) and B(300 mV, 30<sup>0</sup>C points of Section-1(1))<br>T<sup>0</sup>C ~= 100*V<sub>DT</sub> &nbsp; //V<sub>DT</sub>=DC Voltage at sensor output pin when temperature is T<sup>0</sup>C temp. <br>==&gt; T<sup>0</sup>C = 100*(V<sub>REF</sub>/1023)*analogRead(A4); <br><br><span class="bbc_bold">(2) &nbsp;DS18B20:</span> Digital type Temperature Sensor<br><img src="./Ch-12 Sensors_files/ds18b20Uno.png" alt="" width="500" height="243" class="bbc_img resized"><br>Figure-12.2: DS18B20 &nbsp;temperature sensor with UNO<br><br><span class="bbc_bold">(a)</span> &nbsp;Response Profile<br>Temperature changes gradually and hence there is a gradual change at the output of the "Sensing Element" of DS18B20 sensor. <br><br>The sensor's electronics is designed in such a way such that a change of 0.0625<sup>0</sup>C temperature in the environment, the BIT 0 of the following "Temperature Register" (Fig-12.3) assumes HIGH (1) state. <br><br>Read the bits of this register and multiply by the respective positional weights, you get the calibrated temperature value. <br><img src="./Ch-12 Sensors_files/ds18b20TempRegister.png" alt="" width="500" height="107" class="bbc_img resized"><br>Figure-12.3: Bit layout of the temperature register of DS18B20 sensor<br><br><span class="bbc_bold">(3) &nbsp;I2C Bus Driven 5V BME280 Sensor Breakout Board</span> (with on-board level sifters and Voltage Regulator): Pressure, Temperature, and Humidity Sensor.<br><br>A "Breakout Board" contains facilities to mount pins/sockets for making jumper connections with Arduino.<br><br><img src="./Ch-12 Sensors_files/bme280-1.png" alt="" width="500" height="262" class="bbc_img resized"><br>Figure-12.4: BME280 sensor is on a breakout board<br><br><span class="bbc_bold">(4) &nbsp;I2C Bus Driven 5V MPU6050 Sensor Breakout Board:</span> 3-axis Accelerometer and 3-axis Gyroscope.<br>It is a Micro Electro-Mechanical Systems (MEMS). The sensor measures acceleration, velocity, orientation, displacement, and many other motion related parameters of a system or object. <br><img src="./Ch-12 Sensors_files/MPU6050Pic.png" alt="" class="bbc_img"><br>Figure-12.5:<br><br><span class="bbc_bold">(5) &nbsp;Load cell (30 kg)</span><br>It is a "wheatstone bridge" type sensor. It produces a DC output voltage proportional to weight placed on it. The load cell of Fig-12.6 produces around 10 mV signal when 30 kg weight/load is placed on it.<br><br><img src="./Ch-12 Sensors_files/loadcellPic.png" alt="" class="bbc_img"><br>Figure-12.6: &nbsp;Wheatstone bridge type load cell <br><br><span class="bbc_bold">3. &nbsp;Calibration Philosophy of a Load Cell Sensor</span><br><span class="bbc_bold">(1)</span> &nbsp;An "ideal load cell sensor" (say: Fig-6) will produce "zero output voltage" when "no weight' is placed on it. It will also output 5 mV signal when 15 kg load is placed on it. The response curve of an ideal sensor passes through origin and make 45<sup>o</sup> angle with the abscissa (Fig-12.7 drawn not to scale).<br><br><img src="./Ch-12 Sensors_files/calib-1.png" alt="" class="bbc_img"><br>Figure-12.7: Response curve of an ideal load cell<br><br><span class="bbc_bold">(2)</span> &nbsp;An ideal load cell exits in the ideal mind/world. In the practical field, there is a "real load cell sensor" which produces some amount of finite output voltage when there is no load placed on it. This voltage is known as "offset". The real load cell also produces more output voltage (say 5.3 mV) than what should be (5 mV) when 15 kg weight/load is applied on it. It demonstrates that the real load cell is amplifying the signal or to say in other way that the load cell has applied "gain" to the signal. Fig--12.8 (drawn not to scale) depicts the response curve of a real sensor. &nbsp;<br><br><img src="./Ch-12 Sensors_files/calib-2.png" alt="" class="bbc_img"><br>Figure-12.8: Response curve of a real load cell<br><br><span class="bbc_bold">(3)</span> &nbsp;Now, we see that a real load cell (in general sensor) has deviated from its ideal nature due to some imperfections that has introduced into it during manufacturing. Every real sensor has "gain" and "offset".<br><br><span class="bbc_bold">(4)</span> &nbsp;If we know the value of "offset", the we can subtract it from the actual/measured measurement. If we know the value of "gain", then we can reduce the actual/measurement value by multiplying it with the inverse of the gain (the gain factor). <br><br><span class="bbc_bold">(5)</span> &nbsp;<span class="bbc_bold">Calibration</span> is the task of finding the "gain" and "offset" of the real sensor from the 'Real Response" curve of the load cell (in general the sensor).<br><br>... to be continued</div>
+							</div>
+							<div id="msg_4677511_footer" class="attachments">
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/MPU6050Pic.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;MPU6050Pic.png</a> 
+											<br>77.15 KB<br>downloaded 738 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/loadcellPic.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;loadcellPic.png</a> 
+											<br>41.42 KB<br>downloaded 725 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="https://forum.arduino.cc/index.php?action=dlattach;topic=695781.0;attach=373488"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280I2CPic.jpg</a> 
+											<br>14.24 KB<br>downloaded 326 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/lm35Uno.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;lm35Uno.png</a> 
+											<br>25.34 KB<br>downloaded 538 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/ds18b20Uno.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;ds18b20Uno.png</a> 
+											<br>23.57 KB<br>downloaded 516 times
+										</div>
+									</div>
+									<br>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/ds18b20TempRegister.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;ds18b20TempRegister.png</a> 
+											<br>9.48 KB<br>downloaded 473 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="https://forum.arduino.cc/index.php?action=dlattach;topic=695781.0;attach=373791"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;cal-1.png</a> 
+											<br>6.71 KB<br>downloaded 130 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="https://forum.arduino.cc/index.php?action=dlattach;topic=695781.0;attach=373805"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;theta.png</a> 
+											<br>1.04 KB<br>downloaded 97 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/bme280-1.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;bme280-1.png</a> 
+											<br>108.94 KB<br>downloaded 404 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/calib-1.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;calib-1.png</a> 
+											<br>9.11 KB<br>downloaded 378 times
+										</div>
+									</div>
+									<br>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/calib-2.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;calib-2.png</a> 
+											<br>9.38 KB<br>downloaded 377 times
+										</div>
+									</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=695781.0;msg=4677511">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4677511;topic=695781.0;last_msg=4717573" onclick="return oQuickReply.quote(4677511);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div><div id="ad_container_zone" class="adv-banner"><script src="./Ch-12 Sensors_files/ajs.php"></script></div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg4677514"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-12 Sensors_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon">
+									<img src="./Ch-12 Sensors_files/clip.png" alt="">
+								</div>
+								<div id="subject_4677514" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=695781.msg4677514#msg4677514" rel="nofollow">Re: Ch-12  Sensors</a></div>
+								<div class="page_number floatright">
+									 #1 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=695781.msg4677514#msg4677514" rel="nofollow" title="Reply #1 - Re: Ch-12  Sensors" class="smalltext">Jul 16, 2020, 04:46 pm</a>
+									<span class="smalltext modified" id="modified_4677514"><span class="lastedit">Last Edit</span>: Aug 19, 2020, 03:55 am by GolamMostafa</span>
+								</h5>
+								<div id="msg_4677514_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4677514"><span class="bbc_bold">12.2 &nbsp;Architecture of BME280 Sensor Module</span><br>BME280 is a 3.3V sensor. Therefore, one must use level sifters (5V/3.3V/5V) to operate it with Arduino UNO/MEGA/NANO. The sensor can be directly connected with Arduino DUE which is a is 3.3V device. <br><br><span class="bbc_bold">1.</span> &nbsp;The BME280 Sensor MODULE contains the following three sensing elements:<br><img src="./Ch-12 Sensors_files/bme280SensorPic.png" alt="" class="bbc_img"><br>Fig-12.9: 3.3V operational voltage BME280 sensor (2.5 mm x 2.5 mm x 0.93 mm)<br><br><span class="bbc_bold">(1)</span> &nbsp;Temperature Sensor<br><span class="bbc_bold">(2)</span> &nbsp;Pressure Sensor<br><span class="bbc_bold">(3)</span> &nbsp;Humidity Sensor<br><span class="bbc_bold">(4)</span> &nbsp;Architecture <br><br><img src="./Ch-12 Sensors_files/BME280Arch.png" alt="" width="500" height="269" class="bbc_img resized"><br>Figure-12.9: Architecture of BME280 3.3V Sensor<br><br><span class="bbc_bold">(5)</span> &nbsp;<span class="bbc_bold">(a)</span> &nbsp;Register Set<br><img src="./Ch-12 Sensors_files/RegSetBME280.png" alt="" width="500" height="208" class="bbc_img resized"><br>Figure-12.10: Register Set of BME280 Sensor<br><br><img src="./Ch-12 Sensors_files/BME280CalReg.png" alt="" width="500" height="432" class="bbc_img resized"><br><span class="bbc_bold">(b)</span> &nbsp;Expanded view of Calibration Coefficient Registers<br>Figure-12.11: Expanded view of calibration coefficient registers<br><br><span class="bbc_bold">2.</span> &nbsp;<span class="bbc_bold">(1)</span> &nbsp;The BME280 Sensor Module has 8 pins (Fig-7) with signal signatures as described in Fig-12.10:<br><img src="./Ch-12 Sensors_files/BME280Pin.png" alt="" width="500" height="238" class="bbc_img resized"><br>Figure-12.11: Pins of BME280<br><br><span class="bbc_bold">(2)</span> &nbsp;Pin Connection Options of BME280<br><img src="./Ch-12 Sensors_files/BME280PinCon.png" alt="" width="500" height="270" class="bbc_img resized"><br>Figure-12.12: Table showing pin connection options<br><br><span class="bbc_bold">3.</span> &nbsp;<span class="bbc_bold">(1)</span> &nbsp;3.3V BME280 Sensor Breakout Board without on-board Level Sifters and Voltage Regulator <br><img src="./Ch-12 Sensors_files/BME280BreakOut.png" alt="" class="bbc_img"><br>Figure-12.13: Breakout board without level sifter<br><br><span class="bbc_bold">(2)</span> &nbsp;4-Wire SPI Port Connection with 3.3V BME280 Sensor Breakout Board using External Level Sifters<br><img src="./Ch-12 Sensors_files/BME280spi.png" alt="" class="bbc_img"><br>Figure-12.14: 4-Wire SPI Port connection of Fig-9 breakout board<br><br><span class="bbc_bold">(3)</span> &nbsp;I2C Bus Connection of 3.3V BME280 Sensor Breakout Board with External Level Sifters<br><img src="./Ch-12 Sensors_files/BME280I2c.png" alt="" width="500" height="270" class="bbc_img resized"><br>Figure-12.15: I2C Bus connection of 3.3v breakout board<br><br><span class="bbc_bold">4.</span> &nbsp;<span class="bbc_bold">(1)</span> &nbsp;5V BME280 Sensor Breakout Board with on-board Level Sifters<br><img src="./Ch-12 Sensors_files/BME280Total.png" alt="" width="500" height="254" class="bbc_img resized"><br>Figure-12.16: I2C bus breakout board with level sifters<br><br><span class="bbc_bold">(2)</span> &nbsp;I2C Bus Connection with 5V BME280 Sensor Breakout Board using on-board Level Sifters<br><img src="./Ch-12 Sensors_files/bme280i2c-1.png" alt="" width="500" height="249" class="bbc_img resized"><br>Figure-12.17: Connection diagarm between 5VBME280 Breakout and UNO using I2C Bus</div>
+							</div>
+							<div id="msg_4677514_footer" class="attachments">
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280Total.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280Total.png</a> 
+											<br>186.15 KB<br>downloaded 671 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280Pin.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280Pin.png</a> 
+											<br>43.43 KB<br>downloaded 651 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280PinCon.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280PinCon.png</a> 
+											<br>38.42 KB<br>downloaded 651 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280BreakOut.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280BreakOut.png</a> 
+											<br>101.89 KB<br>downloaded 1041 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280Arch.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280Arch.png</a> 
+											<br>48.56 KB<br>downloaded 625 times
+										</div>
+									</div>
+									<br>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280spi.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280spi.png</a> 
+											<br>19.84 KB<br>downloaded 960 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280I2c.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280I2c.png</a> 
+											<br>13.47 KB<br>downloaded 559 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/bme280SensorPic.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;bme280SensorPic.png</a> 
+											<br>13.03 KB<br>downloaded 557 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/bme280i2c-1.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;bme280i2c-1.png</a> 
+											<br>20.83 KB<br>downloaded 498 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/RegSetBME280.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;RegSetBME280.png</a> 
+											<br>190.26 KB<br>downloaded 357 times
+										</div>
+									</div>
+									<br>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280CalReg.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280CalReg.png</a> 
+											<br>162.48 KB<br>downloaded 225 times
+										</div>
+									</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=695781.1;msg=4677514">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4677514;topic=695781.0;last_msg=4717573" onclick="return oQuickReply.quote(4677514);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg4677515"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-12 Sensors_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon">
+									<img src="./Ch-12 Sensors_files/clip.png" alt="">
+								</div>
+								<div id="subject_4677515" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=695781.msg4677515#msg4677515" rel="nofollow">Re: Ch-12  Sensors</a></div>
+								<div class="page_number floatright">
+									 #2 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=695781.msg4677515#msg4677515" rel="nofollow" title="Reply #2 - Re: Ch-12  Sensors" class="smalltext">Jul 16, 2020, 04:46 pm</a>
+									<span class="smalltext modified" id="modified_4677515"><span class="lastedit">Last Edit</span>: Jul 22, 2020, 06:15 pm by GolamMostafa</span>
+								</h5>
+								<div id="msg_4677515_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4677515"><span class="bbc_bold">12.3 &nbsp;Programming of I2C Bus driven BME280 Sensor</span> using 5VBME280 Beakout Board of Fig-12.4.<br>In this Section, We will develop a sketch to read temperature data from BME280 sensor and then the value will be shown on Serial Monitor. Pressure and humidity measurement and display will be done in some other sections.<br><br>The BME280 Sensor can be operated using SPI Port or I2C Bus. We will use I2C Bus which is directly supported by the 5VBME280 Breakout Board of Fig-12.4.<br><br><span class="bbc_bold">1.</span> &nbsp;<span class="bbc_bold">(1)</span> &nbsp;Let us check that the sensor placed on the breakout board of Fig-12.4 is really a BME280 sensor by reading the "ID code (0x60)" from the sensor's "ID Register". You may ask question why is it not enough to know the I2C Bus address?<br><br><span class="bbc_bold">(2)</span> &nbsp;Look at Fig-12.10 and check that the "internal address" of the "ID Register" is 0xD0 and the "ID Code" it holds is 0x60.<br><br><span class="bbc_bold">(3)</span> &nbsp;The codes to be executed are:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: 200px;">Wire.beginTransmission(0x76); &nbsp;//addressing the "Whole Sensor" at I2C Bus address x76<br>Wire.write(0XD0); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//pointing at the ID Register<br>Wire.endTransmission();<br>//-----------------------<br>Wire.requestFrom(0x76, 1); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//request to read 1-byte data from IN Register pointed in Step-c<br>byte idValue = Wire.read(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //idValue should hold 0x60<br>//-------------------------<br>if(idValue == 0x60)<br>{<br>&nbsp;&nbsp; &nbsp; Serial.println("Sensor's ID found as 0x60.");<br>}<br>else<br>{<br>&nbsp;&nbsp; &nbsp; Serial.println("Sensor's ID is not found...!");<br>&nbsp;&nbsp; &nbsp; while(1): &nbsp; &nbsp;//wait for ever<br>}</code><br>&nbsp;<br><span class="bbc_bold">2.</span> &nbsp;<span class="bbc_bold">(1)</span> &nbsp;Set "Normal Mode" operation of the sensor by putting 1/1 into bit1/bit0 positions of the <span class="bbc_bold">ctrl_meas</span> register (Fig-12.10). The address of the ctrl_meas register is given as: 0xF4. &nbsp; <br><br><span class="bbc_bold">(2)</span> &nbsp;Write codes for the task of Step-2(1).<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">Wire.beginTransmission(0x76); &nbsp;//addressing the "Whole Sensor" at I2C Bus address x76<br>Wire.write(0XF4); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//pointing at ctrl_meas Register<br>Wire.write(0x03); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//data for bit1/bit0 of the ctrl_meas register.<br>Wire.endTransmission();<br>//-----------------------</code><br><span class="bbc_bold">Note:</span> &nbsp;While writing into bit1/bit0 of ctrl_meas register, the other bits should remain undisturbed. But, the codes of Step-2(2) corrupt bit7-bit2 by putting 0s there. Therefore, the codes of Step-2(2) are to be modified as follows so that only bit1/bit0 bits are addressed.<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: 200px;">[code]Wire.beginTransmission(0x76); &nbsp; //the sensor holds the register<br>Wire.write(0xF4); &nbsp; //point the ctrl_meas register<br>Wire.endTransmission();<br>//------------------------------------------------------<br>Wire.requestFrom(0x76, 1); &nbsp; &nbsp;//read the content of ctrl_meas register<br>byte x = Wire.read();<br>x = x | 0b00000011; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //only bi1/bit0 of ctrl_meas are changed; other bits remain unrouched.<br>//-----------------------------------------------------<br>Wire.beginTransmission(0x76);<br>Wire.write(0xF4);<br>Wire.write(x);<br>Wire.endTransmission();</code><br><span class="bbc_bold">3.</span> &nbsp;<span class="bbc_bold">(1)</span> &nbsp;Now, we are going to read temperature data from the "Temperature Register" of BME280 sensor. In Fig-12.10, we observe that the Temperature Register is composed of the following 3 locations (Fig-12.18):<br><img src="./Ch-12 Sensors_files/BME280TempReg.png" alt="" class="bbc_img"><br>Figure-12.18: Bit pattern of Temperature Register.<br><br><span class="bbc_bold">(2)</span> &nbsp;Fig-12.18 says that the Temperature Register has 20 active bits and they are formed as:<br><img src="./Ch-12 Sensors_files/BME280TempREG-2.png" alt="" class="bbc_img"><br>Figure-12.19: Formation of 20-bit active bits for Temperature Register<br><br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">long tempReg = (long)|(long)(temp_msb&lt;&lt;12)|(long)(temp_lsb&lt;&lt;4)|(long)(temp_xlsb&gt;&gt;4)</code><br><span class="bbc_bold">(3)</span> &nbsp;In Normal Mode operation, the signal conversion (from varying DC to digital form) within BME280 takes place perpetually; there is no need to issue any command from the host (the Arduino UNO) computer. As long as the conversion is in progress, the <span class="bbc_bold">bit3</span> (measuring) of <span class="bbc_bold">Status</span> Register (fig-12.10) remains at HIGH state. After the conversion, the bit3 assumes LOW state and the data from ADC is transferred into the registers of Fig-12.18. Now, our task will be to poll the <span class="bbc_bold">measuring</span> bit to see when it goes to LOW state and then bring those data to UNO. The codes are:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: 200px;">Wire.beginTransmission(0x76); &nbsp; //the sensor holds the register<br>Wire.write(0xF3); &nbsp; //point the status register; Fig-12.10<br>Wire.endTransmission();<br>//------------------------------------------------------<br>do<br>{<br>&nbsp;&nbsp; Wire.requestFrom(0x76, 1); &nbsp; &nbsp;//read the content of status register pointed above<br>&nbsp;&nbsp; byte x = Wire.read();<br>}<br>while(bitRead(x, 3) != LOW); &nbsp; &nbsp; //keep checking until conversion is done<br>//--------------------------------------------------------------------------------</code><br><br><span class="bbc_bold">4.</span> &nbsp;Read Temperature Data by executing the following codes:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">Wire.beginTransmission(0x76);<br>Wire.write(0xFA); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //pointing temp_msb register; auto increment<br>Wire.endTransmission();<br>//-------------------------------<br>byte m = Wire.requestFrom(0x76, 3); &nbsp; &nbsp;//request to read 3-byte data<br>uint8_t temp_msb = Wire.read(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//MSByte<br>uint8_t temp_lsb = Wire.read(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//NSByte<br>uint8_t temp_xlsb = Wire.read(); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//LSByte</code><br><br><span class="bbc_bold">5.</span> &nbsp;Manipulate the contents of the variables of Step-4 as per Fig-12.20 so that the resultant 20 active bits of temperature data are saved in the variable <span class="bbc_bold">tempReg</span>.<br><img src="./Ch-12 Sensors_files/BME280TempREG-2.png" alt="" width="500" height="49" class="bbc_img resized"><br>Figure-12.20: Formation of 20-bit active bits for Temperature Register<br><br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;">uint32_t tempReg = (uint32_t)(temp_msb&lt;&lt;12)|(uint32_t)(temp_lsb&lt;&lt;4)|(uint32_t)(temp_xlsb&gt;&gt;4)</code><br><span class="bbc_bold">6.</span> &nbsp;Let us process the value of <span class="bbc_bold">tempReg</span> variable of Step-4 to get the actual value of temperature in <sup>o</sup>C with 2-digit precision after the decimal point.<br>[/code]<br></div>
+							</div>
+							<div id="msg_4677515_footer" class="attachments">
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/smwq.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;smwq.png</a> 
+											<br>19.62 KB<br>downloaded 394 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280TempReg.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280TempReg.png</a> 
+											<br>37.88 KB<br>downloaded 197 times
+										</div>
+									</div>
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="./Ch-12 Sensors_files/BME280TempREG-2.png"><img src="./Ch-12 Sensors_files/clip(1).png" class="centericon" alt="*">&nbsp;BME280TempREG-2.png</a> 
+											<br>5.63 KB<br>downloaded 198 times
+										</div>
+									</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=695781.2;msg=4677515">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4677515;topic=695781.0;last_msg=4717573" onclick="return oQuickReply.quote(4677515);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg4677517"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-12 Sensors_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="./Ch-12 Sensors_files/xx.png" alt="">
+								</div>
+								<div id="subject_4677517" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=695781.msg4677517#msg4677517" rel="nofollow">Re: Ch-12  Sensors</a></div>
+								<div class="page_number floatright">
+									 #3 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=695781.msg4677517#msg4677517" rel="nofollow" title="Reply #3 - Re: Ch-12  Sensors" class="smalltext">Jul 16, 2020, 04:47 pm</a>
+									<span class="smalltext modified" id="modified_4677517"><span class="lastedit">Last Edit</span>: Jul 22, 2020, 09:25 am by GolamMostafa</span>
+								</h5>
+								<div id="msg_4677517_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4677517"><br><span class="bbc_bold">(3)</span> &nbsp;Select "Normal Mode of Operation" <br>bme1.parameter.sensorMode = 0b11;<br><br><span class="bbc_bold">(4)</span> &nbsp;Set "factor" of IIR (Infinite Impulse Response) filter. A high value meas less noise<br>bme1.parameter.IIRfilter = 0b100; &nbsp; &nbsp; //factor 16<br><br><span class="bbc_bold">(5)</span> &nbsp;Set "over sampling factor" for humidity sensor. Higher value means less noise.<br>bme1.parameter.humidOversampling = 0b101; &nbsp; &nbsp;//factor 16<br><br><span class="bbc_bold">(6)</span> &nbsp;Set "over sampling factor" for temperature sensor. Higher value means less noise.<br>bme1.parameter.tempOversampling = 0b101; &nbsp; &nbsp;//factor 16<br><br><span class="bbc_bold">(7)</span> &nbsp;Set "over sampling factor" for pressure sensor. Higher value means less noise.<br>bme1.parameter.pressOversampling = 0b101; &nbsp; &nbsp;//factor 16<br><br><span class="bbc_bold">(8)</span> &nbsp;Put present pressure corrected at sea level <br>bme1.parameter.pressureSeaLevel = 1013.25; &nbsp; &nbsp;//default 1013.25 hPa = hecta Pascal<br><br><span class="bbc_bold">(9)</span> &nbsp;Put current average temperature outside<br>bme1.parameter.tempOutsideCelsius = 15; &nbsp; &nbsp; //default 15 degree centrigrade<br><br><span class="bbc_bold">(10)</span> &nbsp;heck if the Sensor is present by reading its ID (0x60)<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: 200px;"><br>&nbsp;&nbsp;if (bme1.init() != 0x60)<br>&nbsp;&nbsp;{ &nbsp; &nbsp;<br>&nbsp;&nbsp; &nbsp;Serial.println(F("Ops! First BME280 Sensor not found!"));<br>&nbsp;&nbsp; &nbsp;bme1Detected = 0;<br>&nbsp;&nbsp; &nbsp;while(1); //wait for ever<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;else<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp; &nbsp;Serial.println(F("First BME280 Sensor detected!"));<br>&nbsp;&nbsp; &nbsp;bme1Detected = 1;<br>&nbsp;&nbsp; <br>&nbsp;&nbsp;}</code><br><br><span class="bbc_bold">(11)</span> &nbsp;<br><br><br><span class="bbc_bold">Sketch:</span><br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: 200px;">#include &lt;Wire.h&gt;<br>#include "BlueDot_BME280.h"<br><br>BlueDot_BME280 bme;<br>int bmeDetected = 0; &nbsp; &nbsp;//Checks if Sensor 1 is available<br><br>void setup()<br>{<br>&nbsp;&nbsp;Serial.begin(9600);<br>&nbsp;&nbsp;Serial.println(F("Basic Weather Station"));<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;bme.parameter.communication = 0; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//I2C communication for Sensor &nbsp;(bme1)<br>&nbsp;&nbsp;bme.parameter.I2CAddress = 0x76; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//I2C Address for Sensor &nbsp;(bme1)<br>&nbsp;&nbsp;bme.parameter.sensorMode = 0b11; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Setup Sensor mode for Sensor <br>&nbsp;&nbsp;bme.parameter.IIRfilter = 0b100; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //IIR Filter for Sensor <br>&nbsp;&nbsp;bme.parameter.humidOversampling = 0b101; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Humidity Oversampling for Sensor <br>&nbsp;&nbsp;bme.parameter.tempOversampling = 0b101; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//Temperature Oversampling for Sensor <br>&nbsp;&nbsp;bme.parameter.pressOversampling = 0b101; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Pressure Oversampling for Sensor <br>&nbsp;&nbsp;bme.parameter.pressureSeaLevel = 1013.25; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//default value of 1013.25 hPa (Sensor)<br>&nbsp;&nbsp;bme.parameter.tempOutsideCelsius = 15; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //default value of 15°C<br><br>&nbsp;&nbsp;if (bme.init() != 0x60)<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp; &nbsp;Serial.println(F("Ops! First BME280 Sensor not found!"));<br>&nbsp;&nbsp; &nbsp;bmeDetected = 0;<br>&nbsp;&nbsp; &nbsp;while (1); //wait for ever<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp; &nbsp;Serial.println(F("First BME280 Sensor detected!"));<br>&nbsp;&nbsp; &nbsp;bmeDetected = 1;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;Serial.println();<br>&nbsp;&nbsp;Serial.println();<br>}<br><br>void loop()<br>{<br>&nbsp;&nbsp;Serial.print("Temperature Sensor [°C]: &nbsp;");<br>&nbsp;&nbsp;float bmeTemp = bme.readTempC();<br>&nbsp;&nbsp;Serial.println(bmeTemp, 2);<br>&nbsp;&nbsp;//------------------------------------------<br>&nbsp;&nbsp;Serial.print("Humidity Sensor [%]: &nbsp; &nbsp; ");<br>&nbsp;&nbsp;float bmeHumid = bme.readHumidity();<br>&nbsp;&nbsp;Serial.println(bmeHumid, 2);<br>&nbsp;&nbsp;//-------------------------------------------<br>&nbsp;&nbsp;Serial.print("Pressure Sensor [hPa]: &nbsp;");<br>&nbsp;&nbsp;float bmePress = bme.readPressure();<br>&nbsp;&nbsp;Serial.println(bmePress, 2);<br>&nbsp;&nbsp;//--------------------------------------------<br>&nbsp;&nbsp;Serial.print("Altitude Sensor [m]: &nbsp; &nbsp; &nbsp;");<br>&nbsp;&nbsp;float bmeAlt = bme.readAltitudeMeter();<br>&nbsp;&nbsp;Serial.println(bmeAlt, 2);<br>&nbsp;&nbsp;//----------------------------------------------<br>&nbsp;&nbsp;Serial.println("****************************************");<br>&nbsp;&nbsp;Serial.println();<br>&nbsp;&nbsp;<br>&nbsp;&nbsp;delay(3000); &nbsp;//test interval<br>}</code><br><br><img src="./Ch-12 Sensors_files/smwq.png" alt="" width="500" height="422" class="bbc_img resized"><br><br><br><br>...to be continued[/code]<br><br>[/code]<br><br><br><span class="bbc_bold">12.4 &nbsp;Questions and Answers</span><br><span class="bbc_bold">1.</span> &nbsp;Consult Fig-12.9, 12,11, 12,12, 12.3 and then draw 4-wire SPI connection diagram between 3.3V BME280 Breakout Board (Fig-12.13) and Arduino UNO.<br><br><span class="bbc_bold">(1)</span> &nbsp;Take a blank page of your working khata.<br><span class="bbc_bold">(2)</span> &nbsp;Draw a 2"x1" rectangle at the left size of the khata and this name on the top of the rectangle: "3.3V BME280 Breakout". Label the rectangle as Fig-1 at the bottom.<br><br><span class="bbc_bold">(3)</span> &nbsp;Draw about 1" sized four lines from Figure-1 and attach the following signal names with these four lines and inside the rectangle (Fig-12.15).<br><span class="bbc_bold">(a)</span> &nbsp;VCC<br><span class="bbc_bold">(b)</span> &nbsp;GND<br><span class="bbc_bold">(c)</span> &nbsp;SCL<br><span class="bbc_bold">(d)</span> &nbsp;SDA <br><span class="bbc_bold">(e)</span> &nbsp;CSB<br><span class="bbc_bold">(f)</span> &nbsp;SD0 &nbsp;<br><br><span class="bbc_bold">(4)</span> &nbsp;Draw another rectangle at the right side of Fig-1 and keeping about 2" gap. Label the new rectangle as ARduino UNO and Figure-2.<br><br><span class="bbc_bold">(5)</span> &nbsp;The following four SPI lines are coming from UNO:<br><span class="bbc_bold">(a)</span> &nbsp;SS/ (Slave Select, Active Low)<br><span class="bbc_bold">(b)</span> &nbsp;MOSI (Master out Slave In)<br><span class="bbc_bold">(c)</span> &nbsp;MISO (Master In Slave Out)<br><span class="bbc_bold">(d)</span> &nbsp;SCK (Serial Clock)<br><br><span class="bbc_bold">(6)</span> &nbsp;The logic levels of the IO lines of Step-5 are:<br><span class="bbc_bold">(a)</span> &nbsp;0V = Logic Low<br><span class="bbc_bold">(b)</span> &nbsp;5V = Logic High<br><br><span class="bbc_bold">(7)</span> &nbsp;The logic level of the IO lines of the breakout board of Step-3 are:<br><span class="bbc_bold">(a)</span> &nbsp;0V = Logic Low<br><span class="bbc_bold">(b)</span> &nbsp;3.3V = Logic High<br><br><span class="bbc_bold">(8)</span> &nbsp;Information of Step-6 and 7 indicate that the SPI lines of UNO can not be directly connected with the corresponding IP lines of the 3.3VBME280 breakout board. There is a need to place between then level sifter to convert 5V logic to 3.3V logic and 3.3V logic to 5V logic. <br><br><span class="bbc_bold">(9)</span> &nbsp;Draw another 1.5"x1" rectangle between Fig-1 and Fig-2 having some gaps at both sides. Label the rectangle as "Figure-3: Level sifter".<br><br><span class="bbc_bold">(10)</span> &nbsp;There are 3.3V and 5V point on the UNO board. Draw line from VCC-pin of Fig-1 to 3.3V-pin of UNO.<br><br><span class="bbc_bold">(11)</span> &nbsp;Draw line beween GND-pin of Fig-1 and GND-pin of Fig-2.<br><span class="bbc_bold">(12)</span> &nbsp;Draw a lne from Fig-2 (UNO) upto Fig-3 (Level Sifter). At the UNO side, put this name: <span class="bbc_bold">SS/</span> at the end of the line.<br><br><span class="bbc_bold">(13)</span> &nbsp;Now consult Fig-12.9, 12.11, 12.12 to find the signal of the breakout board with which the SS/ line of UNO would be connected. There is no such direct name SS/ on the breakout board; but, there must an equivalent one with some-other name. &nbsp;<br><br>Is it not <span class="bbc_bold">CSB</span> signal? Yes, it is this signal with which SS/ line of UNO (after level sifting) would have connection.<br><br>Draw a line from CSB-pin of the breakout board upto Fig-3. Now within the rectangle of Fig-3, draw dotted line (...) from CSB signal to SS/ signal/<br><br>Within Fig-1 and at the left of CSB signal, put this name withing pair of parentheses: (SS/). ((SS/)CSB)<br><br><span class="bbc_bold">(14)</span> &nbsp;Draw MOSI line from Fig-2 to Fig-3. Consult the refereed figures to find the signal name of the breakout board with which the MOSI line would be connected.<br><br>Is it not <span class="bbc_bold">SDI</span> in Fig-12.12? <br><br>If yes, it is which signal of breakout board? <br>Is it not SDA? <br>If yes, draw a line from SDA signal of Fig-1 to Fig-3. <br><br>Draw dotted line (....) within Fig-3 between SDA signal and MOSI signal.<br><br>To the left of SDA signal of Fig-1, put the word <span class="bbc_bold">MOSI</span> with a pair of parentheses. (MOSI)SDA<br><br><span class="bbc_bold">(15)</span> &nbsp;Draw MISO line from Fig-2 to Fig-3. Consult the refereed figures to find the signal name of the breakout board with which the MISO line would be connected.<br><br>Is it not <span class="bbc_bold">SDO</span> in Fig-12.12? <br><br>If yes, it is which signal of breakout board? <br>Is it not SDO? <br>If yes, draw a line from SDO signal of Fig-1 to Fig-3. <br><br>Draw dotted line (....) within Fig-3 between SD) signal and MISO signal.<br><br>To the left of SDO signal of Fig-1, put the word <span class="bbc_bold">MISO</span> with a pair of parentheses. (MISO)SDO<br><br><span class="bbc_bold">(16)</span> &nbsp;Draw SCK line from Fig-2 to Fig-3. Consult the refereed figures to find the signal name of the breakout board with which the SCK line would be connected.<br><br>Is it not <span class="bbc_bold">SCK</span> in Fig-12.12? <br><br>If yes, it is which signal of breakout board? <br>Is it not SSCL? <br>If yes, draw a line from SCL signal of Fig-1 to Fig-3. <br><br>Draw dotted line (....) within Fig-3 between SSCL signal and SCK signal.<br><br>To the left of SSCL signal of Fig-1, put the word <span class="bbc_bold">SCK</span> with a pair of parentheses. (SCK)SCL<br><br><span class="bbc_bold">(17)</span> &nbsp;From the top side of Fig-3, draw 2 lines (See Fig-12.14 for my style); where, one will go to 5V point of UNO and another will go to 3.3V point of breakout board.<br><br><span class="bbc_bold">(18)</span> &nbsp;make a fresh copy of your above diagram and compare with mine one in Fig-12.14. Check that both are the same.<br><br><span class="bbc_bold">2.</span> &nbsp;Consult Fig-12.9, 12,11, 12,12, 12.3 and then draw i2C Bus connection diagram between 3.3V BME280 Breakout Board and Arduino UNO.<br><br>... to be continued</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=695781.3;msg=4677517">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4677517;topic=695781.0;last_msg=4717573" onclick="return oQuickReply.quote(4677517);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg4679067"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=610642" title="View the profile of GolamMostafa" class="pm_icon">GolamMostafa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=610642"><img class="avatar" src="./Ch-12 Sensors_files/GolamMostafa.jpeg" alt="avatar_GolamMostafa" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 5,446</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=610642" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 342&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=610642;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="./Ch-12 Sensors_files/xx.png" alt="">
+								</div>
+								<div id="subject_4679067" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=695781.msg4679067#msg4679067" rel="nofollow">Re: Ch-12  Sensors</a></div>
+								<div class="page_number floatright">
+									 #4 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=695781.msg4679067#msg4679067" rel="nofollow" title="Reply #4 - Re: Ch-12  Sensors" class="smalltext">Jul 18, 2020, 09:12 am</a>
+									<span class="smalltext modified" id="modified_4679067"></span>
+								</h5>
+								<div id="msg_4679067_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4679067">...this is also reserved.</div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=695781.4;msg=4679067">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4679067;topic=695781.0;last_msg=4717573" onclick="return oQuickReply.quote(4679067);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg4717573"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=411246" title="Offline"><span class="off" title="Offline"></span></a>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=411246" title="View the profile of Koepel" class="pm_icon">Koepel</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=411246"><img class="avatar" src="./Ch-12 Sensors_files/Koepel.jpg" alt="avatar_Koepel" onerror="this.src=&#39;//dcw9y8se13llu.cloudfront.net/avatars/default.png&#39;;"></a>
+								</li>
+								<li class="icons"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"><img src="./Ch-12 Sensors_files/stargold.gif" alt="*"></li>
+								<li class="postgroup">Faraday Member</li>
+								<li class="postcount">Posts: 3,632</li>
+								<li class="profile">
+									<ol class="profile_icons">
+										<li><a href="https://forum.arduino.cc/index.php?action=pm;sa=send;u=411246" title="Personal Message (Offline)"><span class="generic_icons im_off centericon" title="Personal Message (Offline)"></span> </a></li>
+									</ol>
+								</li>
+								<li class="custom karma">Karma: 559&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=411246;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">[add]</a></li>
+								<li class="poster_ip"><a href="https://forum.arduino.cc/index.php?action=helpadmin;help=see_member_ip" onclick="return reqOverlayDiv(this.href);" class="help">Logged</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="./Ch-12 Sensors_files/xx.png" alt="">
+								</div>
+								<div id="subject_4717573" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=695781.msg4717573#msg4717573" rel="nofollow">Re: Ch-12  Sensors</a></div>
+								<div class="page_number floatright">
+									 #5 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=695781.msg4717573#msg4717573" rel="nofollow" title="Reply #5 - Re: Ch-12  Sensors" class="smalltext">Aug 25, 2020, 08:10 am</a>
+									<span class="smalltext modified" id="modified_4717573"></span>
+								</h5>
+								<div id="msg_4717573_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_4717573">The <a href="https://www.arduino.cc/reference/en/language/functions/bits-and-bytes/bitread/" class="bbc_link" target="_blank">bitRead()</a> returns 0 or 1, not HIGH or LOW.<br><br>I think it should be this:<br><div class="codeheader">Code: <a href="javascript:void(0);" onclick="return smfSelectText(this);" class="codeoperation">[Select]</a></div><code class="bbc_code" style="max-height: none; height: auto;"><br>do<br>{<br>&nbsp; ...<br>}<br>while(bitRead(x, 3) == 1);</code></div>
+							</div>
+							<div class="under_message">
+								<ul class="floatleft smalltext">
+									<li class="report_link"><a href="https://forum.arduino.cc/index.php?action=reporttm;topic=695781.5;msg=4717573">Report to moderator</a></li>
+								</ul>
+								<ul class="quickbuttons sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+									<li><a href="https://forum.arduino.cc/index.php?action=post;quote=4717573;topic=695781.0;last_msg=4717573" onclick="return oQuickReply.quote(4717573);" class="quote_button">Quote</a></li>
+										<ul>
+										</ul>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				</form>
+			</div>
+			<div class="pagesection">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_reply " href="https://forum.arduino.cc/index.php?action=post;topic=695781.0;last_msg=4717573">Reply</a>
+				<a class="button-forum  button_strip_mark_unread" href="https://forum.arduino.cc/index.php?action=markasread;sa=topic;t=4677511;topic=695781.0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5">Mark unread</a>
+				<a class="button-forum  button_strip_print" href="https://forum.arduino.cc/index.php?action=printpage;topic=695781.0" rel="nofollow">Print</a>
+				<a class="button-forum  button_strip_notify" href="https://forum.arduino.cc/index.php?topic=695781.msg4677511">No Alerts or Emails</a>
+					<div class="top_menu dropmenu notify_dropdown">
+						<div class="viewport">
+							<div class="overview"><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=0;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Not Following</strong><br><span>You will not receive any emails or alerts for this post and it will also not show up in your unread replies and topics list. You will still receive @mentions for this topic.</span></a><span class="notify_check checked"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=1;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>No Alerts or Emails</strong><br><span>You will not receive any emails or alerts but only @mentions by other members.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=2;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Alerts</strong><br><span>You will receive alerts for this topic.</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=3;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails</strong><br><span>You will receive emails for this topic</span></a><span class="notify_check"></span>
+								<a href="https://forum.arduino.cc/index.php?action=notifytopic;topic=695781;mode=4;b9461d3f92=f27e02cfd2ffc059ad89808fbc1ebcc5"><strong>Receive Emails and Alerts</strong><br><span>You will receive both alerts and e-mails for this topic.</span></a>
+							</div>
+						</div>
+					</div>
+		</div>
+				 <a href="https://forum.arduino.cc/index.php?topic=695781.msg4677511#main_content_section" class="topbottom floatleft" id="bot">Go Up</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="moderationbuttons">
+				
+			</div>
+			<div id="display_jump_to"><label class="smalltext" for="display_jump_to_select">Jump to:</label> <select name="display_jump_to_select" id="display_jump_to_select" onfocus="grabJumpToContent(this);"><option value="?board=18.0">=&gt; Education and Teaching</option></select>&nbsp;<input type="button" class="button_submit" value="Go" onclick="window.location.href = &#39;https://forum.arduino.cc/index.php?board=18.0&#39;;"></div>
+			<a id="quickreply"></a>
+			<div class="tborder" id="quickreplybox">
+				<div class="cat_bar">
+					<h3 class="catbg">
+						Quick Reply
+					</h3>
+				</div>
+				<div id="quickReplyOptions">
+					<div class="roundframe">
+						
+						
+						
+						<form action="https://forum.arduino.cc/index.php?board=18;action=post2" method="post" accept-charset="UTF-8" name="postmodify" id="postmodify" onsubmit="submitonce(this);">
+							<input type="hidden" name="topic" value="695781">
+							<input type="hidden" name="subject" value="Re: Ch-12  Sensors">
+							<input type="hidden" name="icon" value="xx">
+							<input type="hidden" name="from_qr" value="1">
+							<input type="hidden" name="notify" value="1">
+							<input type="hidden" name="not_approved" value="">
+							<input type="hidden" name="goback" value="1">
+							<input type="hidden" name="last_msg" value="4717573">
+							<input type="hidden" name="b9461d3f92" value="f27e02cfd2ffc059ad89808fbc1ebcc5">
+							<input type="hidden" name="seqnum" value="1434498">
+							
+		<textarea class="editor" name="quickReply" id="quickReply" cols="600" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onchange="storeCaret(this);" tabindex="1" style="width: 100%; height: 250px; display: none;"></textarea><div class="sceditor-container ltr" style="width: 760px;"><div class="sceditor-toolbar" unselectable="on"><div class="sceditor-group"><a class="sceditor-button sceditor-button-code" data-sceditor-command="code" unselectable="on" title="Code"><div unselectable="on">Code</div></a><a class="sceditor-button sceditor-button-bold" data-sceditor-command="bold" unselectable="on" title="Bold (ctrl+b)"><div unselectable="on">Bold (ctrl+b)</div></a><a class="sceditor-button sceditor-button-italic" data-sceditor-command="italic" unselectable="on" title="Italic (ctrl+i)"><div unselectable="on">Italic (ctrl+i)</div></a><a class="sceditor-button sceditor-button-underline" data-sceditor-command="underline" unselectable="on" title="Underline (ctrl+u)"><div unselectable="on">Underline (ctrl+u)</div></a><a class="sceditor-button sceditor-button-strike" data-sceditor-command="strike" unselectable="on" title="Strikethrough"><div unselectable="on">Strikethrough</div></a></div><div class="sceditor-group"><a class="sceditor-button sceditor-button-pre" data-sceditor-command="pre" unselectable="on" title="Pre"><div unselectable="on">Pre</div></a><a class="sceditor-button sceditor-button-left active" data-sceditor-command="left" unselectable="on" title="Align left"><div unselectable="on">Align left</div></a><a class="sceditor-button sceditor-button-center" data-sceditor-command="center" unselectable="on" title="Center"><div unselectable="on">Center</div></a><a class="sceditor-button sceditor-button-right" data-sceditor-command="right" unselectable="on" title="Align right"><div unselectable="on">Align right</div></a></div><div class="sceditor-group"><a class="sceditor-button sceditor-button-color" data-sceditor-command="color" unselectable="on" title="Font Color"><div unselectable="on">Font Color</div></a></div><div class="sceditor-group"><a class="sceditor-button sceditor-button-image" data-sceditor-command="image" unselectable="on" title="Insert an image"><div unselectable="on">Insert an image</div></a><a class="sceditor-button sceditor-button-link" data-sceditor-command="link" unselectable="on" title="Insert a link"><div unselectable="on">Insert a link</div></a></div><div class="sceditor-group"><a class="sceditor-button sceditor-button-superscript" data-sceditor-command="superscript" unselectable="on" title="Superscript"><div unselectable="on">Superscript</div></a><a class="sceditor-button sceditor-button-subscript" data-sceditor-command="subscript" unselectable="on" title="Subscript"><div unselectable="on">Subscript</div></a><a class="sceditor-button sceditor-button-tt" data-sceditor-command="tt" unselectable="on" title="Teletype"><div unselectable="on">Teletype</div></a></div><div class="sceditor-group"><a class="sceditor-button sceditor-button-table" data-sceditor-command="table" unselectable="on" title="Insert a table"><div unselectable="on">Insert a table</div></a><a class="sceditor-button sceditor-button-quote" data-sceditor-command="quote" unselectable="on" title="Insert a Quote"><div unselectable="on">Insert a Quote</div></a></div><div class="sceditor-group"><a class="sceditor-button sceditor-button-bulletlist" data-sceditor-command="bulletlist" unselectable="on" title="Bullet list"><div unselectable="on">Bullet list</div></a><a class="sceditor-button sceditor-button-orderedlist" data-sceditor-command="orderedlist" unselectable="on" title="Numbered list"><div unselectable="on">Numbered list</div></a><a class="sceditor-button sceditor-button-horizontalrule" data-sceditor-command="horizontalrule" unselectable="on" title="Insert a horizontal rule"><div unselectable="on">Insert a horizontal rule</div></a></div><div class="sceditor-group"><a class="sceditor-button sceditor-button-removeformat disabled" data-sceditor-command="removeformat" unselectable="on" title="Remove Formatting"><div unselectable="on">Remove Formatting</div></a><a class="sceditor-button sceditor-button-source" data-sceditor-command="source" unselectable="on" title="View source (ctrl+shift+s)"><div unselectable="on">View source (ctrl+shift+s)</div></a></div><div class="sceditor-insertemoticon"><div><img src="./Ch-12 Sensors_files/smiley.gif" alt=":)" title=":)"><img src="./Ch-12 Sensors_files/angry.gif" alt="&gt;:(" title="&gt;:("><img src="./Ch-12 Sensors_files/sad.gif" alt=":(" title=":("><img src="./Ch-12 Sensors_files/shocked.gif" alt=":o" title=":o"><img src="./Ch-12 Sensors_files/smiley-confuse.png" alt=":smiley-confuse:" title=":smiley-confuse:"></div><div class="sceditor-more-button sceditor-more button">...</div></div></div><iframe frameborder="0" tabindex="1" src="javascript:false" style="width: 748px; height: 196px;" src="./Ch-12 Sensors_files/saved_resource.html"></iframe><textarea tabindex="1" style="display: none; width: 748px; height: 196px;" dir="ltr"></textarea><div class="sceditor-grip"></div><div class="sceditor-resize-cover" style="display: none;"></div></div>
+		<div id="quickReply_resizer" class="richedit_resize"></div>
+		<input type="hidden" name="quickReply_mode" id="quickReply_mode" value="0">
+		<script><!-- // --><![CDATA[
+			$(document).ready(function() {
+				
+
+				$("#quickReply").sceditor({
+					
+					style: "https://forum.arduino.cc/Themes/default/css/jquery.sceditor.default.css",
+					emoticonsCompat: true,
+					colors: "black,red,yellow,pink,green,orange,purple,blue,beige,brown,teal,navy,maroon,limegreen,white",
+					plugins: "bbcode",
+					parserOptions: {
+						quoteType: $.sceditor.BBCodeParser.QuoteType.auto
+					},
+					emoticons:
+					{
+						dropdown:
+						{
+								':)': 'https://forum.arduino.cc/Smileys/arduino/smiley.gif',
+								'>:(': 'https://forum.arduino.cc/Smileys/arduino/angry.gif',
+								':(': 'https://forum.arduino.cc/Smileys/arduino/sad.gif',
+								':o': 'https://forum.arduino.cc/Smileys/arduino/shocked.gif',
+								':smiley-confuse:': 'https://forum.arduino.cc/Smileys/arduino/smiley-confuse.png'
+						},
+						popup:
+						{
+								';)': 'https://forum.arduino.cc/Smileys/arduino/wink.gif',
+								':D': 'https://forum.arduino.cc/Smileys/arduino/cheesy.gif',
+								';D': 'https://forum.arduino.cc/Smileys/arduino/grin.gif',
+								'8)': 'https://forum.arduino.cc/Smileys/arduino/cool.gif',
+								'???': 'https://forum.arduino.cc/Smileys/arduino/huh.gif',
+								'::)': 'https://forum.arduino.cc/Smileys/arduino/rolleyes.gif',
+								':P': 'https://forum.arduino.cc/Smileys/arduino/tongue.gif',
+								':-[': 'https://forum.arduino.cc/Smileys/arduino/embarrassed.gif',
+								':-X': 'https://forum.arduino.cc/Smileys/arduino/lipsrsealed.gif',
+								':-\\': 'https://forum.arduino.cc/Smileys/arduino/undecided.gif',
+								':-*': 'https://forum.arduino.cc/Smileys/arduino/kiss.gif',
+								':\'(': 'https://forum.arduino.cc/Smileys/arduino/cry.gif',
+								':smiley-eek-blue:': 'https://forum.arduino.cc/Smileys/arduino/smiley-eek-blue.png',
+								':smiley-draw:': 'https://forum.arduino.cc/Smileys/arduino/smiley-draw.png',
+								':smiley-mr-green:': 'https://forum.arduino.cc/Smileys/arduino/smiley-mr-green.png',
+								':smiley-cool:': 'https://forum.arduino.cc/Smileys/arduino/smiley-cool.png',
+								':smiley-mad:': 'https://forum.arduino.cc/Smileys/arduino/smiley-mad.png',
+								':smiley-sad-blue:': 'https://forum.arduino.cc/Smileys/arduino/smiley-sad-blue.png',
+								':smiley-neutral:': 'https://forum.arduino.cc/Smileys/arduino/smiley-neutral.png',
+								':smiley-sleep:': 'https://forum.arduino.cc/Smileys/arduino/smiley-sleep.png',
+								':smiley-sad:': 'https://forum.arduino.cc/Smileys/arduino/smiley-sad.png',
+								':smiley-kiss:': 'https://forum.arduino.cc/Smileys/arduino/smiley-kiss.png',
+								':smiley-fat:': 'https://forum.arduino.cc/Smileys/arduino/smiley-fat.png',
+								':smiley-twist:': 'https://forum.arduino.cc/Smileys/arduino/smiley-twist.png',
+								':smiley-wink:': 'https://forum.arduino.cc/Smileys/arduino/smiley-wink.png',
+								':smiley-roll-blue:': 'https://forum.arduino.cc/Smileys/arduino/smiley-roll-blue.png',
+								':smiley-cry:': 'https://forum.arduino.cc/Smileys/arduino/smiley-cry.png',
+								':smiley-razz:': 'https://forum.arduino.cc/Smileys/arduino/smiley-razz.png',
+								':smiley-slim:': 'https://forum.arduino.cc/Smileys/arduino/smiley-slim.png',
+								':smiley-evil:': 'https://forum.arduino.cc/Smileys/arduino/smiley-evil.png',
+								':smiley-yell:': 'https://forum.arduino.cc/Smileys/arduino/smiley-yell.png',
+								':smiley-lol:': 'https://forum.arduino.cc/Smileys/arduino/smiley-lol.png',
+								':smiley-red:': 'https://forum.arduino.cc/Smileys/arduino/smiley-red.png',
+								':smiley-grin:': 'https://forum.arduino.cc/Smileys/arduino/smiley-grin.png',
+								':smiley-roll-sweat:': 'https://forum.arduino.cc/Smileys/arduino/smiley-roll-sweat.png',
+								':smiley-roll:': 'https://forum.arduino.cc/Smileys/arduino/smiley-roll.png',
+								':smiley-money:': 'https://forum.arduino.cc/Smileys/arduino/smiley-money.png',
+								':smiley:': 'https://forum.arduino.cc/Smileys/arduino/smiley.png',
+								':smiley-sweat:': 'https://forum.arduino.cc/Smileys/arduino/smiley-sweat.png',
+								':smiley-surprise:': 'https://forum.arduino.cc/Smileys/arduino/smiley-surprise.png',
+								':smiley-kitty:': 'https://forum.arduino.cc/Smileys/arduino/smiley-kitty.png',
+								':smiley-zipper:': 'https://forum.arduino.cc/Smileys/arduino/smiley-zipper.png',
+								':smiley-small:': 'https://forum.arduino.cc/Smileys/arduino/smiley-small.png',
+								':smiley-eek:': 'https://forum.arduino.cc/Smileys/arduino/smiley-eek.png'
+						}
+					},
+					toolbar: "emoticon,code,bold,italic,underline,strike|pre,left,center,right|font,size,color|||image,link,ftp|move|superscript,subscript,tt|table,quote|bulletlist,orderedlist,horizontalrule|unformat,toggle,removeformat,source",
+				});
+				$("#quickReply").data("sceditor").createPermanentDropDown();
+				if (!(is_ie || is_ie11 || is_ff || is_opera || is_safari || is_chrome))
+				{
+					$("#quickReply").data("sceditor").setTextMode();
+					$(".sceditor-button-source").hide();
+				}
+			});
+				var oEditorHandle_quickReply = new smc_Editor({
+					sUniqueId: 'quickReply',
+					sEditWidth: '100%',
+					sEditHeight: '250px',
+					bRichEditOff: true,
+					oSmileyBox: null,
+					oBBCBox: null
+				});
+				smf_editorArray[smf_editorArray.length] = oEditorHandle_quickReply;
+			// ]]></script>
+							<script><!-- // --><![CDATA[
+								function insertQuoteFast(messageid)
+								{
+									if (window.XMLHttpRequest)
+										getXMLDocument(smf_prepareScriptUrl(smf_scripturl) + 'action=quotefast;quote=' + messageid + ';xml;pb=quickReply;mode=' + (oEditorHandle_quickReply.bRichTextEnabled ? 1 : 0), onDocReceived);
+									else
+										reqWin(smf_prepareScriptUrl(smf_scripturl) + 'action=quotefast;quote=' + messageid + ';pb=quickReply;mode=' + (oEditorHandle_quickReply.bRichTextEnabled ? 1 : 0), 240, 90);
+									return false;
+								}
+								function onDocReceived(XMLDoc)
+								{
+									var text = '';
+									for (var i = 0, n = XMLDoc.getElementsByTagName('quote')[0].childNodes.length; i < n; i++)
+										text += XMLDoc.getElementsByTagName('quote')[0].childNodes[i].nodeValue;
+									$("#quickReply").data("sceditor").InsertText(text);
+
+									// Move the view to the quick reply box.
+									if (navigator.appName == "Microsoft Internet Explorer")
+										window.location.hash = "quickreply";
+									else
+										window.location.hash = "#quickreply";
+
+									ajax_indicator(false);
+								}
+							// ]]></script>
+					<br class="clear_right">
+					<span id="post_confirm_buttons">
+						
+		<input type="submit" name="save_draft" value="Save Draft" tabindex="3" onclick="return confirm(&#39;This will save the text of your post, but it will not save attachments, poll or event information.&#39;) &amp;&amp; submitThisOnce(this);" accesskey="d" class="button_submit">
+		<input type="hidden" id="id_draft" name="id_draft" value="0">
+		<input type="submit" name="preview" value="Preview" tabindex="2" onclick="return submitThisOnce(this);" accesskey="p" class="button_submit">
+		<input type="submit" value="Post" tabindex="1" onclick="return submitThisOnce(this);" accesskey="s" class="button_submit">
+		<span class="righttext padding" style="display: block">
+			<span id="throbber" style="display:none"><img src="./Ch-12 Sensors_files/loading_sm.gif" alt="" class="centericon">&nbsp;</span>
+			<span id="draft_lastautosave"></span>
+		</span>
+		<script src="./Ch-12 Sensors_files/drafts.js.download"></script>
+		<script><!-- // --><![CDATA[
+			var oDraftAutoSave = new smf_DraftAutoSave({
+				sSelf: 'oDraftAutoSave',
+				sLastNote: 'draft_lastautosave',
+				sLastID: 'id_draft',
+				sSceditorID: 'quickReply',
+				sType: 'post',
+				iBoard: 18,
+				iFreq: 60000
+			});
+		// ]]></script>
+					</span>
+						</form>
+					</div>
+				</div>
+			</div>
+			<script><!-- // --><![CDATA[
+				var oDraftAutoSave = new smf_DraftAutoSave({
+					sSelf: 'oDraftAutoSave',
+					sLastNote: 'draft_lastautosave',
+					sLastID: 'id_draft',
+					sSceditorID: 'quickReply',
+					sType: 'quick',
+					iBoard: 18,
+					iFreq: 60000
+				});
+			// ]]></script>
+				<script><!-- // --><![CDATA[
+					var oQuickReply = new QuickReply({
+						bDefaultCollapsed: false,
+						iTopicId: 695781,
+						iStart: 0,
+						sScriptUrl: smf_scripturl,
+						sImagesUrl: smf_images_url,
+						sContainerId: "quickReplyOptions",
+						sImageId: "quickReplyExpand",
+						sClassCollapsed: "toggle_up",
+						sClassExpanded: "toggle_down",
+						bIsFull: true
+					});
+					if ('XMLHttpRequest' in window)
+					{
+						var oQuickModify = new QuickModify({
+							sScriptUrl: smf_scripturl,
+							sClassName: 'quick_edit',
+							bShowModify: true,
+							iTopicId: 695781,
+							sTemplateBodyEdit: '\n\t\t\t\t\t\t\t\t<div id="quick_edit_body_container">\n\t\t\t\t\t\t\t\t\t<div id="error_box" class="error"><' + '/div>\n\t\t\t\t\t\t\t\t\t<textarea class="editor" name="message" rows="12" style="width: 100%; margin-bottom: 10px;" tabindex="4">%body%<' + '/textarea><br>\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="b9461d3f92" value="f27e02cfd2ffc059ad89808fbc1ebcc5">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="topic" value="695781">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="msg" value="%msg_id%">\n\t\t\t\t\t\t\t\t\t<div class="righttext">\n\t\t\t\t\t\t\t\t\t\t<input type="submit" name="post" value="Save" tabindex="5" onclick="return oQuickModify.modifySave(\'f27e02cfd2ffc059ad89808fbc1ebcc5\', \'b9461d3f92\');" accesskey="s" class="button_submit">&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" tabindex="6" onclick="return oQuickModify.modifyCancel();" class="button_submit">\n\t\t\t\t\t\t\t\t\t<' + '/div>\n\t\t\t\t\t\t\t\t<' + '/div>',
+							sTemplateSubjectEdit: '<input type="text" name="subject" value="%subject%" size="80" maxlength="80" tabindex="7" class="input_text">',
+							sTemplateBodyNormal: '%body%',
+							sTemplateSubjectNormal: '<a hr'+'ef="' + smf_scripturl + '?topic=695781.msg%msg_id%#msg%msg_id%" rel="nofollow">%subject%<' + '/a>',
+							sTemplateTopSubject: 'Topic: %subject% &nbsp;(Read 2291 times)',
+							sTemplateReasonEdit: '<input type="text" name="modify_reason" value="%modify_reason%" size="80" maxlength="80" tabindex="8" class="input_text">)',
+							sTemplateReasonNormal: '%modify_text',
+							sErrorBorderStyle: '1px solid red',
+							sFormRemoveAccessKeys: 'postmodify'
+						});
+
+						aJumpTo[aJumpTo.length] = new JumpTo({
+							sContainerId: "display_jump_to",
+							sJumpToTemplate: "<label class=\"smalltext\" for=\"%select_id%\">Jump to:<" + "/label> %dropdown_list%",
+							iCurBoardId: 18,
+							iCurBoardChildLevel: 0,
+							sCurBoardName: "Education and Teaching",
+							sBoardChildLevelIndicator: "==",
+							sBoardPrefix: "=> ",
+							sCatSeparator: "-----------------------------",
+							sCatPrefix: "",
+							sGoButtonLabel: "Go"
+						});
+
+						aIconLists[aIconLists.length] = new IconList({
+							sBackReference: "aIconLists[" + aIconLists.length + "]",
+							sIconIdPrefix: "msg_icon_",
+							sScriptUrl: smf_scripturl,
+							bShowModify: true,
+							iBoardId: 18,
+							iTopicId: 695781,
+							sSessionId: smf_session_id,
+							sSessionVar: smf_session_var,
+							sLabelIconList: "Message icon",
+							sBoxBackground: "transparent",
+							sBoxBackgroundHover: "#ffffff",
+							iBoxBorderWidthHover: 1,
+							sBoxBorderColorHover: "#adadad" ,
+							sContainerBackground: "#ffffff",
+							sContainerBorder: "1px solid #adadad",
+							sItemBorder: "1px solid #ffffff",
+							sItemBorderHover: "1px dotted gray",
+							sItemBackground: "transparent",
+							sItemBackgroundHover: "#e0e0f0"
+						});
+					}
+				// ]]></script>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+           <br><style>.pagefooter a { color: white !important; }</style><div id="spacer"></div>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="./Ch-12 Sensors_files/js"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-22581631-3');
+	</script>
+    <div>
+      <div id="newsletter-modal"></div>
+      <div id="footer" data-ref="0.6427736372958468"><div id="ino-footer-block" class="ino-footer-block">
+  <!-- TrusArc -->
+  <div id="teconsent"></div>
+
+  <div class="app-footer-header">
+    <div class="app-footer-header__logo app-footer-logo logo-arduino" id="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" width="102" height="14" fill="none" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerLogo-arduino.svg">
+  <path d="M0 13.812L4.162.19h3.784l4.351 13.622H8.703l-.757-2.649H4.162l-.757 2.649H0zM6.054 3.595L4.73 8.515h2.648l-1.324-4.92zM14.378.19h5.486c3.784 0 5.108 1.891 5.108 4.54 0 1.892-.756 3.216-2.27 3.973l2.649 4.919h-3.973l-1.892-4.163h-1.703v4.352h-3.405V.189zm7.19 4.54c0-1.135-.38-1.892-2.082-1.892h-1.703v3.784h1.703c1.324.189 2.081-.379 2.081-1.892zM27.811.19h4.352c5.108 0 6.81 2.459 6.81 6.62 0 3.217-.945 6.812-6.81 6.812h-4.54V.189h.188zm3.406 2.648v7.946h1.324c2.838 0 3.027-1.703 3.027-3.973 0-2.649-.19-3.973-3.216-3.973h-1.135zM48.81.19h3.217V9.08C52.027 13.054 49 14 46.541 14c-2.27 0-5.298-.757-5.298-4.919V.19h3.406v8.324c0 2.27.756 2.838 2.08 2.838 1.514 0 2.082-.756 2.082-2.838V.19zM55.054 10.973h3.594V3.027h-3.405V.189h10.405v2.838h-3.594v7.946h3.594v2.838H55.243v-2.838h-.19zM71.325 13.622h-3.217V.189h3.784l4.352 8.135V.19h3.216v13.622h-3.406l-4.54-8.703-.19 8.514zM93.082 7c0 3.973-1.514 7-5.865 7-3.973 0-5.676-2.27-5.676-6.81 0-4.163 1.514-7.19 5.676-7.19 3.973 0 5.865 1.703 5.865 7zm-3.595 0c0-3.405-.19-4.162-2.27-4.162-1.703-.19-2.081.946-2.081 4.351 0 2.649.189 4.162 2.08 4.162 2.082-.189 2.271-1.324 2.271-4.351zM95.352 3.027C95.352 1.324 96.676 0 98.189 0c1.703 0 3.027 1.324 3.027 3.027s-1.324 3.027-3.027 3.027c-1.513-.19-2.837-1.513-2.837-3.027zm5.297 0c0-1.324-.946-2.46-2.46-2.46-1.324 0-2.27.947-2.27 2.46 0 1.514 1.135 2.46 2.27 2.46 1.514 0 2.46-.946 2.46-2.46zm-3.973-1.892h1.703c1.135 0 1.513.568 1.513 1.135 0 .379-.19.757-.567 1.135l.567 1.325h-1.135l-.378-1.135H98V4.73h-1.135V1.135h-.19zm1.513 1.703c.379 0 .568-.19.568-.568 0-.378-.19-.378-.568-.378h-.378v.946h.378z" fill="currentColor"></path>
+</svg></div>
+
+    <div class="app-footer-header__controls no-select app-footer-controls" id="footer-controls"><div class="app-footer-button" id="go-top">
+  <div class="app-footer-button__icon"><svg xmlns="http://www.w3.org/2000/svg" id="control-icon-back2top" viewBox="0 0 15 14" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerControl-back2top.svg">
+  <path d="M10.3125 8.40628C10.2508 8.40664 10.1896 8.39481 10.1325 8.37149C10.0754 8.34816 10.0235 8.31379 9.97965 8.27034L7.49996 5.78597L5.02028 8.27034C4.97657 8.31405 4.92469 8.34872 4.86758 8.37237C4.81048 8.39603 4.74927 8.4082 4.68746 8.4082C4.62566 8.4082 4.56445 8.39603 4.50735 8.37237C4.45024 8.34872 4.39836 8.31405 4.35465 8.27034C4.31095 8.22664 4.27628 8.17475 4.25262 8.11765C4.22897 8.06054 4.2168 7.99934 4.2168 7.93753C4.2168 7.87572 4.22897 7.81452 4.25262 7.75742C4.27628 7.70031 4.31095 7.64843 4.35465 7.60472L7.16715 4.79222C7.21073 4.74828 7.26257 4.71341 7.31969 4.68961C7.37682 4.66582 7.43808 4.65356 7.49996 4.65356C7.56185 4.65356 7.62311 4.66582 7.68023 4.68961C7.73736 4.71341 7.7892 4.74828 7.83278 4.79222L10.6453 7.60472C10.6892 7.6483 10.7241 7.70014 10.7479 7.75726C10.7717 7.81438 10.7839 7.87565 10.7839 7.93753C10.7839 7.99941 10.7717 8.06068 10.7479 8.1178C10.7241 8.17492 10.6892 8.22677 10.6453 8.27034C10.6015 8.31379 10.5495 8.34816 10.4924 8.37149C10.4353 8.39481 10.3742 8.40664 10.3125 8.40628Z" fill="currentColor"></path>
+  <path d="M7.5 13.5625C6.20206 13.5625 4.93327 13.1776 3.85407 12.4565C2.77488 11.7354 1.93374 10.7105 1.43704 9.51136C0.940343 8.31222 0.810384 6.99272 1.0636 5.71972C1.31682 4.44672 1.94183 3.2774 2.85961 2.35961C3.7774 1.44183 4.94672 0.816815 6.21972 0.5636C7.49272 0.310384 8.81222 0.440343 10.0114 0.937043C11.2105 1.43374 12.2354 2.27488 12.9565 3.35407C13.6776 4.43327 14.0625 5.70206 14.0625 7C14.0625 8.74049 13.3711 10.4097 12.1404 11.6404C10.9097 12.8711 9.24049 13.5625 7.5 13.5625ZM7.5 1.375C6.38748 1.375 5.29995 1.7049 4.37492 2.32299C3.44989 2.94107 2.72892 3.81957 2.30318 4.84741C1.87744 5.87524 1.76604 7.00624 1.98309 8.09738C2.20013 9.18853 2.73586 10.1908 3.52253 10.9775C4.3092 11.7641 5.31148 12.2999 6.40262 12.5169C7.49376 12.734 8.62476 12.6226 9.6526 12.1968C10.6804 11.7711 11.5589 11.0501 12.177 10.1251C12.7951 9.20006 13.125 8.11252 13.125 7C13.125 5.50816 12.5324 4.07742 11.4775 3.02253C10.4226 1.96764 8.99185 1.375 7.5 1.375Z" fill="currentColor"></path>
+</svg></div>
+  <span class="app-footer-button__text">Back to top</span>
+</div></div>
+  </div>
+
+  <div class="app-footer-content main">
+    <div class="footer-menu-desktop app-footer-menu-desktop"><div class="app-footer-menu-desktop__item"><div class="app-footer-menu-desktop__link"><a href="https://www.arduino.cc/en/Trademark/HomePage"><span title="Trademark">Trademark</span></a></div><div class="app-footer-menu-desktop__link"><a href="https://www.arduino.cc/en/contact-us"><span title="Contact Us">Contact Us</span></a></div><div class="app-footer-menu-desktop__link"><a href="https://store.arduino.cc/distributors"><span title="Distributors">Distributors</span></a></div><div class="app-footer-menu-desktop__link"><a href="https://careers.arduino.cc/"><span title="Careers">Careers</span></a></div></div><div class="app-footer-menu-desktop__item"><div class="app-footer-menu-desktop__link"><a href="https://support.arduino.cc/"><span title="Help Center">Help Center</span></a></div></div></div>
+
+    <div class="news-letter arduino-view">
+      <newsletter data-ref="0.8749016310952638"><div class="newsletter-form">
+    <h4 id="newsletter-input-label">Newsletter</h4>
+    <div class="subscribe-wrapper">
+        <div id="newsletter-email-error" class="upper-error-notif">Please insert a valid email</div>
+        <div class="input-wrapper">
+            <input id="newsletter-email" aria-labelledby="newsletter-input-label" type="email" name="email" class="email" placeholder="Enter your email to sign up">
+            <button id="subscribe-btn" aria-label="Subscribe" class="button">Subscribe</button>
+        </div>
+    </div>
+</div></newsletter>
+    </div>
+
+    <div class="social-container app-footer-social-apps"><h4>FOLLOW US</h4>
+<div class="app-footer-social-btns">
+  <div class="app-footer-social-btn">
+    <a href="https://www.facebook.com/official.arduino" target="_blank" id="facebook" class="facebook" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-facebook" viewBox="0 0 7 13" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-facebook.svg">
+  <path d="M4.66301 3.54026V4.93745H6.72426L6.39488 7.08901H4.66301V12.3749H2.33613V7.08901H0.450195V4.93745H2.33613V3.3012C2.33613 1.43651 3.44645 0.405884 5.14645 0.405884C5.70345 0.413533 6.25917 0.46147 6.80926 0.549321V2.38213H5.87426C5.71438 2.35869 5.55126 2.37203 5.39731 2.42112C5.24336 2.47021 5.10264 2.55377 4.98585 2.66544C4.86906 2.77711 4.77927 2.91395 4.72333 3.06554C4.66739 3.21713 4.64676 3.37949 4.66301 3.54026Z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://www.instagram.com/arduino.cc/" target="_blank" id="instagram" class="instagram" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-instagram" viewBox="0 0 13 14" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-instagram.svg">
+  <path d="M6.5 1.772c1.7 0 1.902 0 2.577.038.404.006.805.081 1.184.223a2.066 2.066 0 011.206 1.206c.142.379.217.78.223 1.184.032.675.037.877.037 2.577s0 1.902-.037 2.577a3.541 3.541 0 01-.223 1.184 2.065 2.065 0 01-1.206 1.206c-.379.142-.78.217-1.184.223-.675.032-.877.037-2.577.037s-1.902 0-2.577-.037a3.542 3.542 0 01-1.184-.223 2.066 2.066 0 01-1.206-1.206 3.543 3.543 0 01-.223-1.184C1.278 8.902 1.272 8.7 1.272 7s0-1.902.038-2.577c.006-.404.081-.805.223-1.184a2.066 2.066 0 011.206-1.206c.379-.142.78-.217 1.184-.223.675-.032.877-.038 2.577-.038zm0-1.147c-1.732 0-1.95 0-2.63.037A4.654 4.654 0 002.324.96 3.224 3.224 0 00.46 2.824 4.654 4.654 0 00.162 4.37C.125 5.05.125 5.268.125 7c0 1.732 0 1.95.037 2.63.01.528.111 1.05.298 1.546a3.225 3.225 0 001.864 1.864 4.65 4.65 0 001.546.298c.68.037.898.037 2.63.037 1.732 0 1.95 0 2.63-.037a4.65 4.65 0 001.546-.298 3.226 3.226 0 001.864-1.864c.184-.487.284-1 .298-1.52.037-.706.037-.924.037-2.656 0-1.732 0-1.95-.037-2.63a4.65 4.65 0 00-.298-1.546A3.226 3.226 0 0010.676.96c-.487-.184-1-.284-1.52-.298C8.45.625 8.232.625 6.5.625z" fill="currentColor"></path>
+  <path d="M6.5 3.728a3.273 3.273 0 100 6.545 3.273 3.273 0 000-6.545zm0 5.397a2.125 2.125 0 110-4.25 2.125 2.125 0 010 4.25zM9.906 4.36a.765.765 0 100-1.53.765.765 0 000 1.53z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://twitter.com/arduino" target="_blank" id="twitter" class="twitter" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-twitter" viewBox="0 0 13 11" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-twitter.svg">
+  <path d="M4.545 10.36a7.04 7.04 0 007.087-7.092V2.95a5.13 5.13 0 001.243-1.29c-.457.2-.94.332-1.434.393.522-.311.913-.802 1.1-1.382a5.233 5.233 0 01-1.595.606 2.491 2.491 0 00-4.308 1.705 2.22 2.22 0 00.064.569A7.071 7.071 0 011.575.94a2.497 2.497 0 00.776 3.326 2.444 2.444 0 01-1.126-.33v.032a2.497 2.497 0 001.997 2.444 2.619 2.619 0 01-1.126.043 2.492 2.492 0 002.327 1.732A4.994 4.994 0 011.325 9.25a4.422 4.422 0 01-.595 0 6.975 6.975 0 003.815 1.126" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://github.com/arduino/" target="_blank" id="github" class="github" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-github" viewBox="0 0 11 13" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-github.svg">
+  <path d="M6.85 8.337a1.77 1.77 0 01.504 1.382v2.008a.531.531 0 01-.409.531 7.52 7.52 0 01-2.869 0 .531.531 0 01-.409-.531v-1.233c-2.066.447-2.502-.998-2.502-.998a1.97 1.97 0 00-.829-1.09c-.674-.456.054-.451.054-.451a1.562 1.562 0 011.136.77 1.594 1.594 0 002.168.617c.03-.377.196-.73.467-.994C2.515 8.157.777 7.52.777 4.672a2.869 2.869 0 01.744-2.003A2.656 2.656 0 011.596.687s.621-.201 2.045.76a7.066 7.066 0 013.719 0C8.783.502 9.405.687 9.405.687c.275.622.302 1.325.074 1.966.503.542.777 1.258.765 1.998 0 2.874-1.737 3.5-3.394 3.686z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://www.linkedin.com/company/arduino" target="_blank" id="linkedin" class="linkedin" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-linkedin" viewBox="0 0 11 12" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-linkedin.svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.863 11.313h2.125V7.338c-.006-.18.02-.36.075-.531A1.222 1.222 0 017.237 6c.967 0 1.307.616 1.307 1.525v3.787h2.167V7.239c0-2.067-.632-3.188-2.576-3.188A2.183 2.183 0 006.01 5.33V4.205H3.885c.031.633 0 7.109 0 7.109h-.022z" fill="currentColor"></path>
+  <path d="M1.361 3.248a1.28 1.28 0 100-2.56 1.28 1.28 0 000 2.56zM2.45 4.204H.247v7.109h2.205V4.204z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+  <div class="app-footer-social-btn">
+    <a href="https://www.youtube.com/user/arduinoteam" target="_blank" id="youtube" class="youtube" rel="noopener">
+      <div class="app-footer-social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" id="social-youtube" viewBox="0 0 15 12" data-inject-url="https://cdn.arduino.cc/header-footer/prod/assets/footerSocial-youtube.svg">
+  <path d="M14.624 2.398a1.854 1.854 0 00-1.312-1.323C12.154.762 7.5.762 7.5.762s-4.653 0-5.811.313A1.854 1.854 0 00.376 2.398 19.407 19.407 0 00.063 6a19.407 19.407 0 00.313 3.602 1.855 1.855 0 001.313 1.323c1.158.313 5.811.313 5.811.313s4.654 0 5.812-.313a1.855 1.855 0 001.313-1.323c.216-1.188.32-2.394.313-3.602a19.412 19.412 0 00-.314-3.602zM5.981 8.21V3.79L9.864 6 5.981 8.21z" fill="currentColor"></path>
+</svg>
+      </div>
+    </a>
+  </div>
+</div></div>
+  </div>
+
+  <div class="footer-mobile-menu-list app-footer-menu-mobile"><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Trademark/HomePage"><span title="Trademark">Trademark</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/contact-us"><span title="Contact Us">Contact Us</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://store.arduino.cc/distributors"><span title="Distributors">Distributors</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://careers.arduino.cc/"><span title="Careers">Careers</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://support.arduino.cc/"><span title="Help Center">Help Center</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Main/TermsOfService"><span title="Terms Of Service">Terms Of Service</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Main/PrivacyPolicy"><span title="Privacy Policy">Privacy Policy</span></a></div><div class="app-footer-menu-mobile__link"><a href="https://www.arduino.cc/en/Main/Security"><span title="Security">Security</span></a></div><div class="app-footer-menu-mobile__link" id="footer-trustarc-element" style="display: none;"><a class="footer-teconsent">Cookie Preferences</a></div></div>
+
+  <div class="app-footer-bottom">
+    <div class="app-footer-bottom__left footer-year app-footer-copyright" id="footer-copyright"><p id="footer-copyright-container">
+  <a href="https://www.arduino.cc/en/Main/CopyrightNotice" id="footer-copyright-url">
+    <span class="text">
+      © <span id="current-year">2020</span> Arduino
+    </span>
+  </a>
+</p></div>
+
+    <div class="app-footer-bottom__middle">
+      <div class="footer-menu-copyright app-footer-menu-copyright"><div class="app-footer-menu-copyright__link"><a href="https://www.arduino.cc/en/Main/TermsOfService"><span title="Terms Of Service">Terms Of Service</span></a></div><div class="app-footer-menu-copyright__link"><a href="https://www.arduino.cc/en/Main/PrivacyPolicy"><span title="Privacy Policy">Privacy Policy</span></a></div><div class="app-footer-menu-copyright__link"><a href="https://www.arduino.cc/en/Main/Security"><span title="Security">Security</span></a></div><div class="app-footer-menu-copyright__link" id="footer-trustarc-element" style="display: none;"><a class="footer-teconsent">Cookie Preferences</a></div></div>
+    </div>
+
+    <div class="app-footer-bottom__right payments" id="footer-payments">
+      <!-- right -->
+    </div>
+  </div>
+  
+  <div class="footer-help-container hide">
+    <a href="https://support.arduino.cc/" aria-haspopup="true" aria-label="Help" class="footer-help-button">
+      <span class="footer-help-icon" type="Icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><title></title><g id="Layer_4"><path d="M11,12.3V13c0,0-1.8,0-2,0v-0.6c0-0.6,0.1-1.4,0.8-2.1c0.7-0.7,1.6-1.2,1.6-2.1c0-0.9-0.7-1.4-1.4-1.4 c-1.3,0-1.4,1.4-1.5,1.7H6.6C6.6,7.1,7.2,5,10,5c2.4,0,3.4,1.6,3.4,3C13.4,10.4,11,10.8,11,12.3z"></path><circle cx="10" cy="15" r="1"></circle><path d="M10,2c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S5.6,2,10,2 M10,0C4.5,0,0,4.5,0,10s4.5,10,10,10s10-4.5,10-10S15.5,0,10,0 L10,0z"></path></g></svg>
+      </span>
+      <span class="footer-help-text">Help</span>
+    </a>
+  </div>
+</div><!-- footer-block -->
+</div>
+    </div>
+    <script src="./Ch-12 Sensors_files/index.v2.js.download" type="text/javascript"></script>
+    <script>
+      var auth = new window.arduinoHF.CustomAuth({
+        token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rUkVSalJFTWpBNFFqTXdNMFl3TXpSRFF6SkZOa0kxT0RkQlFVVTJNelpCUkRReFJqTXlOZyJ9.eyJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6ImVtb25fbWlyemEiLCJodHRwOi8vYXJkdWluby5jYy9pZCI6IjBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImh0dHA6Ly9hcmR1aW5vLmNjL3JvbGVzIjpbXSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5hcmR1aW5vLmNjLyIsInN1YiI6ImF1dGgwfDBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImF1ZCI6WyJodHRwczovL2FwaS5hcmR1aW5vLmNjIiwiaHR0cHM6Ly9hcmR1aW5vLXByb2QuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTYwMzk4NjU2NiwiZXhwIjoxNjAzOTg3MTY2LCJhenAiOiJnVGxqaWFmN2NOS25xMWQwdzdJSzcxaWIya0l3SmI3VyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MiLCJwZXJtaXNzaW9ucyI6W119.oASuZdBnSy0rnOn9EkWZsEfWLvEfXnHkDZu056lBTnS5GP6Ty-vYtcpuMJ2wfk79DsL61_lcYvNcLJlC8O2uWSK_XJOQB0e64v4OYPnYuRIp3uRuA9HIxeqh95gA6D_gAXOxdL6xuyvyLM8U1bW7ZjmxvpIFuaMMBanpK4gauw6VJTR6p5_13msp6hrSEGzN10rLb1UNcDESlB7YYvw4kaF_o6DgpyhnSURejf2tjuEd4h3qeJH4HWiWh-9p8nvoL_hO2rjhVGQZBMM5bM8EpNJaPUat8jcW6RmUJ2lYjURqo80Lec32Iuq0uZvXSTWiuhwADfJ2KkppqswpR8NmQQ" ? "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rUkVSalJFTWpBNFFqTXdNMFl3TXpSRFF6SkZOa0kxT0RkQlFVVTJNelpCUkRReFJqTXlOZyJ9.eyJodHRwOi8vYXJkdWluby5jYy91c2VybmFtZSI6ImVtb25fbWlyemEiLCJodHRwOi8vYXJkdWluby5jYy9pZCI6IjBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImh0dHA6Ly9hcmR1aW5vLmNjL3JvbGVzIjpbXSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5hcmR1aW5vLmNjLyIsInN1YiI6ImF1dGgwfDBhYTZiMzFkLTM4ODgtNGIyZC1iOWYxLWU5Njg0OTc3ZjNjZSIsImF1ZCI6WyJodHRwczovL2FwaS5hcmR1aW5vLmNjIiwiaHR0cHM6Ly9hcmR1aW5vLXByb2QuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTYwMzk4NjU2NiwiZXhwIjoxNjAzOTg3MTY2LCJhenAiOiJnVGxqaWFmN2NOS25xMWQwdzdJSzcxaWIya0l3SmI3VyIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwgb2ZmbGluZV9hY2Nlc3MiLCJwZXJtaXNzaW9ucyI6W119.oASuZdBnSy0rnOn9EkWZsEfWLvEfXnHkDZu056lBTnS5GP6Ty-vYtcpuMJ2wfk79DsL61_lcYvNcLJlC8O2uWSK_XJOQB0e64v4OYPnYuRIp3uRuA9HIxeqh95gA6D_gAXOxdL6xuyvyLM8U1bW7ZjmxvpIFuaMMBanpK4gauw6VJTR6p5_13msp6hrSEGzN10rLb1UNcDESlB7YYvw4kaF_o6DgpyhnSURejf2tjuEd4h3qeJH4HWiWh-9p8nvoL_hO2rjhVGQZBMM5bM8EpNJaPUat8jcW6RmUJ2lYjURqo80Lec32Iuq0uZvXSTWiuhwADfJ2KkppqswpR8NmQQ": null,
+        login_url: 'https://forum.arduino.cc/login.php?redirect_uri=https%3A%2F%2Fforum.arduino.cc%2Findex.php%3Ftopic%3D695781.msg4677511&do_login=1',
+        logout_url: 'https://login.arduino.cc/v2/logout?returnTo=https%3A%2F%2Fforum.arduino.cc%2Flogin.php%3Ferror%3Dloggedout&client_id=gTljiaf7cNKnq1d0w7IK71ib2kIwJb7W',
+        profile: {
+          picture: 'https://content.arduino.cc/avatars/2/emon_mirza.jpeg'
+        }
+    });
+
+      var header = new window.arduinoHF.Header(document.getElementById('header'), window.auth, {
+        env: 'prod',
+        search: {
+          tab: 'forum'
+        },
+        style: 'arduino',
+        logo: {
+            url: 'https://www.arduino.cc'
+        }
+      });
+      header.init();
+
+      var footer = new arduinoHF.Footer(document.getElementById('footer'), {env: 'prod', style: 'arduino', helpCenter: null});
+
+    </script><div data-ref="0.8355017521354378"><div class="modal info-modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-body" data-ref="0.9984017561905045"><div class="privacy">
+
+    <h1>Privacy consent</h1>
+
+    <div>
+        <p>
+            Arduino cares about the privacy and personal data of its users. The <a href="https://www.arduino.cc/en/Main/PrivacyPolicy" target="_blank" rel="noopener">privacy policy</a> is meant to inform you on how we process your personal data when you use our services.
+        </p>
+
+        <ul class="privacy-settings">
+            <li>
+                <div class="upper-error-notif privacy-error">Please confirm that you have read the privacy policy</div>
+                <label class="checkbox">
+        <input type="checkbox" id="privacy-consent" name="privacy-consent" value="privacy_approval">
+
+        <span class="custom-checkbox"></span>
+        <span>I confirm to have read the privacy policy<span class="required-asterisk">*</span></span>
+      </label>
+            </li>
+            <li>
+                <div class="upper-error-notif newsletter-error">Please confirm your consent to receive the newsletter</div>
+                <label class="checkbox">
+        <input type="checkbox" id="newsletter-consent" name="newsletter-consent" value="newsletter_approval" checked="checked">
+
+        <span class="custom-checkbox"></span>
+        <span>I confirm my consent to receive your newsletter<span class="required-asterisk">*</span></span>
+      </label>
+            </li>
+            <li>
+                <label class="checkbox">
+        <input type="checkbox" id="marketing-consent" value="marketing_approval">
+        <span class="custom-checkbox"></span>
+        <span>I confirm my consent to the processing of my personal data for marketing purposes, consisting in commercial offers sent via email</span>
+      </label>
+            </li>
+            <li>
+                <label class="checkbox">
+        <input type="checkbox" id="tracking-consent" value="tracking_approval">
+        <span class="custom-checkbox"></span>
+        <span>I confirm my consent to automated processing of my personal data, by means of profiling, in order to receive commercial offers customized on the basis of my browsing and purchasing behavior</span>
+      </label>
+            </li>
+        </ul>
+        <div class="my-error-notification">
+            <div id="newsletterSubscribeStatus"></div>
+        </div>
+        <section class="buttons-wrapper">
+            <button name="Cancel" class="button secondary cancel">Cancel</button>
+            <button name="Ok" class="primary button submit">Ok</button>
+        </section>
+    </div>
+</div></div>
+</div></div><div data-ref="0.16191148898938712"><div class="modal info-modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-body" data-ref="0.4712059117242815"><div class="confirm">
+  <h1>Confirm your email address</h1>
+  <p>
+    We need to confirm your email address.<br> To complete the subscription, please click the link in the email we just sent you.
+  </p>
+  <p>
+    Thank you for subscribing!
+  </p>
+  <section class="buttons-wrapper">
+    <button name="Ok" class="button submit">Ok</button>
+  </section>
+</div></div>
+</div></div>
+  <div id="ajax_in_progress" style="display: none;">Loading...</div>
+<script><!-- // --><![CDATA[
+	function triggerCron() {
+		var tempImage = new Image();
+		tempImage.src = 'https://forum.arduino.cc' + "/cron.php?ts=1603986600";
+	}
+	window.setTimeout(triggerCron, 1);
+	var user_menus = new smc_PopupMenu();
+	user_menus.add("profile", "https://forum.arduino.cc/index.php?action=profile;area=popup");
+	user_menus.add("alerts", "https://forum.arduino.cc/index.php?action=profile;area=alerts_popup");
+	user_menus.add("pm", "https://forum.arduino.cc/index.php?action=pm;sa=popup");
+// ]]></script>
+    <script src="./Ch-12 Sensors_files/modernizr.js.download"></script>
+    <!--[if gte IE 9]><!-->
+    <script src="./Ch-12 Sensors_files/foundation.min.js.download"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <!--<![endif]-->
+    <!--[if IE 8]>
+    <script src="//content.arduino.cc/legacy/js/foundation_ie8.min.js"></script>
+    <script src="//content.arduino.cc/legacy/js/ie8/jquery.foundation.alerts.js"></script>
+    <script src="//content.arduino.cc/legacy/js/app.js"></script>
+		<![endif]-->
+		<script>
+		// Adv banner configuration
+		var arduinoAdvOptions = {
+			breakpointDesktop: 480,
+			breakpointMobile: 480,
+			zoneIdDesktop: 561,
+			zoneIdTablet: 560,
+			zoneIdMobile: 560
+		};
+
+		jQuery('.boardindex_table .main_container:nth-child(1)').append('<div id="ad_container_zone" class="adv-banner"></div>');
+		jQuery('#forumposts form .windowbg:nth-of-type(1)').after('<div id="ad_container_zone" class="adv-banner"></div>');
+
+		</script>
+		<!-- Script used by adv banner -->
+		<script type="text/javascript" src="./Ch-12 Sensors_files/postscribe.min.js.download"></script>
+		<script type="text/javascript" src="./Ch-12 Sensors_files/banner.js.download"></script>
+
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Ch-12 Sensors_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>
